@@ -14,6 +14,11 @@
 		46449D3E27D616A700633CAE /* ScannerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46449D3D27D616A700633CAE /* ScannerAppTests.swift */; };
 		46449D4827D616A700633CAE /* ScannerAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46449D4727D616A700633CAE /* ScannerAppUITests.swift */; };
 		46449D4A27D616A700633CAE /* ScannerAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46449D4927D616A700633CAE /* ScannerAppUITestsLaunchTests.swift */; };
+		46449D5727D6170A00633CAE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46449D5627D6170A00633CAE /* Model.swift */; };
+		46449D5927D6173500633CAE /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46449D5827D6173500633CAE /* ModelView.swift */; };
+		46449D5D27D6184700633CAE /* dragon.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 46449D5B27D6184700633CAE /* dragon.usdz */; };
+		46449D5E27D6184700633CAE /* chair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 46449D5C27D6184700633CAE /* chair.usdz */; };
+		46449D6027D6189F00633CAE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 46449D5F27D6189F00633CAE /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		46449D4327D616A700633CAE /* ScannerAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScannerAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46449D4727D616A700633CAE /* ScannerAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerAppUITests.swift; sourceTree = "<group>"; };
 		46449D4927D616A700633CAE /* ScannerAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		46449D5627D6170A00633CAE /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		46449D5827D6173500633CAE /* ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
+		46449D5B27D6184700633CAE /* dragon.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = dragon.usdz; sourceTree = "<group>"; };
+		46449D5C27D6184700633CAE /* chair.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = chair.usdz; sourceTree = "<group>"; };
+		46449D5F27D6189F00633CAE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +84,7 @@
 		46449D2027D616A700633CAE = {
 			isa = PBXGroup;
 			children = (
+				46449D5F27D6189F00633CAE /* README.md */,
 				46449D2B27D616A700633CAE /* ScannerApp */,
 				46449D3C27D616A700633CAE /* ScannerAppTests */,
 				46449D4627D616A700633CAE /* ScannerAppUITests */,
@@ -94,8 +105,11 @@
 		46449D2B27D616A700633CAE /* ScannerApp */ = {
 			isa = PBXGroup;
 			children = (
+				46449D5A27D617F500633CAE /* Objects */,
 				46449D2C27D616A700633CAE /* ScannerAppApp.swift */,
 				46449D2E27D616A700633CAE /* ContentView.swift */,
+				46449D5627D6170A00633CAE /* Model.swift */,
+				46449D5827D6173500633CAE /* ModelView.swift */,
 				46449D3027D616A700633CAE /* Assets.xcassets */,
 				46449D3227D616A700633CAE /* Preview Content */,
 			);
@@ -125,6 +139,15 @@
 				46449D4927D616A700633CAE /* ScannerAppUITestsLaunchTests.swift */,
 			);
 			path = ScannerAppUITests;
+			sourceTree = "<group>";
+		};
+		46449D5A27D617F500633CAE /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				46449D5C27D6184700633CAE /* chair.usdz */,
+				46449D5B27D6184700633CAE /* dragon.usdz */,
+			);
+			path = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +254,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46449D5D27D6184700633CAE /* dragon.usdz in Resources */,
+				46449D5E27D6184700633CAE /* chair.usdz in Resources */,
+				46449D6027D6189F00633CAE /* README.md in Resources */,
 				46449D3427D616A700633CAE /* Preview Assets.xcassets in Resources */,
 				46449D3127D616A700633CAE /* Assets.xcassets in Resources */,
 			);
@@ -258,6 +284,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				46449D2F27D616A700633CAE /* ContentView.swift in Sources */,
+				46449D5727D6170A00633CAE /* Model.swift in Sources */,
+				46449D5927D6173500633CAE /* ModelView.swift in Sources */,
 				46449D2D27D616A700633CAE /* ScannerAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

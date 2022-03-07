@@ -9,8 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack{
+            Image("icon")
+                .resizable()
+                .scaledToFit()
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/5)
+            Spacer()
+            ModelView()
+            Spacer()
+            Button(action: {
+                print("Entered")
+            }, label: {
+                Text("Click to start")
+            })
+        }
     }
 }
 
