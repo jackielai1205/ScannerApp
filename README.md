@@ -1,4 +1,4 @@
-<img src="/ScannerApplication/Assets.xcassets/icon.imageset/icon.png">
+<img src="/ScannerApp/Assets.xcassets/icon.imageset/icon.png">
 
 # 3DScannerApplication
 This is a R&D project which develop by AUT student. The application will develop by swiftui
