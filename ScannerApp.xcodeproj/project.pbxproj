@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4628978A27D742930080E663 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4628978927D742930080E663 /* TabBar.swift */; };
+		4628978E27D958B50080E663 /* TabCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4628978D27D958B50080E663 /* TabCurve.swift */; };
 		46449D2D27D616A700633CAE /* ScannerAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46449D2C27D616A700633CAE /* ScannerAppApp.swift */; };
 		46449D2F27D616A700633CAE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46449D2E27D616A700633CAE /* ContentView.swift */; };
 		46449D3127D616A700633CAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46449D3027D616A700633CAE /* Assets.xcassets */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4628978927D742930080E663 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		4628978D27D958B50080E663 /* TabCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCurve.swift; sourceTree = "<group>"; };
 		46449D2927D616A700633CAE /* ScannerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScannerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46449D2C27D616A700633CAE /* ScannerAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerAppApp.swift; sourceTree = "<group>"; };
 		46449D2E27D616A700633CAE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +85,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4628978B27D745F80080E663 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				4628978C27D958A20080E663 /* TabBar */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		4628978C27D958A20080E663 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				4628978927D742930080E663 /* TabBar.swift */,
+				4628978D27D958B50080E663 /* TabCurve.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		46449D2027D616A700633CAE = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +126,7 @@
 		46449D2B27D616A700633CAE /* ScannerApp */ = {
 			isa = PBXGroup;
 			children = (
+				4628978B27D745F80080E663 /* Helper */,
 				46449D5A27D617F500633CAE /* Objects */,
 				46449D2C27D616A700633CAE /* ScannerAppApp.swift */,
 				46449D2E27D616A700633CAE /* ContentView.swift */,
@@ -284,9 +306,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				46449D2F27D616A700633CAE /* ContentView.swift in Sources */,
+				4628978E27D958B50080E663 /* TabCurve.swift in Sources */,
 				46449D5727D6170A00633CAE /* Model.swift in Sources */,
 				46449D5927D6173500633CAE /* ModelView.swift in Sources */,
 				46449D2D27D616A700633CAE /* ScannerAppApp.swift in Sources */,
+				4628978A27D742930080E663 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
