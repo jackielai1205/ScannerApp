@@ -9,47 +9,54 @@ import SwiftUI
 
 struct MenuView: View {
     
-    @State var selectedTab = "viewfinder.circle"
+    @State var selectedTab = "house"
     
     var body: some View {
         ZStack(alignment: .bottom, content: {
+            
             switch selectedTab{
+            case "house":
+                ZStack(alignment: .center, content: {
+                    Color("Background")
+                    Text("Home")
+                })
+                    .ignoresSafeArea()
             case "viewfinder.circle":
                 ZStack(alignment: .center, content: {
-                    Color.red
-                        .ignoresSafeArea()
+                    Color("Background")
                     Text("Scan")
                 })
-            case "person":
+                    .ignoresSafeArea()
+            case "photo":
                 ZStack(alignment: .center, content: {
-                    Color.blue
-                        .ignoresSafeArea()
+                    Color("Background")
                     Text("View")
                 })
+                    .ignoresSafeArea()
             case "icloud.and.arrow.up":
                 ZStack(alignment: .center, content: {
-                    Color.green
-                        .ignoresSafeArea()
+                    Color("Background")
                     Text("Upload")
                 })
+                    .ignoresSafeArea()
             case "person.3":
                 ZStack(alignment: .center, content: {
-                    Color.yellow
-                        .ignoresSafeArea()
+                    Color("Background")
                     Text("About")
                 })
+                    .ignoresSafeArea()
             case "gearshape":
                 ZStack(alignment: .center, content: {
-                    Color.blue
-                        .ignoresSafeArea()
+                    Color("Background")
                     Text("Setting")
                 })
+                    .ignoresSafeArea()
             default:
                 ZStack(alignment: .center, content: {
-                    Color.black
-                        .ignoresSafeArea()
+                    Color("Background")
                     Text("Error")
                 })
+                    .ignoresSafeArea()
             }
             TabBar(selectedTab: $selectedTab)
         })

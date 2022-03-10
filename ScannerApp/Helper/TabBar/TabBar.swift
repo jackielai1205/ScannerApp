@@ -15,8 +15,9 @@ struct TabBar: View {
     var body: some View {
         
         HStack(spacing:0){
+            TabBarButton(image: "house", name: "Home", selectedTab: $selectedTab, tabPoints: $tabPoints)
             TabBarButton(image: "viewfinder.circle", name: "Scan", selectedTab: $selectedTab, tabPoints: $tabPoints)
-            TabBarButton(image: "person", name: "View", selectedTab: $selectedTab, tabPoints: $tabPoints)
+            TabBarButton(image: "photo", name: "View", selectedTab: $selectedTab, tabPoints: $tabPoints)
             TabBarButton(image: "icloud.and.arrow.up", name: "Upload", selectedTab: $selectedTab, tabPoints: $tabPoints)
             TabBarButton(image: "person.3", name: "About", selectedTab: $selectedTab, tabPoints: $tabPoints)
             TabBarButton(image: "gearshape", name: "Setting", selectedTab: $selectedTab, tabPoints: $tabPoints)
@@ -37,25 +38,19 @@ struct TabBar: View {
             return 10
         }
         else{
-            
-            //I don't know is bug or something else, the width reversed
-            //Please update here
             switch selectedTab{
-            case "viewfinder.circle":
-                print(tabPoints[0])
+            case "house":
                 return tabPoints[0]
-            case "person":
-                print(tabPoints[1])
+            case "viewfinder.circle":
                 return tabPoints[1]
-            case "icloud.and.arrow.up":
-                print(tabPoints[2])
+            case "photo":
                 return tabPoints[2]
-            case "person.3":
-                print(tabPoints[3])
+            case "icloud.and.arrow.up":
                 return tabPoints[3]
-            case "gearshape":
-                print(tabPoints[4])
+            case "person.3":
                 return tabPoints[4]
+            case "gearshape":
+                return tabPoints[5]
             default:
                 return 10
             }

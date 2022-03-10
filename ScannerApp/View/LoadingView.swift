@@ -43,11 +43,6 @@ struct LoadingView: View {
                         // Move up Animation
                             .offset(y: startAnimation ? -80 : 0)
                     }
-
-//                    Color.red
-//                        .frame(width: leaveAnimation ? nil : 0, height: leaveAnimation ? nil : 0, alignment: .center)
-//                        .scaleEffect(leaveAnimation ? 3 : 1)
-//                        .ignoresSafeArea()
                     
                         MenuView()
                             .opacity(showMenu ? 1 : 0)
