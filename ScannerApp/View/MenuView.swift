@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MenuView: View {
     
     @State var selectedTab = "viewfinder.circle"
     
@@ -56,8 +56,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(selectedTab: "viewfinder.circle")
+        MenuView(selectedTab: "viewfinder.circle")
     }
 }

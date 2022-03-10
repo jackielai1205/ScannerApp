@@ -37,16 +37,24 @@ struct TabBar: View {
             return 10
         }
         else{
+            
+            //I don't know is bug or something else, the width reversed
+            //Please update here
             switch selectedTab{
             case "viewfinder.circle":
+                print(tabPoints[0])
                 return tabPoints[0]
             case "person":
+                print(tabPoints[1])
                 return tabPoints[1]
             case "icloud.and.arrow.up":
+                print(tabPoints[2])
                 return tabPoints[2]
             case "person.3":
+                print(tabPoints[3])
                 return tabPoints[3]
             case "gearshape":
+                print(tabPoints[4])
                 return tabPoints[4]
             default:
                 return 10
@@ -57,7 +65,7 @@ struct TabBar: View {
 
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MenuView()
     }
 }
 
