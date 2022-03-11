@@ -17,8 +17,9 @@ struct MenuView: View {
             switch selectedTab{
             case "house":
                 ZStack(alignment: .center, content: {
-                    Color("Background")
-                    Text("Home")
+                    HomePageView()
+//                    Color("Background")
+//                    Text("Home")
                 })
                     .ignoresSafeArea()
             case "viewfinder.circle":
@@ -41,8 +42,7 @@ struct MenuView: View {
                     .ignoresSafeArea()
             case "person.3":
                 ZStack(alignment: .center, content: {
-                    Color("Background")
-                    Text("About")
+                    AboutUsView()
                 })
                     .ignoresSafeArea()
             case "gearshape":
