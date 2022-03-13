@@ -16,6 +16,9 @@
 		017AD54A27D9B8E200DB6E5A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017AD54927D9B8E200DB6E5A /* LoadingView.swift */; };
 		4628978A27D742930080E663 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4628978927D742930080E663 /* TabBar.swift */; };
 		4628978E27D958B50080E663 /* TabCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4628978D27D958B50080E663 /* TabCurve.swift */; };
+		4628979827DAB2A80080E663 /* dragon.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 4628979627DAB2A80080E663 /* dragon.usdz */; };
+		4628979927DAB2A80080E663 /* chair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 4628979727DAB2A80080E663 /* chair.usdz */; };
+		4628979B27DAB3F00080E663 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4628979A27DAB3F00080E663 /* CameraView.swift */; };
 		46449D2D27D616A700633CAE /* ScannerAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46449D2C27D616A700633CAE /* ScannerAppApp.swift */; };
 		46449D2F27D616A700633CAE /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46449D2E27D616A700633CAE /* MenuView.swift */; };
 		46449D3127D616A700633CAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46449D3027D616A700633CAE /* Assets.xcassets */; };
@@ -53,8 +56,12 @@
 		016CD80C27DADFC0006260B2 /* TopLogoBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLogoBar.swift; sourceTree = "<group>"; };
 		016CD80E27DB09B5006260B2 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		017AD54927D9B8E200DB6E5A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		46171A7327DAD00400BBD951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4628978927D742930080E663 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		4628978D27D958B50080E663 /* TabCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCurve.swift; sourceTree = "<group>"; };
+		4628979627DAB2A80080E663 /* dragon.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = dragon.usdz; path = ScannerApp/Objects/dragon.usdz; sourceTree = SOURCE_ROOT; };
+		4628979727DAB2A80080E663 /* chair.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = chair.usdz; path = ScannerApp/Objects/chair.usdz; sourceTree = SOURCE_ROOT; };
+		4628979A27DAB3F00080E663 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		46449D2927D616A700633CAE /* ScannerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScannerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46449D2C27D616A700633CAE /* ScannerAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerAppApp.swift; sourceTree = "<group>"; };
 		46449D2E27D616A700633CAE /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -112,6 +119,7 @@
 				017AD54927D9B8E200DB6E5A /* LoadingView.swift */,
 				016CD80827DACD96006260B2 /* AboutUsView.swift */,
 				016CD80E27DB09B5006260B2 /* HomePageView.swift */,
+				4628979A27DAB3F00080E663 /* CameraView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -136,9 +144,19 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		4628979527DAB2800080E663 /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				4628979727DAB2A80080E663 /* chair.usdz */,
+				4628979627DAB2A80080E663 /* dragon.usdz */,
+			);
+			path = Object;
+			sourceTree = "<group>";
+		};
 		46449D2027D616A700633CAE = {
 			isa = PBXGroup;
 			children = (
+				4628979527DAB2800080E663 /* Object */,
 				46449D5F27D6189F00633CAE /* README.md */,
 				46449D2B27D616A700633CAE /* ScannerApp */,
 				46449D3C27D616A700633CAE /* ScannerAppTests */,
@@ -160,8 +178,8 @@
 		46449D2B27D616A700633CAE /* ScannerApp */ = {
 			isa = PBXGroup;
 			children = (
+				46171A7327DAD00400BBD951 /* Info.plist */,
 				017AD54427D9B7F400DB6E5A /* View */,
-				017AD53F27D9B7B400DB6E5A /* Object */,
 				4628978B27D745F80080E663 /* Helper */,
 				46449D2C27D616A700633CAE /* ScannerAppApp.swift */,
 				46449D3027D616A700633CAE /* Assets.xcassets */,
@@ -299,9 +317,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4628979927DAB2A80080E663 /* chair.usdz in Resources */,
 				46449D6027D6189F00633CAE /* README.md in Resources */,
 				012BB77127DDB646008298F5 /* chair.usdz in Resources */,
 				46449D3427D616A700633CAE /* Preview Assets.xcassets in Resources */,
+				4628979827DAB2A80080E663 /* dragon.usdz in Resources */,
 				46449D3127D616A700633CAE /* Assets.xcassets in Resources */,
 				012BB77227DDB646008298F5 /* dragon.usdz in Resources */,
 			);
@@ -339,6 +359,7 @@
 				017AD54A27D9B8E200DB6E5A /* LoadingView.swift in Sources */,
 				016CD80F27DB09B5006260B2 /* HomePageView.swift in Sources */,
 				4628978A27D742930080E663 /* TabBar.swift in Sources */,
+				4628979B27DAB3F00080E663 /* CameraView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +524,9 @@
 				DEVELOPMENT_TEAM = 3N2HM2CBW9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ScannerApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -534,6 +558,9 @@
 				DEVELOPMENT_TEAM = 3N2HM2CBW9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ScannerApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
