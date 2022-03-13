@@ -28,6 +28,8 @@
 		46449D5727D6170A00633CAE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46449D5627D6170A00633CAE /* Model.swift */; };
 		46449D5927D6173500633CAE /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46449D5827D6173500633CAE /* ModelView.swift */; };
 		46449D6027D6189F00633CAE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 46449D5F27D6189F00633CAE /* README.md */; };
+		46C474A327DDAAD1006075DB /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C474A227DDAAD1006075DB /* SettingView.swift */; };
+		46C474A527DDB631006075DB /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C474A427DDB631006075DB /* RowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		46449D5627D6170A00633CAE /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		46449D5827D6173500633CAE /* ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
 		46449D5F27D6189F00633CAE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		46C474A227DDAAD1006075DB /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		46C474A427DDB631006075DB /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 				016CD80827DACD96006260B2 /* AboutUsView.swift */,
 				016CD80E27DB09B5006260B2 /* HomePageView.swift */,
 				4628979A27DAB3F00080E663 /* CameraView.swift */,
+				46C474A227DDAAD1006075DB /* SettingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				016CD80C27DADFC0006260B2 /* TopLogoBar.swift */,
+				46C474A427DDB631006075DB /* RowView.swift */,
 				46449D5627D6170A00633CAE /* Model.swift */,
 				016CD80A27DAD2B9006260B2 /* Person.swift */,
 				4628978C27D958A20080E663 /* TabBar */,
@@ -336,9 +342,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				46449D2F27D616A700633CAE /* MenuView.swift in Sources */,
+				46C474A527DDB631006075DB /* RowView.swift in Sources */,
 				4628978E27D958B50080E663 /* TabCurve.swift in Sources */,
 				016CD80927DACD96006260B2 /* AboutUsView.swift in Sources */,
 				46449D5727D6170A00633CAE /* Model.swift in Sources */,
+				46C474A327DDAAD1006075DB /* SettingView.swift in Sources */,
 				46449D5927D6173500633CAE /* ModelView.swift in Sources */,
 				46449D2D27D616A700633CAE /* ScannerAppApp.swift in Sources */,
 				016CD80D27DADFC0006260B2 /* TopLogoBar.swift in Sources */,
