@@ -23,8 +23,7 @@ struct MenuView: View {
                     .ignoresSafeArea()
             case "viewfinder.circle":
                 ZStack(alignment: .center, content: {
-                    Color("Background")
-                    Text("Scan")
+                    CameraView()
                 })
                     .ignoresSafeArea()
             case "photo":
