@@ -16,13 +16,21 @@ struct HomePageView: View {
             ScrollView {
                 VStack {
                     TopLogoBar()
+                    HStack{
+                        SceneView(scene: SCNScene(named: "chair.usdz") , options: [.autoenablesDefaultLighting,.allowsCameraControl])
+                            .frame(width: UIScreen.main.bounds.width / 2, height: UIScreen.main.bounds.height / 2)
+                            .padding(.leading, 10)
+                            .padding(.top, 5)
+                    }
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 2, alignment: .leading)
                 }
             }
-            SceneView(scene: SCNScene(named: "dragon.usdz") , options: [.autoenablesDefaultLighting,.allowsCameraControl])
-                .frame(width: UIScreen.main.bounds.width / 2, height: UIScreen.main.bounds.height / 2)
         }
     }
 }
+
+
+
 
 struct HomePageView_Previews: PreviewProvider {
     static var previews: some View {

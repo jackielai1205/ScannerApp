@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		012BB77127DDB646008298F5 /* chair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 012BB76F27DDB646008298F5 /* chair.usdz */; };
+		012BB77227DDB646008298F5 /* dragon.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 012BB77027DDB646008298F5 /* dragon.usdz */; };
 		016CD80927DACD96006260B2 /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016CD80827DACD96006260B2 /* AboutUsView.swift */; };
 		016CD80B27DAD2B9006260B2 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016CD80A27DAD2B9006260B2 /* Person.swift */; };
 		016CD80D27DADFC0006260B2 /* TopLogoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016CD80C27DADFC0006260B2 /* TopLogoBar.swift */; };
 		016CD80F27DB09B5006260B2 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016CD80E27DB09B5006260B2 /* HomePageView.swift */; };
-		017AD54727D9B86900DB6E5A /* chair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 017AD54527D9B86900DB6E5A /* chair.usdz */; };
-		017AD54827D9B86900DB6E5A /* dragon.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 017AD54627D9B86900DB6E5A /* dragon.usdz */; };
 		017AD54A27D9B8E200DB6E5A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017AD54927D9B8E200DB6E5A /* LoadingView.swift */; };
 		4628978A27D742930080E663 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4628978927D742930080E663 /* TabBar.swift */; };
 		4628978E27D958B50080E663 /* TabCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4628978D27D958B50080E663 /* TabCurve.swift */; };
@@ -46,12 +46,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		012BB76F27DDB646008298F5 /* chair.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = chair.usdz; sourceTree = "<group>"; };
+		012BB77027DDB646008298F5 /* dragon.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = dragon.usdz; sourceTree = "<group>"; };
 		016CD80827DACD96006260B2 /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
 		016CD80A27DAD2B9006260B2 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		016CD80C27DADFC0006260B2 /* TopLogoBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLogoBar.swift; sourceTree = "<group>"; };
 		016CD80E27DB09B5006260B2 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
-		017AD54527D9B86900DB6E5A /* chair.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = chair.usdz; path = ../../../../chair.usdz; sourceTree = "<group>"; };
-		017AD54627D9B86900DB6E5A /* dragon.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = dragon.usdz; path = ../../../../dragon.usdz; sourceTree = "<group>"; };
 		017AD54927D9B8E200DB6E5A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4628978927D742930080E663 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		4628978D27D958B50080E663 /* TabCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCurve.swift; sourceTree = "<group>"; };
@@ -98,8 +98,8 @@
 		017AD53F27D9B7B400DB6E5A /* Object */ = {
 			isa = PBXGroup;
 			children = (
-				017AD54527D9B86900DB6E5A /* chair.usdz */,
-				017AD54627D9B86900DB6E5A /* dragon.usdz */,
+				012BB76F27DDB646008298F5 /* chair.usdz */,
+				012BB77027DDB646008298F5 /* dragon.usdz */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -300,10 +300,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				46449D6027D6189F00633CAE /* README.md in Resources */,
-				017AD54727D9B86900DB6E5A /* chair.usdz in Resources */,
+				012BB77127DDB646008298F5 /* chair.usdz in Resources */,
 				46449D3427D616A700633CAE /* Preview Assets.xcassets in Resources */,
 				46449D3127D616A700633CAE /* Assets.xcassets in Resources */,
-				017AD54827D9B86900DB6E5A /* dragon.usdz in Resources */,
+				012BB77227DDB646008298F5 /* dragon.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

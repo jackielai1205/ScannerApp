@@ -42,8 +42,16 @@ struct LoadingView: View {
                             .opacity(startAnimation ? 1 : 0)
                         // Move up Animation
                             .offset(y: startAnimation ? -80 : 0)
+                        VStack {
+                            Spacer()
+                            Text("Copyright © 2020\nAll rights reserved")
+                            .foregroundColor(Color(red: 66/255, green: 150/255, blue: 157/255))
+                            .opacity(startAnimation ? 1 : 0)
+                            .offset(y: 30)
+                            .font(.footnote)
+                            .multilineTextAlignment(.center)
+                        }
                     }
-                    
                         MenuView()
                             .opacity(showMenu ? 1 : 0)
                 }
