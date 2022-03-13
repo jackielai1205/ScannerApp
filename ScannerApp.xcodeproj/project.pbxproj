@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		012BB77127DDB646008298F5 /* chair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 012BB76F27DDB646008298F5 /* chair.usdz */; };
 		012BB77227DDB646008298F5 /* dragon.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 012BB77027DDB646008298F5 /* dragon.usdz */; };
-		012BB78127DDD6C9008298F5 /* Object in Resources */ = {isa = PBXBuildFile; fileRef = 012BB78027DDD6C9008298F5 /* Object */; };
 		016CD80927DACD96006260B2 /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016CD80827DACD96006260B2 /* AboutUsView.swift */; };
 		016CD80B27DAD2B9006260B2 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016CD80A27DAD2B9006260B2 /* Person.swift */; };
 		016CD80D27DADFC0006260B2 /* TopLogoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016CD80C27DADFC0006260B2 /* TopLogoBar.swift */; };
@@ -52,7 +51,6 @@
 /* Begin PBXFileReference section */
 		012BB76F27DDB646008298F5 /* chair.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = chair.usdz; sourceTree = "<group>"; };
 		012BB77027DDB646008298F5 /* dragon.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = dragon.usdz; sourceTree = "<group>"; };
-		012BB78027DDD6C9008298F5 /* Object */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Object; path = ../../../Object; sourceTree = "<group>"; };
 		016CD80827DACD96006260B2 /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
 		016CD80A27DAD2B9006260B2 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		016CD80C27DADFC0006260B2 /* TopLogoBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLogoBar.swift; sourceTree = "<group>"; };
@@ -172,7 +170,6 @@
 		46449D2B27D616A700633CAE /* ScannerApp */ = {
 			isa = PBXGroup;
 			children = (
-				012BB78027DDD6C9008298F5 /* Object */,
 				017AD54427D9B7F400DB6E5A /* View */,
 				4628978B27D745F80080E663 /* Helper */,
 				46449D2C27D616A700633CAE /* ScannerAppApp.swift */,
@@ -316,7 +313,6 @@
 				46449D3427D616A700633CAE /* Preview Assets.xcassets in Resources */,
 				46449D3127D616A700633CAE /* Assets.xcassets in Resources */,
 				012BB77227DDB646008298F5 /* dragon.usdz in Resources */,
-				012BB78127DDD6C9008298F5 /* Object in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
