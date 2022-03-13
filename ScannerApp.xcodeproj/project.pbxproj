@@ -46,7 +46,6 @@
 
 /* Begin PBXFileReference section */
 		017AD54927D9B8E200DB6E5A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		46171A7327DAD00400BBD951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4628978927D742930080E663 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		4628978D27D958B50080E663 /* TabCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCurve.swift; sourceTree = "<group>"; };
 		4628979627DAB2A80080E663 /* dragon.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = dragon.usdz; path = ScannerApp/Objects/dragon.usdz; sourceTree = SOURCE_ROOT; };
@@ -159,7 +158,6 @@
 		46449D2B27D616A700633CAE /* ScannerApp */ = {
 			isa = PBXGroup;
 			children = (
-				46171A7327DAD00400BBD951 /* Info.plist */,
 				017AD54427D9B7F400DB6E5A /* View */,
 				4628978B27D745F80080E663 /* Helper */,
 				46449D2C27D616A700633CAE /* ScannerAppApp.swift */,
