@@ -46,10 +46,8 @@ struct MenuView: View {
                     .ignoresSafeArea()
             case "gearshape":
                 ZStack(alignment: .center, content: {
-                    Color("Background")
-                    Text("Setting")
+                    SettingView()
                 })
-                    .ignoresSafeArea()
             default:
                 ZStack(alignment: .center, content: {
                     Color("Background")

@@ -20,61 +20,21 @@ struct CameraView: View {
                 .ignoresSafeArea()
             
             VStack{
-                
-                if camera.isTaken{
-                    HStack{
-                        Spacer()
-                        Button(action:{
-                            if camera.isTaken {camera.reTake()}
-                        }, label: {
-                            Image(systemName: "arrow.triangle.2.circlepath.camera")
-                                .foregroundColor(.black)
-                                .padding()
-                                .background(.white)
-                                .clipShape(Circle())
-                        })
-                            .padding(.top, UIScreen.main.bounds.height/15)
-                            .padding(.trailing, UIScreen.main.bounds.width/15)
-                    }
-                }
-                
                 Spacer()
-                HStack{
-                    if camera.isTaken{
-                        Button(action: {
-                            if camera.isTaken {camera.savePic()}
-                        }, label: {
-                            Text(camera.isSaved ? "Saved" : "Save")
-                                .foregroundColor(.black)
-                                .fontWeight(.semibold)
-                                .padding(.vertical,10)
-                                .padding(.horizontal, 20)
-                                .background(Color.white)
-                                .clipShape(Capsule())
-                        })
-                            .padding(.bottom, UIScreen.main.bounds.height/3.5)
-                            .padding(.leading, UIScreen.main.bounds.width/15)
-                        Spacer()
-                        
-                    }else{
-                        Button(action: {
-                            if !camera.isTaken {
-                                camera.takePic()
-                            }
-                        }, label: {
-                            ZStack{
-                                Circle()
-                                    .fill(.white)
-                                    .frame(width: 60, height: 60)
+                Button(action: {
+                        camera.takePic()
+                }, label: {
+                    ZStack{
+                        Circle()
+                            .fill(.white)
+                            .frame(width: 60, height: 60)
 
-                                Circle()
-                                    .stroke(Color.white, lineWidth:4)
-                                    .frame(width: 70, height: 70)
-                            }
-                            .padding(.bottom, UIScreen.main.bounds.height / 3.3)
-                        })
+                        Circle()
+                            .stroke(Color.white, lineWidth:4)
+                            .frame(width: 70, height: 70)
                     }
-                }
+                    .padding(.bottom, UIScreen.main.bounds.height / 3.3)
+                })
                 .frame(height: 75)
             }
         }
@@ -98,7 +58,6 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
     @Published var preview : AVCaptureVideoPreviewLayer!
     @Published var output = AVCapturePhotoOutput()
     @Published var isSaved = false
-    @Published var picData = Data(count:0)
     
     func checkAuthorization(){
         switch AVCaptureDevice.authorizationStatus(for: .video){
@@ -151,8 +110,8 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
     
     func takePic(){
         DispatchQueue.global(qos:.background).async {
+            print("Take Pic")
             self.output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
-            self.session.stopRunning()
             
             DispatchQueue.main.async {
                 self.isTaken.toggle()
@@ -163,6 +122,7 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
     func reTake(){
         DispatchQueue.global(qos: .background).async {
             self.session.startRunning()
+            print("Session started")
             DispatchQueue.main.async {
                 self.isTaken.toggle()
                 self.isSaved = false;
@@ -175,13 +135,17 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
 
         print("Photo taken")
         
-        guard let imageData = photo.fileDataRepresentation() else {return}
+        if(error == nil){
+            guard let imageData = photo.fileDataRepresentation() else {return}
+            self.savePic(imageData: imageData)
+        }
         
-        self.picData = imageData
+        print(error ?? "")
+
     }
     
-    func savePic(){
-        let image = UIImage(data:self.picData)!
+    func savePic(imageData:Data){
+        let image = UIImage(data:imageData)!
         
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         
