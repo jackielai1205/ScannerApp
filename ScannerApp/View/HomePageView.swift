@@ -17,7 +17,7 @@ struct HomePageView: View {
                 VStack {
                     TopLogoBar()
                     HStack{
-                        SceneView(scene: SCNScene(named: "chair.usdz") , options: [.autoenablesDefaultLighting,.allowsCameraControl])
+                        SceneView(scene: SCNScene(named: "dragon.usdz") , options: [.autoenablesDefaultLighting,.allowsCameraControl])
                             .frame(width: UIScreen.main.bounds.width / 2, height: UIScreen.main.bounds.height / 2)
                             .padding(.leading, 10)
                             .padding(.top, 5)
