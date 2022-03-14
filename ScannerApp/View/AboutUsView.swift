@@ -19,12 +19,6 @@ struct AboutUsView: View {
                     TopLogoBar()
                 }
                 VStack{
-                    Text("About Us")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.white)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding()
                     ForEach (personList, id: \.self) { person in
                             Text(person.name)
                                 .foregroundColor(Color.white)

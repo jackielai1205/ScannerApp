@@ -45,12 +45,6 @@ struct CameraView: View {
     }
 }
 
-struct CameraView_Previews: PreviewProvider {
-    static var previews: some View {
-        CameraView()
-    }
-}
-
 class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
     @Published var isTaken = false
     @Published var session = AVCaptureSession()
