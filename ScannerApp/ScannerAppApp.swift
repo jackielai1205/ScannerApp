@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 @main
 struct ScannerAppApp: App {
     var body: some Scene {

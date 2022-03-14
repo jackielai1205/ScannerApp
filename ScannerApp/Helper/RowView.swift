@@ -27,7 +27,9 @@ struct RowView: View {
                 .foregroundColor(.gray)
             Spacer()
             Text(rightText)
+                .foregroundColor(.gray)
         }
+        .padding(.vertical,2)
     }
 }
 
