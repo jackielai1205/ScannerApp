@@ -18,8 +18,6 @@ struct MenuView: View {
             case "house":
                 ZStack(alignment: .center, content: {
                     HomePageView()
-//                    Color("Background")
-//                    Text("Home")
                 })
                     .ignoresSafeArea()
             case "viewfinder.circle":
@@ -29,8 +27,9 @@ struct MenuView: View {
                     .ignoresSafeArea()
             case "photo":
                 ZStack(alignment: .center, content: {
-                    Color("Background")
-                    Text("View")
+                    ModelView()
+//                    Color("Background")
+//                    Text("View")
                 })
                     .ignoresSafeArea()
             case "icloud.and.arrow.up":
