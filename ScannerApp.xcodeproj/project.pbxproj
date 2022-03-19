@@ -30,6 +30,10 @@
 		4699FE8727DEE2A500B83A72 /* NavigateRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699FE8627DEE2A500B83A72 /* NavigateRowView.swift */; };
 		46C474A327DDAAD1006075DB /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C474A227DDAAD1006075DB /* SettingView.swift */; };
 		46C474A527DDB631006075DB /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C474A427DDB631006075DB /* RowView.swift */; };
+		46F6FD9E27E2B7130084CD30 /* MultipartForm in Frameworks */ = {isa = PBXBuildFile; productRef = 46F6FD9D27E2B7130084CD30 /* MultipartForm */; };
+		46F6FDA027E2B7D90084CD30 /* UploadModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F6FD9F27E2B7D90084CD30 /* UploadModelView.swift */; };
+		46F6FDA227E2BC8E0084CD30 /* FormSubmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F6FDA127E2BC8E0084CD30 /* FormSubmission.swift */; };
+		46F6FDA427E2EFE20084CD30 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F6FDA327E2EFE20084CD30 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +80,9 @@
 		4699FE8627DEE2A500B83A72 /* NavigateRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateRowView.swift; sourceTree = "<group>"; };
 		46C474A227DDAAD1006075DB /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		46C474A427DDB631006075DB /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
+		46F6FD9F27E2B7D90084CD30 /* UploadModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadModelView.swift; sourceTree = "<group>"; };
+		46F6FDA127E2BC8E0084CD30 /* FormSubmission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSubmission.swift; sourceTree = "<group>"; };
+		46F6FDA327E2EFE20084CD30 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46F6FD9E27E2B7130084CD30 /* MultipartForm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +130,7 @@
 				016CD80E27DB09B5006260B2 /* HomePageView.swift */,
 				4628979A27DAB3F00080E663 /* CameraView.swift */,
 				46C474A227DDAAD1006075DB /* SettingView.swift */,
+				46F6FD9F27E2B7D90084CD30 /* UploadModelView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -132,8 +141,8 @@
 				4699FE8627DEE2A500B83A72 /* NavigateRowView.swift */,
 				016CD80C27DADFC0006260B2 /* TopLogoBar.swift */,
 				46C474A427DDB631006075DB /* RowView.swift */,
-				46449D5627D6170A00633CAE /* Model.swift */,
-				016CD80A27DAD2B9006260B2 /* Person.swift */,
+				46F6FDA327E2EFE20084CD30 /* ImagePicker.swift */,
+				46F6FDA127E2BC8E0084CD30 /* FormSubmission.swift */,
 				4628978C27D958A20080E663 /* TabBar */,
 			);
 			path = Helper;
@@ -173,6 +182,7 @@
 		46449D2B27D616A700633CAE /* ScannerApp */ = {
 			isa = PBXGroup;
 			children = (
+				46F6FDA527E2F34A0084CD30 /* Object */,
 				017AD54427D9B7F400DB6E5A /* View */,
 				4628978B27D745F80080E663 /* Helper */,
 				46449D2C27D616A700633CAE /* ScannerAppApp.swift */,
@@ -207,6 +217,15 @@
 			path = ScannerAppUITests;
 			sourceTree = "<group>";
 		};
+		46F6FDA527E2F34A0084CD30 /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				46449D5627D6170A00633CAE /* Model.swift */,
+				016CD80A27DAD2B9006260B2 /* Person.swift */,
+			);
+			path = Object;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -223,6 +242,9 @@
 			dependencies = (
 			);
 			name = ScannerApp;
+			packageProductDependencies = (
+				46F6FD9D27E2B7130084CD30 /* MultipartForm */,
+			);
 			productName = ScannerApp;
 			productReference = 46449D2927D616A700633CAE /* ScannerApp.app */;
 			productType = "com.apple.product-type.application";
@@ -295,6 +317,9 @@
 				Base,
 			);
 			mainGroup = 46449D2027D616A700633CAE;
+			packageReferences = (
+				46F6FD9C27E2B7130084CD30 /* XCRemoteSwiftPackageReference "MultipartForm" */,
+			);
 			productRefGroup = 46449D2A27D616A700633CAE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -341,11 +366,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				46449D2F27D616A700633CAE /* MenuView.swift in Sources */,
+				46F6FDA027E2B7D90084CD30 /* UploadModelView.swift in Sources */,
 				46C474A527DDB631006075DB /* RowView.swift in Sources */,
+				46F6FDA427E2EFE20084CD30 /* ImagePicker.swift in Sources */,
 				4628978E27D958B50080E663 /* TabCurve.swift in Sources */,
 				016CD80927DACD96006260B2 /* AboutUsView.swift in Sources */,
 				4699FE8727DEE2A500B83A72 /* NavigateRowView.swift in Sources */,
 				46449D5727D6170A00633CAE /* Model.swift in Sources */,
+				46F6FDA227E2BC8E0084CD30 /* FormSubmission.swift in Sources */,
 				46C474A327DDAAD1006075DB /* SettingView.swift in Sources */,
 				46449D5927D6173500633CAE /* ModelView.swift in Sources */,
 				46449D2D27D616A700633CAE /* ScannerAppApp.swift in Sources */,
@@ -691,6 +719,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		46F6FD9C27E2B7130084CD30 /* XCRemoteSwiftPackageReference "MultipartForm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/davbeck/MultipartForm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		46F6FD9D27E2B7130084CD30 /* MultipartForm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46F6FD9C27E2B7130084CD30 /* XCRemoteSwiftPackageReference "MultipartForm" */;
+			productName = MultipartForm;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 46449D2127D616A700633CAE /* Project object */;
 }

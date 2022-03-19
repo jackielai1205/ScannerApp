@@ -35,8 +35,7 @@ struct MenuView: View {
                     .ignoresSafeArea()
             case "icloud.and.arrow.up":
                 ZStack(alignment: .center, content: {
-                    Color("Background")
-                    Text("Upload")
+                    UploadModelView()
                 })
                     .ignoresSafeArea()
             case "person.3":
