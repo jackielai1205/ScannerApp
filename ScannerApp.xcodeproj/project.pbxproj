@@ -28,12 +28,11 @@
 		46449D5927D6173500633CAE /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46449D5827D6173500633CAE /* ModelView.swift */; };
 		46449D6027D6189F00633CAE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 46449D5F27D6189F00633CAE /* README.md */; };
 		4699FE8727DEE2A500B83A72 /* NavigateRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699FE8627DEE2A500B83A72 /* NavigateRowView.swift */; };
+		46A7940C27FAA93A0054B0B2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A7940B27FAA93A0054B0B2 /* ImagePicker.swift */; };
 		46C474A327DDAAD1006075DB /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C474A227DDAAD1006075DB /* SettingView.swift */; };
 		46C474A527DDB631006075DB /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C474A427DDB631006075DB /* RowView.swift */; };
 		46F6FD9E27E2B7130084CD30 /* MultipartForm in Frameworks */ = {isa = PBXBuildFile; productRef = 46F6FD9D27E2B7130084CD30 /* MultipartForm */; };
 		46F6FDA027E2B7D90084CD30 /* UploadModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F6FD9F27E2B7D90084CD30 /* UploadModelView.swift */; };
-		46F6FDA227E2BC8E0084CD30 /* FormSubmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F6FDA127E2BC8E0084CD30 /* FormSubmission.swift */; };
-		46F6FDA427E2EFE20084CD30 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F6FDA327E2EFE20084CD30 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,11 +77,10 @@
 		46449D5827D6173500633CAE /* ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
 		46449D5F27D6189F00633CAE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4699FE8627DEE2A500B83A72 /* NavigateRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateRowView.swift; sourceTree = "<group>"; };
+		46A7940B27FAA93A0054B0B2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		46C474A227DDAAD1006075DB /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		46C474A427DDB631006075DB /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		46F6FD9F27E2B7D90084CD30 /* UploadModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadModelView.swift; sourceTree = "<group>"; };
-		46F6FDA127E2BC8E0084CD30 /* FormSubmission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSubmission.swift; sourceTree = "<group>"; };
-		46F6FDA327E2EFE20084CD30 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,11 +136,10 @@
 		4628978B27D745F80080E663 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				46A7940B27FAA93A0054B0B2 /* ImagePicker.swift */,
 				4699FE8627DEE2A500B83A72 /* NavigateRowView.swift */,
 				016CD80C27DADFC0006260B2 /* TopLogoBar.swift */,
 				46C474A427DDB631006075DB /* RowView.swift */,
-				46F6FDA327E2EFE20084CD30 /* ImagePicker.swift */,
-				46F6FDA127E2BC8E0084CD30 /* FormSubmission.swift */,
 				4628978C27D958A20080E663 /* TabBar */,
 			);
 			path = Helper;
@@ -368,12 +365,11 @@
 				46449D2F27D616A700633CAE /* MenuView.swift in Sources */,
 				46F6FDA027E2B7D90084CD30 /* UploadModelView.swift in Sources */,
 				46C474A527DDB631006075DB /* RowView.swift in Sources */,
-				46F6FDA427E2EFE20084CD30 /* ImagePicker.swift in Sources */,
+				46A7940C27FAA93A0054B0B2 /* ImagePicker.swift in Sources */,
 				4628978E27D958B50080E663 /* TabCurve.swift in Sources */,
 				016CD80927DACD96006260B2 /* AboutUsView.swift in Sources */,
 				4699FE8727DEE2A500B83A72 /* NavigateRowView.swift in Sources */,
 				46449D5727D6170A00633CAE /* Model.swift in Sources */,
-				46F6FDA227E2BC8E0084CD30 /* FormSubmission.swift in Sources */,
 				46C474A327DDAAD1006075DB /* SettingView.swift in Sources */,
 				46449D5927D6173500633CAE /* ModelView.swift in Sources */,
 				46449D2D27D616A700633CAE /* ScannerAppApp.swift in Sources */,

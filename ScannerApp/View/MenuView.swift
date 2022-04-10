@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MenuView: View {
     
+    @State var offset:CGSize = CGSize(width: 0, height:0)
     @State var selectedTab = "house"
     
     var body: some View {

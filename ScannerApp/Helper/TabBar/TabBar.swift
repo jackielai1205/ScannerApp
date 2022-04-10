@@ -11,25 +11,44 @@ struct TabBar: View {
     
     @Binding var selectedTab:String
     @State var tabPoints : [CGFloat] = []
+    @State var isShowed = false
     
     var body: some View {
         
-        HStack(spacing:0){
-            TabBarButton(image: "house", name: "Home", selectedTab: $selectedTab, tabPoints: $tabPoints)
-            TabBarButton(image: "viewfinder.circle", name: "Scan", selectedTab: $selectedTab, tabPoints: $tabPoints)
-            TabBarButton(image: "photo", name: "View", selectedTab: $selectedTab, tabPoints: $tabPoints)
-            TabBarButton(image: "icloud.and.arrow.up", name: "Upload", selectedTab: $selectedTab, tabPoints: $tabPoints)
-            TabBarButton(image: "person.3", name: "About", selectedTab: $selectedTab, tabPoints: $tabPoints)
-            TabBarButton(image: "gearshape", name: "Setting", selectedTab: $selectedTab, tabPoints: $tabPoints)
+        VStack{
+            HStack{
+                Button(action: {
+                    withAnimation(.spring()){
+                        isShowed.toggle()
+                    }
+                }, label: {
+                    ZStack{
+                        Rectangle()
+                            .fill(Color.white)
+                            .frame(width: UIScreen.main.bounds.width, height: 45, alignment: .center)
+                            .cornerRadius(50, corners: [.topLeft,.topRight])
+                        Image(systemName: "text.justify")
+                            .foregroundColor(Color("SelectedTab"))
+                            .frame(width: UIScreen.main.bounds.width)
+                    }
+                    .offset(x: 0, y: 8.3)
+                })
+                .buttonStyle(FlatLinkStyle())
+            }
+            HStack(spacing:0){
+                TabBarButton(image: "house", name: "Home", selectedTab: $selectedTab, tabPoints: $tabPoints)
+                TabBarButton(image: "viewfinder.circle", name: "Scan", selectedTab: $selectedTab, tabPoints: $tabPoints)
+                TabBarButton(image: "photo", name: "View", selectedTab: $selectedTab, tabPoints: $tabPoints)
+                TabBarButton(image: "icloud.and.arrow.up", name: "Upload", selectedTab: $selectedTab, tabPoints: $tabPoints)
+                TabBarButton(image: "person.3", name: "About", selectedTab: $selectedTab, tabPoints: $tabPoints)
+                TabBarButton(image: "gearshape", name: "Setting", selectedTab: $selectedTab, tabPoints: $tabPoints)
+            }
+            .padding()
+            .background(
+                Color.white
+            )
         }
-        .padding()
-        .background(
-            Color.white
-                .opacity(0.7)
-                .clipShape(TabCurve(tabPoint: getCurvePoint() - 15))
-        )
-        .cornerRadius(30)
-        .padding(.horizontal)
+        .offset(y: isShowed ? 30 : 115)
     }
     
     
@@ -109,3 +128,25 @@ struct TabBarButton:View{
     }
 }
 
+extension View {
+    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+        clipShape( RoundedCorner(radius: radius, corners: corners) )
+    }
+}
+
+struct RoundedCorner: Shape {
+
+    var radius: CGFloat = .infinity
+    var corners: UIRectCorner = .allCorners
+
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        return Path(path.cgPath)
+    }
+}
+
+struct FlatLinkStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+    }
+}

@@ -39,6 +39,7 @@ struct HomePageView: View {
                                     .foregroundColor(Color.black)
                             }
                         }
+                        .frame(width: 200, height: 200)
                         .onChange(of: startAnimation) { _ in
                             renderAnimation(startAnimation: startAnimation)
                         }
