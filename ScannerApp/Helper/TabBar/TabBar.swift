@@ -25,7 +25,7 @@ struct TabBar: View {
                     ZStack{
                         Rectangle()
                             .fill(Color.white)
-                            .frame(width: UIScreen.main.bounds.width, height: 45, alignment: .center)
+                            .frame(width: UIScreen.main.bounds.width, height: 55, alignment: .center)
                             .cornerRadius(50, corners: [.topLeft,.topRight])
                         Image(systemName: "text.justify")
                             .foregroundColor(Color("SelectedTab"))

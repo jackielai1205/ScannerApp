@@ -7,11 +7,27 @@
 
 import SwiftUI
 import PhotosUI
+import MultipartForm
 
 struct UploadModelView: View {
     
+    @State var uploadID:String
     @State var images : [UIImage] = []
     @State var picker = false;
+    
+    
+    init(){
+        if let data = UserDefaults.standard.string(forKey: "Save") {
+            uploadID = data
+        }else{
+            uploadID = UUID().uuidString
+        }
+        save()
+    }
+    
+    private func save() {
+        UserDefaults.standard.set(uploadID, forKey: "Save")
+    }
     
     var body: some View {
         
@@ -19,6 +35,9 @@ struct UploadModelView: View {
             Color("Background")
                 .ignoresSafeArea()
             VStack{
+                Text(uploadID)
+                    .foregroundColor(Color.white
+                    )
                 if(!images.isEmpty){
                     ScrollView(.horizontal,showsIndicators: false, content: {
                         HStack(spacing:15){
@@ -33,8 +52,11 @@ struct UploadModelView: View {
                     })
                 }
                 HStack{
+                    
                     Button(action: {
                         if(!images.isEmpty){
+                            let form = createMultiPartForm(images: images, identification: uploadID)
+                            submitMultiPartForm(form: form)
                             print("Upload")
                         }else{
                             print("No pics")
@@ -85,4 +107,8 @@ struct UploadModelView_Previews: PreviewProvider {
         }
     }
 }
+
+
+
+
 

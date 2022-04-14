@@ -6,64 +6,78 @@
 //
 
 import SwiftUI
-import SceneKit
+import Combine
 
 struct ModelView: View {
     
-    @State var dragon = Model(id: 1, modelName: "dragon.usdz")
-    @State var fileName = ""
-    @State var openFile = false
-    @State var model = Model(id: 0, modelName: "")
-    @State var fileURL = ""
-    @State var view = SCNScene(named: "chair.usdz")
-    @State private var textInFiles = [String]()
+    @State var uploadID:String
+    @StateObject var manager = HttpAuth()
+    
+    init(){
+        if let data = UserDefaults.standard.string(forKey: "Save") {
+            uploadID = data
+        }else{
+            uploadID = UUID().uuidString
+        }
+        UITableView.appearance().backgroundColor = .clear
+        save()
+    }
+    
+    private func save() {
+        UserDefaults.standard.set(uploadID, forKey: "Save")
+    }
     
     var body: some View {
-        ScrollView {
+        NavigationView{
             ZStack{
                 Color("Background")
-                    .ignoresSafeArea(.all)
                 VStack{
                     TopLogoBar()
-                    VStack {}
-                    .fileImporter(isPresented: $openFile, allowedContentTypes: [.usdz]) {  result in
-                        switch result {
-                        case .success(let url):
-                            _ = url.startAccessingSecurityScopedResource()
-                            print(url)
-                            fileURL = url.absoluteString
-                            self.fileName = url.lastPathComponent
-                            print(fileName)
-                            model.modelName = fileName
-                            do{
-                                try
-                                view = SCNScene(url: url, options: .none)
-                            }catch{
-                                print(error)
-                            }
-                        case.failure(let error):
-                            print(error)
-                        }
-                    }
-                    SceneView(scene: view , options: [.autoenablesDefaultLighting,.allowsCameraControl])
-                                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 2)
-                    VStack {
-                        Button {
-                            openFile.toggle()
-                        } label: {
-                            Circle()
-                                .strokeBorder(Color.black, lineWidth: 2)
-                                .background(Circle().foregroundColor(Color(red: 66/255, green: 180/255, blue: 157/255)))
-                                .frame(width: UIScreen.main.bounds.width / 3, height: UIScreen.main.bounds.height / 2.5, alignment: .top)
-                                .overlay(Text("Select Model")
-                                            .foregroundColor(Color.white)
-                                            .fontWeight(.bold))
-                                .offset(y: -(UIScreen.main.bounds.height / 9))
+                    List{
+                        ForEach(self.manager.finalData, id:\.self){
+                            data in
+                            NavigationLink(destination: ViewModelView(), label: {
+                                ModelList(model: data)
+                            })
                         }
                     }
                 }
             }
+            .refreshable{
+                await self.manager.checkDetails(uploadID: self.uploadID)
+            }
+            .task {
+                await self.manager.checkDetails(uploadID: self.uploadID)
+            }
         }
+    }
+}
+
+class HttpAuth: ObservableObject{
+    
+    var didChange = PassthroughSubject<HttpAuth, Never>()
+    @Published var finalData:[ModelDetail] = []
+    var authenticated = false{
+        didSet{
+            didChange.send(self)
+        }
+    }
+    
+    func checkDetails(uploadID:String) async{
+        guard let url = URL(string: "http://192.168.1.204:8080/query") else {return}
+        print(url)
+        let body: [String:String] = ["deviceID": uploadID]
+        let finalBody = try! JSONSerialization.data(withJSONObject: body)
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = finalBody
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        URLSession.shared.dataTask(with: request){(data,response,error) in
+        guard let data = data else {return}
+        DispatchQueue.main.async {
+            self.finalData = try! JSONDecoder().decode([ModelDetail].self, from: data)
+        }
+        }.resume()
     }
 }
 

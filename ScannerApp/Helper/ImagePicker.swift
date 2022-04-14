@@ -53,11 +53,11 @@ struct ImagePicker : UIViewControllerRepresentable {
                             print(err)
                             return
                         }
-                        for currenImage in 0..<self.parent.image.count{
-                            if self.parent.image[currenImage].isEqualToImage(image as! UIImage){
-                                self.isExisted = true;
-                            }
-                        }
+//                        for currenImage in 0..<self.parent.image.count{
+//                            if self.parent.image[currenImage].isEqualToImage(image as! UIImage){
+//                                self.isExisted = true;
+//                            }
+//                        }
                         if(self.isExisted == false){
                             self.parent.image.append(image as! UIImage)
                         }
@@ -77,5 +77,4 @@ extension UIImage {
         let data2 = image.pngData()
         return data1 == data2
     }
-
 }
