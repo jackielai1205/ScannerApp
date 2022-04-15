@@ -11,44 +11,53 @@ struct TabBar: View {
     
     @Binding var selectedTab:String
     @State var tabPoints : [CGFloat] = []
-    @State var isShowed = false
+    @State var isShowed = true
     
     var body: some View {
         
         VStack{
-            HStack{
-                Button(action: {
-                    withAnimation(.spring()){
-                        isShowed.toggle()
+            ZStack{
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .fill(Color("Background"))
+                    .opacity(0.85)
+                    .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
+                VStack{
+                    HStack{
+                        Button(action: {
+                            withAnimation(.spring()){
+                                isShowed.toggle()
+                            }
+                        }, label: {
+                            ZStack{
+                                Image(systemName: "text.justify")
+                                    .foregroundColor(Color.black)
+                                RoundedRectangle(cornerRadius: 20)
+                                    .opacity(0.00001)
+                                    .frame(width: UIScreen.main.bounds.width, height: 50)
+                            }
+                        })
+                        .buttonStyle(FlatLinkStyle())
                     }
-                }, label: {
-                    ZStack{
-                        Rectangle()
-                            .fill(Color.white)
-                            .frame(width: UIScreen.main.bounds.width, height: 55, alignment: .center)
-                            .cornerRadius(50, corners: [.topLeft,.topRight])
-                        Image(systemName: "text.justify")
-                            .foregroundColor(Color("SelectedTab"))
-                            .frame(width: UIScreen.main.bounds.width)
+                    HStack(spacing:0){
+                        TabBarButton(image: "house", name: "Home", selectedTab: $selectedTab, tabPoints: $tabPoints)
+                        TabBarButton(image: "viewfinder.circle", name: "Scan", selectedTab: $selectedTab, tabPoints: $tabPoints)
+                        TabBarButton(image: "photo", name: "View", selectedTab: $selectedTab, tabPoints: $tabPoints)
+                        TabBarButton(image: "icloud.and.arrow.up", name: "Upload", selectedTab: $selectedTab, tabPoints: $tabPoints)
+                        TabBarButton(image: "person.3", name: "About", selectedTab: $selectedTab, tabPoints: $tabPoints)
+                        TabBarButton(image: "gearshape", name: "Setting", selectedTab: $selectedTab, tabPoints: $tabPoints)
                     }
-                    .offset(x: 0, y: 8.3)
-                })
-                .buttonStyle(FlatLinkStyle())
+                    .padding()
+                }
             }
-            HStack(spacing:0){
-                TabBarButton(image: "house", name: "Home", selectedTab: $selectedTab, tabPoints: $tabPoints)
-                TabBarButton(image: "viewfinder.circle", name: "Scan", selectedTab: $selectedTab, tabPoints: $tabPoints)
-                TabBarButton(image: "photo", name: "View", selectedTab: $selectedTab, tabPoints: $tabPoints)
-                TabBarButton(image: "icloud.and.arrow.up", name: "Upload", selectedTab: $selectedTab, tabPoints: $tabPoints)
-                TabBarButton(image: "person.3", name: "About", selectedTab: $selectedTab, tabPoints: $tabPoints)
-                TabBarButton(image: "gearshape", name: "Setting", selectedTab: $selectedTab, tabPoints: $tabPoints)
-            }
-            .padding()
-            .background(
-                Color.white
-            )
+//            .background(
+//                Color("Background")
+//                    .opacity(0.85)
+//                    .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
+//            )
         }
-        .offset(y: isShowed ? 30 : 115)
+        .ignoresSafeArea()
+        .frame(width: UIScreen.main.bounds.width, height: 100)
+        .offset(y: isShowed ? 15 : 100)
     }
     
     
@@ -112,11 +121,11 @@ struct TabBarButton:View{
                     VStack{
                         Image(systemName: selectedTab == image ? "\(image).fill" : "\(image)")
                             .font(.system(size: 25, weight: .semibold))
-                            .foregroundColor(Color("SelectedTab"))
+                            .foregroundColor(Color.black)
                             .offset(y:selectedTab == image ? -10 : 0)
                         Text(name)
                             .font(Font.system(size: 13, weight: .semibold))
-                            .foregroundColor(Color("SelectedTab"))
+                            .foregroundColor(Color.black)
                             .offset(y:selectedTab == image ? -10 : 0)
                     }
                 })

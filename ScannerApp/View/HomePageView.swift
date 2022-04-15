@@ -18,6 +18,8 @@ struct HomePageView: View {
     var body: some View {
         ZStack {
             Color("Background")
+            Image("Background")
+                .resizable()
                 .ignoresSafeArea()
             ScrollView {
                 VStack {
@@ -41,7 +43,7 @@ struct HomePageView: View {
                         }
                         .frame(width: 200, height: 200)
                         .onChange(of: startAnimation) { _ in
-                            renderAnimation(startAnimation: startAnimation)
+                        renderAnimation(startAnimation: startAnimation)
                         }
                     }
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 3, alignment: .leading)

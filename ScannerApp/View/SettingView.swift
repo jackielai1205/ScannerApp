@@ -11,7 +11,9 @@ struct SettingView: View {
     
     var body: some View {
         ZStack{
-            Color("Background")
+            Image("Background")
+                .resizable()
+                .ignoresSafeArea()
             VStack(alignment: .center){
                 
                 TopLogoBar()

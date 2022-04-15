@@ -10,17 +10,20 @@ import SwiftUI
 struct TopLogoBar: View {
     var body: some View {
         ZStack(alignment: .bottom) {
-            Color("LogoBarBackground")
+            Color("Background")
+                .opacity(0.75)
                 .ignoresSafeArea(.all)
+                .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
                 .frame(width: UIScreen.main.bounds.width, height: 500)
+                .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
             Image("icon")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 80, height: 60)
                 .padding(.bottom,20)
         }
-        .frame(width: UIScreen.main.bounds.width, height: 150)
-        .offset(y: -175)
+        .frame(width: UIScreen.main.bounds.width, height: 120)
+        .offset(y: -185)
     }
 }
 

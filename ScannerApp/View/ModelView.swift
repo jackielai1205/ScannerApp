@@ -30,9 +30,12 @@ struct ModelView: View {
     var body: some View {
         NavigationView{
             ZStack{
-                Color("Background")
+                Image("Background")
+                    .resizable()
+                    .ignoresSafeArea()
                 VStack{
                     TopLogoBar()
+                        .padding(.bottom, 20)
                     List{
                         ForEach(self.manager.finalData, id:\.self){
                             data in
@@ -42,6 +45,7 @@ struct ModelView: View {
                         }
                     }
                 }
+                .ignoresSafeArea()
             }
             .refreshable{
                 await self.manager.checkDetails(uploadID: self.uploadID)

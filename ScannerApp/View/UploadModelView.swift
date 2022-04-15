@@ -30,67 +30,21 @@ struct UploadModelView: View {
     }
     
     var body: some View {
-        
         ZStack{
-            Color("Background")
+            Image("Background")
+                .resizable()
                 .ignoresSafeArea()
             VStack{
-                Text(uploadID)
-                    .foregroundColor(Color.white
-                    )
-                if(!images.isEmpty){
-                    ScrollView(.horizontal,showsIndicators: false, content: {
-                        HStack(spacing:15){
-                            ForEach(images,id:\.self){
-                                img in
-                                Image(uiImage: img)
-                                    .resizable()
-                                    .frame(width: UIScreen.main.bounds.width - 45, height: 250)
-                                    .cornerRadius(20)
-                            }
-                        }
-                    })
+                TopLogoBar()
+                ZStack{
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color("Background"))
+                        .frame(width: UIScreen.main.bounds.width - 50, height: UIScreen.main.bounds.height/1.55)
+                        .padding(.top, 40)
+                        .opacity(0.85)
+                        .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
                 }
-                HStack{
-                    
-                    Button(action: {
-                        if(!images.isEmpty){
-                            let form = createMultiPartForm(images: images, identification: uploadID)
-                            submitMultiPartForm(form: form)
-                            print("Upload")
-                        }else{
-                            print("No pics")
-                        }
-
-                    }, label: {
-                        Text("Upload")
-                            .foregroundColor(.white)
-                            .padding(.vertical, 10)
-                            .padding(.horizontal, 35)
-                            .background(Color.gray)
-                            .clipShape(Capsule())
-                    })
-                    Button(action: {
-                        picker.toggle()
-                    }, label: {
-                        Text("Pick images")
-                            .foregroundColor(.white)
-                            .padding(.vertical, 10)
-                            .padding(.horizontal, 35)
-                            .background(Color.gray)
-                            .clipShape(Capsule())
-                    })
-                    Button(action: {
-                       images = []
-                    }, label: {
-                        Text("Clear")
-                            .foregroundColor(.white)
-                            .padding(.vertical, 10)
-                            .padding(.horizontal, 35)
-                            .background(Color.gray)
-                            .clipShape(Capsule())
-                    })
-                }
+                Spacer()
             }
             .sheet(isPresented: $picker, content: {
                 ImagePicker(image: $images, picker: $picker)
@@ -111,4 +65,53 @@ struct UploadModelView_Previews: PreviewProvider {
 
 
 
-
+//if(!images.isEmpty){
+//    ScrollView(.horizontal,showsIndicators: false, content: {
+//        HStack(spacing:15){
+//            ForEach(images,id:\.self){
+//                img in
+//                Image(uiImage: img)
+//                    .resizable()
+//                    .frame(width: UIScreen.main.bounds.width - 45, height: 250)
+//                    .cornerRadius(20)
+//            }
+//        }
+//    })
+//}
+//Button(action: {
+//    if(!images.isEmpty){
+//        let form = createMultiPartForm(images: images, identification: uploadID)
+//        submitMultiPartForm(form: form)
+//        print("Upload")
+//    }else{
+//        print("No pics")
+//    }
+//
+//}, label: {
+//    Text("Upload")
+//        .foregroundColor(.white)
+//        .padding(.vertical, 10)
+//        .padding(.horizontal, 35)
+//        .background(Color.gray)
+//        .clipShape(Capsule())
+//})
+//Button(action: {
+//    picker.toggle()
+//}, label: {
+//    Text("Pick images")
+//        .foregroundColor(.white)
+//        .padding(.vertical, 10)
+//        .padding(.horizontal, 35)
+//        .background(Color.gray)
+//        .clipShape(Capsule())
+//})
+//Button(action: {
+//   images = []
+//}, label: {
+//    Text("Clear")
+//        .foregroundColor(.white)
+//        .padding(.vertical, 10)
+//        .padding(.horizontal, 35)
+//        .background(Color.gray)
+//        .clipShape(Capsule())
+//})

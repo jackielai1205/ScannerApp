@@ -49,18 +49,14 @@ struct MenuView: View {
                 })
             default:
                 ZStack(alignment: .center, content: {
-                    Color("Background")
+                    Image("Background")
+                        .resizable()
+                        .ignoresSafeArea()
                     Text("Error")
                 })
                     .ignoresSafeArea()
             }
             TabBar(selectedTab: $selectedTab)
         })
-    }
-}
-
-struct MenuView_Previews: PreviewProvider {
-    static var previews: some View {
-        MenuView(selectedTab: "viewfinder.circle")
     }
 }
