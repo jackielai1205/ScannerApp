@@ -25,6 +25,7 @@ struct LoadingView: View {
                     
                     if !leaveAnimation{
                         Text("hi")
+                            .padding()
                         Image("Logoupper")
                             .renderingMode(.original)
                             .resizable()
