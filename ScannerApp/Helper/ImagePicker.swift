@@ -16,7 +16,7 @@ struct ImagePicker : UIViewControllerRepresentable {
         return ImagePicker.Coordinator(parent1: self)
     }
     
-    
+    @Binding var cancel: Bool
     @Binding var image : [UIImage]
     @Binding var picker: Bool
 
@@ -35,7 +35,6 @@ struct ImagePicker : UIViewControllerRepresentable {
     
     class Coordinator: NSObject,PHPickerViewControllerDelegate{
 
-        var isExisted = false
         var parent : ImagePicker
         init(parent1: ImagePicker){
             parent = parent1
@@ -53,12 +52,7 @@ struct ImagePicker : UIViewControllerRepresentable {
                             print(err)
                             return
                         }
-//                        for currenImage in 0..<self.parent.image.count{
-//                            if self.parent.image[currenImage].isEqualToImage(image as! UIImage){
-//                                self.isExisted = true;
-//                            }
-//                        }
-                        if(self.isExisted == false){
+                        if self.parent.cancel == false{
                             self.parent.image.append(image as! UIImage)
                         }
                     }
@@ -66,15 +60,7 @@ struct ImagePicker : UIViewControllerRepresentable {
                     print("cannot be loaded")
                 }
             }
+            self.parent.cancel = false
         }
-    }
-}
-
-extension UIImage {
-
-    func isEqualToImage(_ image: UIImage) -> Bool {
-        let data1 = self.pngData()
-        let data2 = image.pngData()
-        return data1 == data2
     }
 }

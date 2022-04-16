@@ -10,12 +10,11 @@ import SwiftUI
 struct MenuView: View {
     
     @State var offset:CGSize = CGSize(width: 0, height:0)
-    @State var selectedTab = "house"
+    @StateObject var tab:TabSettings = TabSettings()
     
     var body: some View {
         ZStack(alignment: .bottom, content: {
-            
-            switch selectedTab{
+            switch tab.selectedTab{
             case "house":
                 ZStack(alignment: .center, content: {
                     HomePageView()
@@ -41,6 +40,7 @@ struct MenuView: View {
             case "person.3":
                 ZStack(alignment: .center, content: {
                     AboutUsView()
+
                 })
                     .ignoresSafeArea()
             case "gearshape":
@@ -56,7 +56,7 @@ struct MenuView: View {
                 })
                     .ignoresSafeArea()
             }
-            TabBar(selectedTab: $selectedTab)
         })
+        .environmentObject(tab)
     }
 }

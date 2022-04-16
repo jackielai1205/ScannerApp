@@ -14,6 +14,7 @@ struct HomePageView: View {
     @State var photoNumber:String = ""
     @State var renderTime:String = ""
     @State var rate:String = ""
+    @EnvironmentObject var tab:TabSettings
     
     var body: some View {
         ZStack {
@@ -21,45 +22,48 @@ struct HomePageView: View {
             Image("Background")
                 .resizable()
                 .ignoresSafeArea()
-            ScrollView {
-                VStack {
-                    TopLogoBar()
-                    HStack{
-                        SceneView(scene: SCNScene(named: "dragon.usdz") , options: [.autoenablesDefaultLighting,.allowsCameraControl])
-                            .frame(width: UIScreen.main.bounds.width / 3, height: UIScreen.main.bounds.height / 3)
-                            .padding(.leading, 10)
-                            .padding(.top, 5)
-                        VStack{
-                            Text(photoNumber).animation(.spring())
-                            Text(renderTime).animation(.spring())
-                            Text(rate).animation(.spring())
-                            Button {
-                                startAnimation.toggle()
-                            } label: {
-                                
-                                Text("Model Info")
-                                    .foregroundColor(Color.black)
+            VStack{
+                TopLogoBar()
+                ScrollView {
+                    VStack {
+                        HStack{
+                            SceneView(scene: SCNScene(named: "dragon.usdz") , options: [.autoenablesDefaultLighting,.allowsCameraControl])
+                                .frame(width: UIScreen.main.bounds.width / 3, height: UIScreen.main.bounds.height / 3)
+                                .padding(.leading, 10)
+                                .padding(.top, 5)
+                            VStack{
+                                Text(photoNumber).animation(.spring())
+                                Text(renderTime).animation(.spring())
+                                Text(rate).animation(.spring())
+                                Button {
+                                    startAnimation.toggle()
+                                } label: {
+                                    
+                                    Text("Model Info")
+                                        .foregroundColor(Color.black)
+                                }
+                            }
+                            .frame(width: 200, height: 200)
+                            .onChange(of: startAnimation) { _ in
+                            renderAnimation(startAnimation: startAnimation)
                             }
                         }
-                        .frame(width: 200, height: 200)
-                        .onChange(of: startAnimation) { _ in
-                        renderAnimation(startAnimation: startAnimation)
-                        }
+                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 3, alignment: .leading)
                     }
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 3, alignment: .leading)
+                    SceneView(scene: SCNScene(named: "dragon.usdz") , options: [.autoenablesDefaultLighting,.allowsCameraControl])
+                        .frame(width: UIScreen.main.bounds.width / 3, height: UIScreen.main.bounds.height / 3)
+                        .padding(.leading, 10)
+                        .padding(.top, 5)
+                    SceneView(scene: SCNScene(named: "dragon.usdz") , options: [.autoenablesDefaultLighting,.allowsCameraControl])
+                        .frame(width: UIScreen.main.bounds.width / 3, height: UIScreen.main.bounds.height / 3)
+                        .padding(.leading, 10)
+                        .padding(.top, 5)
+                    SceneView(scene: SCNScene(named: "dragon.usdz") , options: [.autoenablesDefaultLighting,.allowsCameraControl])
+                        .frame(width: UIScreen.main.bounds.width / 3, height: UIScreen.main.bounds.height / 3)
+                        .padding(.leading, 10)
+                        .padding(.top, 5)
                 }
-                SceneView(scene: SCNScene(named: "dragon.usdz") , options: [.autoenablesDefaultLighting,.allowsCameraControl])
-                    .frame(width: UIScreen.main.bounds.width / 3, height: UIScreen.main.bounds.height / 3)
-                    .padding(.leading, 10)
-                    .padding(.top, 5)
-                SceneView(scene: SCNScene(named: "dragon.usdz") , options: [.autoenablesDefaultLighting,.allowsCameraControl])
-                    .frame(width: UIScreen.main.bounds.width / 3, height: UIScreen.main.bounds.height / 3)
-                    .padding(.leading, 10)
-                    .padding(.top, 5)
-                SceneView(scene: SCNScene(named: "dragon.usdz") , options: [.autoenablesDefaultLighting,.allowsCameraControl])
-                    .frame(width: UIScreen.main.bounds.width / 3, height: UIScreen.main.bounds.height / 3)
-                    .padding(.leading, 10)
-                    .padding(.top, 5)
+                TabBar(selectedTab: $tab.selectedTab)
             }
         }
     }

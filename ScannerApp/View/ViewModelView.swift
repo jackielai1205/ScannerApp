@@ -17,6 +17,7 @@ struct ViewModelView: View {
     @State var fileURL = ""
     @State var view = SCNScene(named: "chair.usdz")
     @State private var textInFiles = [String]()
+    @EnvironmentObject var tab:TabSettings
     
     var body: some View {
         ZStack{
@@ -60,6 +61,7 @@ struct ViewModelView: View {
                                         .fontWeight(.bold))
                             .offset(y: -(UIScreen.main.bounds.height / 9))
                     }
+                    TabBar(selectedTab: $tab.selectedTab)
                 }
             }
             .ignoresSafeArea()

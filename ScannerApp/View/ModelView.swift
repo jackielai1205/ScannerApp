@@ -12,6 +12,7 @@ struct ModelView: View {
     
     @State var uploadID:String
     @StateObject var manager = HttpAuth()
+    @EnvironmentObject var tab:TabSettings
     
     init(){
         if let data = UserDefaults.standard.string(forKey: "Save") {
@@ -39,15 +40,26 @@ struct ModelView: View {
                     List{
                         ForEach(self.manager.finalData, id:\.self){
                             data in
-                            NavigationLink(destination: ViewModelView(), label: {
-                                ModelList(model: data)
-                            })
-                        }
+//                            NavigationLink(destination: {
+//                                LazyView(
+//                                    ViewModelView()
+//                                )
+//                            }, label: {
+//                                ListItem(model: data)
+//                            })
+                            ListItem(model: data)
+                                .listRowSeparatorTint(Color.black)
+                        }.listRowBackground(Color("Background")
+                            .opacity(0.85)
+                            .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
+                        
+                        )
                     }
+                    TabBar(selectedTab: $tab.selectedTab)
                 }
                 .ignoresSafeArea()
             }
-            .refreshable{
+            .refreshable {
                 await self.manager.checkDetails(uploadID: self.uploadID)
             }
             .task {
@@ -78,9 +90,10 @@ class HttpAuth: ObservableObject{
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         URLSession.shared.dataTask(with: request){(data,response,error) in
         guard let data = data else {return}
-        DispatchQueue.main.async {
-            self.finalData = try! JSONDecoder().decode([ModelDetail].self, from: data)
-        }
+        let outputData = try! JSONDecoder().decode([ModelDetail].self, from: data)
+            DispatchQueue.main.async {
+                self.finalData = outputData
+            }
         }.resume()
     }
 }

@@ -10,11 +10,13 @@ import PhotosUI
 import MultipartForm
 
 struct UploadModelView: View {
-    
+
     @State var uploadID:String
-    @State var images : [UIImage] = []
     @State var picker = false;
-    
+    @State var images:[UIImage] = []
+    @State var cancel = false
+    @State var isShowing = false
+    @EnvironmentObject var tab:TabSettings
     
     init(){
         if let data = UserDefaults.standard.string(forKey: "Save") {
@@ -36,19 +38,15 @@ struct UploadModelView: View {
                 .ignoresSafeArea()
             VStack{
                 TopLogoBar()
-                ZStack{
-                    RoundedRectangle(cornerRadius: 20)
-                        .fill(Color("Background"))
-                        .frame(width: UIScreen.main.bounds.width - 50, height: UIScreen.main.bounds.height/1.55)
-                        .padding(.top, 40)
-                        .opacity(0.85)
-                        .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
-                }
+                SubmitForm(isShowing: $isShowing, images: $images, uploadID: $uploadID, picker: $picker, cancel: $cancel)
+                    .frame(width: UIScreen.main.bounds.width - 30, height: UIScreen.main.bounds.height / 1.5)
                 Spacer()
+                TabBar(selectedTab: $tab.selectedTab)
             }
             .sheet(isPresented: $picker, content: {
-                ImagePicker(image: $images, picker: $picker)
+                ImagePicker(cancel: $cancel, image: $images, picker: $picker)
             })
+            InstructionView(isShowing: $isShowing)
         }
     }
 }
@@ -61,57 +59,3 @@ struct UploadModelView_Previews: PreviewProvider {
         }
     }
 }
-
-
-
-
-//if(!images.isEmpty){
-//    ScrollView(.horizontal,showsIndicators: false, content: {
-//        HStack(spacing:15){
-//            ForEach(images,id:\.self){
-//                img in
-//                Image(uiImage: img)
-//                    .resizable()
-//                    .frame(width: UIScreen.main.bounds.width - 45, height: 250)
-//                    .cornerRadius(20)
-//            }
-//        }
-//    })
-//}
-//Button(action: {
-//    if(!images.isEmpty){
-//        let form = createMultiPartForm(images: images, identification: uploadID)
-//        submitMultiPartForm(form: form)
-//        print("Upload")
-//    }else{
-//        print("No pics")
-//    }
-//
-//}, label: {
-//    Text("Upload")
-//        .foregroundColor(.white)
-//        .padding(.vertical, 10)
-//        .padding(.horizontal, 35)
-//        .background(Color.gray)
-//        .clipShape(Capsule())
-//})
-//Button(action: {
-//    picker.toggle()
-//}, label: {
-//    Text("Pick images")
-//        .foregroundColor(.white)
-//        .padding(.vertical, 10)
-//        .padding(.horizontal, 35)
-//        .background(Color.gray)
-//        .clipShape(Capsule())
-//})
-//Button(action: {
-//   images = []
-//}, label: {
-//    Text("Clear")
-//        .foregroundColor(.white)
-//        .padding(.vertical, 10)
-//        .padding(.horizontal, 35)
-//        .background(Color.gray)
-//        .clipShape(Capsule())
-//})

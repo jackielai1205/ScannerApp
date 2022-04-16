@@ -30,7 +30,7 @@ struct TabBar: View {
                         }, label: {
                             ZStack{
                                 Image(systemName: "text.justify")
-                                    .foregroundColor(Color.black)
+                                    .foregroundColor(Color.white)
                                 RoundedRectangle(cornerRadius: 20)
                                     .opacity(0.00001)
                                     .frame(width: UIScreen.main.bounds.width, height: 50)
@@ -57,7 +57,7 @@ struct TabBar: View {
         }
         .ignoresSafeArea()
         .frame(width: UIScreen.main.bounds.width, height: 100)
-        .offset(y: isShowed ? 15 : 100)
+        .offset(y: isShowed ? -20 : 60)
     }
     
     
@@ -121,11 +121,11 @@ struct TabBarButton:View{
                     VStack{
                         Image(systemName: selectedTab == image ? "\(image).fill" : "\(image)")
                             .font(.system(size: 25, weight: .semibold))
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Color.white)
                             .offset(y:selectedTab == image ? -10 : 0)
                         Text(name)
                             .font(Font.system(size: 13, weight: .semibold))
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Color.white)
                             .offset(y:selectedTab == image ? -10 : 0)
                     }
                 })

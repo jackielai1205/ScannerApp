@@ -12,6 +12,7 @@ import UIKit
 struct CameraView: View {
     
     @StateObject var camera = CameraModel()
+    @EnvironmentObject var tab:TabSettings
     
     var body: some View {
         
@@ -36,6 +37,7 @@ struct CameraView: View {
                     .padding(.bottom, UIScreen.main.bounds.height / 3.3)
                 })
                 .frame(height: 75)
+                TabBar(selectedTab: $tab.selectedTab)
             }
         }
         .onAppear(

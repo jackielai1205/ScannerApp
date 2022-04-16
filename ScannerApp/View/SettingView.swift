@@ -9,16 +9,16 @@ import SwiftUI
 
 struct SettingView: View {
     
+    @EnvironmentObject var tab:TabSettings
+    
     var body: some View {
         ZStack{
             Image("Background")
                 .resizable()
                 .ignoresSafeArea()
             VStack(alignment: .center){
-                
                 TopLogoBar()
                     .ignoresSafeArea()
-                
                 Form{
                     Section(content: {
                         NavigateRowView(logoName: "Facebook", logoBackGround: .blue, image: "facebook-circle", link: "https://www.facebook.com")
@@ -28,7 +28,7 @@ struct SettingView: View {
                         
                     }, header: {
                         Text("Follow our media")
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
                     })
 
                     Section(content: {
@@ -39,10 +39,10 @@ struct SettingView: View {
                         RowView(icon: "ipad.and.iphone", leftText: "Version", rightText: "0.0.2")
                     }, header: {
                         Text("Application Preferences")
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
                     })
-
                 }
+                TabBar(selectedTab: $tab.selectedTab)
             }
         }
         .ignoresSafeArea()
