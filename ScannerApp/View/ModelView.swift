@@ -36,17 +36,9 @@ struct ModelView: View {
                     .ignoresSafeArea()
                 VStack{
                     TopLogoBar()
-                        .padding(.bottom, 20)
                     List{
                         ForEach(self.manager.finalData, id:\.self){
                             data in
-//                            NavigationLink(destination: {
-//                                LazyView(
-//                                    ViewModelView()
-//                                )
-//                            }, label: {
-//                                ListItem(model: data)
-//                            })
                             ListItem(model: data)
                                 .listRowSeparatorTint(Color.black)
                         }.listRowBackground(Color("Background")
@@ -55,6 +47,7 @@ struct ModelView: View {
                         
                         )
                     }
+                    .padding()
                     TabBar(selectedTab: $tab.selectedTab)
                 }
                 .ignoresSafeArea()
