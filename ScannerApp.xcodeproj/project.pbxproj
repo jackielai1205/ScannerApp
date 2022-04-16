@@ -14,6 +14,7 @@
 		016CD80D27DADFC0006260B2 /* TopLogoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016CD80C27DADFC0006260B2 /* TopLogoBar.swift */; };
 		016CD80F27DB09B5006260B2 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016CD80E27DB09B5006260B2 /* HomePageView.swift */; };
 		017AD54A27D9B8E200DB6E5A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017AD54927D9B8E200DB6E5A /* LoadingView.swift */; };
+		01C8298D280A9C8E004DE535 /* MultipartForm in Frameworks */ = {isa = PBXBuildFile; productRef = 01C8298C280A9C8E004DE535 /* MultipartForm */; };
 		4628978A27D742930080E663 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4628978927D742930080E663 /* TabBar.swift */; };
 		4628978E27D958B50080E663 /* TabCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4628978D27D958B50080E663 /* TabCurve.swift */; };
 		4628979B27DAB3F00080E663 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4628979A27DAB3F00080E663 /* CameraView.swift */; };
@@ -40,7 +41,6 @@
 		46C474A327DDAAD1006075DB /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C474A227DDAAD1006075DB /* SettingView.swift */; };
 		46C474A527DDB631006075DB /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C474A427DDB631006075DB /* RowView.swift */; };
 		46E65A01280A6FB700D86DF9 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E65A00280A6FB700D86DF9 /* ListItem.swift */; };
-		46F6FD9E27E2B7130084CD30 /* MultipartForm in Frameworks */ = {isa = PBXBuildFile; productRef = 46F6FD9D27E2B7130084CD30 /* MultipartForm */; };
 		46F6FDA027E2B7D90084CD30 /* UploadModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F6FD9F27E2B7D90084CD30 /* UploadModelView.swift */; };
 /* End PBXBuildFile section */
 
@@ -106,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46F6FD9E27E2B7130084CD30 /* MultipartForm in Frameworks */,
+				01C8298D280A9C8E004DE535 /* MultipartForm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +267,7 @@
 			);
 			name = ScannerApp;
 			packageProductDependencies = (
-				46F6FD9D27E2B7130084CD30 /* MultipartForm */,
+				01C8298C280A9C8E004DE535 /* MultipartForm */,
 			);
 			productName = ScannerApp;
 			productReference = 46449D2927D616A700633CAE /* ScannerApp.app */;
@@ -343,6 +343,7 @@
 			mainGroup = 46449D2027D616A700633CAE;
 			packageReferences = (
 				46F6FD9C27E2B7130084CD30 /* XCRemoteSwiftPackageReference "MultipartForm" */,
+				01C8298B280A9C8E004DE535 /* XCRemoteSwiftPackageReference "MultipartForm" */,
 			);
 			productRefGroup = 46449D2A27D616A700633CAE /* Products */;
 			projectDirPath = "";
@@ -753,6 +754,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		01C8298B280A9C8E004DE535 /* XCRemoteSwiftPackageReference "MultipartForm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/davbeck/MultipartForm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
 		46F6FD9C27E2B7130084CD30 /* XCRemoteSwiftPackageReference "MultipartForm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/davbeck/MultipartForm";
@@ -764,9 +773,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		46F6FD9D27E2B7130084CD30 /* MultipartForm */ = {
+		01C8298C280A9C8E004DE535 /* MultipartForm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 46F6FD9C27E2B7130084CD30 /* XCRemoteSwiftPackageReference "MultipartForm" */;
+			package = 01C8298B280A9C8E004DE535 /* XCRemoteSwiftPackageReference "MultipartForm" */;
 			productName = MultipartForm;
 		};
 /* End XCSwiftPackageProductDependency section */
