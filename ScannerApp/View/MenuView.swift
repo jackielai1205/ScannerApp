@@ -17,7 +17,7 @@ struct MenuView: View {
             switch tab.selectedTab{
             case "house":
                 ZStack(alignment: .center, content: {
-                    HomePageView()
+                    HomePageV2()
                 })
                     .ignoresSafeArea()
             case "viewfinder.circle":
@@ -28,8 +28,6 @@ struct MenuView: View {
             case "photo":
                 ZStack(alignment: .center, content: {
                     ModelView()
-//                    Color("Background")
-//                    Text("View")
                 })
                     .ignoresSafeArea()
             case "icloud.and.arrow.up":

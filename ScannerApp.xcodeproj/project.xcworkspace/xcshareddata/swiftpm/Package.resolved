@@ -3,10 +3,10 @@
     {
       "identity" : "multipartform",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/davbeck/MultipartForm",
+      "location" : "https://github.com/davbeck/MultipartForm.git",
       "state" : {
-        "revision" : "c91979ea956a360bf84f0cc480afbcc7c946c753",
-        "version" : "0.1.0"
+        "branch" : "master",
+        "revision" : "c91979ea956a360bf84f0cc480afbcc7c946c753"
       }
     }
   ],

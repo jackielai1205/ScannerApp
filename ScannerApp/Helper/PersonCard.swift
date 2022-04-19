@@ -1,0 +1,86 @@
+//
+//  PersonCard.swift
+//  ScannerApp
+//
+//  Created by Walter Siu on 15/4/2022.
+//
+
+import SwiftUI
+
+struct PersonCard: View{
+    
+    @Binding var showAlert: Bool
+    var image: String
+    var name: String
+    var major: String
+    var lang: String
+    var part: String
+    var color: Color
+    // Addition display info
+    // Linkedin Account
+    // Role
+    // Year 2 / 3?
+    // Email
+    
+    var body: some View{
+        ZStack{
+            HStack{
+                Button {
+                    self.showAlert = true
+                } label: {
+                    HStack(alignment: .center){
+                        Image("dog")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .clipShape(Circle())
+                            .frame(width: 90)
+                            .padding(.vertical, 10)
+                            .padding(.leading, 10)
+                        
+                        Divider()
+                                    
+                        VStack(alignment: .leading){
+                            Text(name)
+                                .font(.system(size: 20, weight: .bold, design: .default))
+                                .fontWeight(.bold)
+                                .foregroundColor(self.color)
+                                .padding(.bottom, 5)
+                            Text(part)
+                                .font(.system(size: 15))
+                                .fontWeight(.bold)
+                                .foregroundColor(self.color)
+                        }
+                        .padding(.horizontal, 1)
+                        Spacer()
+                    }
+                    .background(AngularGradient(gradient: Gradient(colors: [.white, self.color]), center: .topLeading))
+                    .frame(width: 350, alignment: .bottom)
+                    .modifier(CardModifier())
+                    .padding(.horizontal, 20)
+                    .navigationTitle("")
+                    .navigationBarHidden(true)
+                    .blur(radius: showAlert ? 30 : 0)
+                }
+            }
+        }
+        .frame(width: UIScreen.main.bounds.width / 1, height: UIScreen.main.bounds.height / 10)
+        .statusBar(hidden: true)
+        .padding(.bottom, 10)
+        .animation(.spring())
+    }
+}
+
+struct CardModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .cornerRadius(20)
+            .opacity(0.9)
+            .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
+    }
+}
+
+struct PersonCard_Previews: PreviewProvider {
+    static var previews: some View {
+        PersonCard(showAlert: .constant(false), image: "dog", name: "TingFung Siu", major: "Computer Science", lang: "Swift", part: "Front End", color: Color.blue)
+    }
+}
