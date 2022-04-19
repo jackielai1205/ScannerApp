@@ -15,6 +15,11 @@
 		016CD80F27DB09B5006260B2 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016CD80E27DB09B5006260B2 /* HomePageView.swift */; };
 		017AD54A27D9B8E200DB6E5A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017AD54927D9B8E200DB6E5A /* LoadingView.swift */; };
 		01C8298D280A9C8E004DE535 /* MultipartForm in Frameworks */ = {isa = PBXBuildFile; productRef = 01C8298C280A9C8E004DE535 /* MultipartForm */; };
+		01C8298F280A9FB7004DE535 /* HomePageV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8298E280A9FB7004DE535 /* HomePageV2.swift */; };
+		01C82991280A9FEA004DE535 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C82990280A9FEA004DE535 /* WebView.swift */; };
+		01C82994280AA019004DE535 /* MultipartForm in Frameworks */ = {isa = PBXBuildFile; productRef = 01C82993280AA019004DE535 /* MultipartForm */; };
+		01C82996280AA044004DE535 /* PersonCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C82995280AA044004DE535 /* PersonCard.swift */; };
+		01C82998280AA060004DE535 /* InfoAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C82997280AA060004DE535 /* InfoAlertView.swift */; };
 		4628978A27D742930080E663 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4628978927D742930080E663 /* TabBar.swift */; };
 		4628978E27D958B50080E663 /* TabCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4628978D27D958B50080E663 /* TabCurve.swift */; };
 		4628979B27DAB3F00080E663 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4628979A27DAB3F00080E663 /* CameraView.swift */; };
@@ -69,6 +74,10 @@
 		016CD80C27DADFC0006260B2 /* TopLogoBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLogoBar.swift; sourceTree = "<group>"; };
 		016CD80E27DB09B5006260B2 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		017AD54927D9B8E200DB6E5A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		01C8298E280A9FB7004DE535 /* HomePageV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageV2.swift; sourceTree = "<group>"; };
+		01C82990280A9FEA004DE535 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		01C82995280AA044004DE535 /* PersonCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCard.swift; sourceTree = "<group>"; };
+		01C82997280AA060004DE535 /* InfoAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAlertView.swift; sourceTree = "<group>"; };
 		4628978927D742930080E663 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		4628978D27D958B50080E663 /* TabCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCurve.swift; sourceTree = "<group>"; };
 		4628979A27DAB3F00080E663 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
@@ -107,6 +116,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01C8298D280A9C8E004DE535 /* MultipartForm in Frameworks */,
+				01C82994280AA019004DE535 /* MultipartForm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +159,7 @@
 				46F6FD9F27E2B7D90084CD30 /* UploadModelView.swift */,
 				467E9C282808145100BA4261 /* ViewModelView.swift */,
 				467E9C2C280968BE00BA4261 /* InstructionView.swift */,
+				01C8298E280A9FB7004DE535 /* HomePageV2.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,6 +176,9 @@
 				016CD80C27DADFC0006260B2 /* TopLogoBar.swift */,
 				46C474A427DDB631006075DB /* RowView.swift */,
 				467E9C3028097DBD00BA4261 /* LazyView.swift */,
+				01C82995280AA044004DE535 /* PersonCard.swift */,
+				01C82997280AA060004DE535 /* InfoAlertView.swift */,
+				01C82990280A9FEA004DE535 /* WebView.swift */,
 				4628978C27D958A20080E663 /* TabBar */,
 			);
 			path = Helper;
@@ -268,6 +282,7 @@
 			name = ScannerApp;
 			packageProductDependencies = (
 				01C8298C280A9C8E004DE535 /* MultipartForm */,
+				01C82993280AA019004DE535 /* MultipartForm */,
 			);
 			productName = ScannerApp;
 			productReference = 46449D2927D616A700633CAE /* ScannerApp.app */;
@@ -344,6 +359,7 @@
 			packageReferences = (
 				46F6FD9C27E2B7130084CD30 /* XCRemoteSwiftPackageReference "MultipartForm" */,
 				01C8298B280A9C8E004DE535 /* XCRemoteSwiftPackageReference "MultipartForm" */,
+				01C82992280AA019004DE535 /* XCRemoteSwiftPackageReference "MultipartForm" */,
 			);
 			productRefGroup = 46449D2A27D616A700633CAE /* Products */;
 			projectDirPath = "";
@@ -403,6 +419,7 @@
 				46E65A01280A6FB700D86DF9 /* ListItem.swift in Sources */,
 				016CD80927DACD96006260B2 /* AboutUsView.swift in Sources */,
 				4699FE8727DEE2A500B83A72 /* NavigateRowView.swift in Sources */,
+				01C82991280A9FEA004DE535 /* WebView.swift in Sources */,
 				46449D5727D6170A00633CAE /* Model.swift in Sources */,
 				46C474A327DDAAD1006075DB /* SettingView.swift in Sources */,
 				46449D5927D6173500633CAE /* ModelView.swift in Sources */,
@@ -410,11 +427,14 @@
 				016CD80D27DADFC0006260B2 /* TopLogoBar.swift in Sources */,
 				016CD80B27DAD2B9006260B2 /* Person.swift in Sources */,
 				017AD54A27D9B8E200DB6E5A /* LoadingView.swift in Sources */,
+				01C82998280AA060004DE535 /* InfoAlertView.swift in Sources */,
 				016CD80F27DB09B5006260B2 /* HomePageView.swift in Sources */,
 				467E9C2B28092D4500BA4261 /* SubmitForm.swift in Sources */,
 				4628978A27D742930080E663 /* TabBar.swift in Sources */,
+				01C8298F280A9FB7004DE535 /* HomePageV2.swift in Sources */,
 				4628979B27DAB3F00080E663 /* CameraView.swift in Sources */,
 				467E9C3128097DBD00BA4261 /* LazyView.swift in Sources */,
+				01C82996280AA044004DE535 /* PersonCard.swift in Sources */,
 				467E9C2D280968BE00BA4261 /* InstructionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,7 +597,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ScannerApp/Preview Content\"";
-				DEVELOPMENT_TEAM = WU9YUJ5Z9G;
+				DEVELOPMENT_TEAM = 3N2HM2CBW9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ScannerApp/Info.plist;
@@ -611,7 +631,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ScannerApp/Preview Content\"";
-				DEVELOPMENT_TEAM = WU9YUJ5Z9G;
+				DEVELOPMENT_TEAM = 3N2HM2CBW9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ScannerApp/Info.plist;
@@ -762,6 +782,14 @@
 				minimumVersion = 0.1.0;
 			};
 		};
+		01C82992280AA019004DE535 /* XCRemoteSwiftPackageReference "MultipartForm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/davbeck/MultipartForm.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		46F6FD9C27E2B7130084CD30 /* XCRemoteSwiftPackageReference "MultipartForm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/davbeck/MultipartForm";
@@ -776,6 +804,11 @@
 		01C8298C280A9C8E004DE535 /* MultipartForm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 01C8298B280A9C8E004DE535 /* XCRemoteSwiftPackageReference "MultipartForm" */;
+			productName = MultipartForm;
+		};
+		01C82993280AA019004DE535 /* MultipartForm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 01C82992280AA019004DE535 /* XCRemoteSwiftPackageReference "MultipartForm" */;
 			productName = MultipartForm;
 		};
 /* End XCSwiftPackageProductDependency section */
