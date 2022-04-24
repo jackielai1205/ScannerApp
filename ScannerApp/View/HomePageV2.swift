@@ -59,6 +59,10 @@ struct Card: View{
     
     var body: some View{
         
+        ZStack{
+//            Color("Background")
+//                .opacity(0.85)
+//                .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
             VStack{
                 NavigationView{
                     VStack{
@@ -110,11 +114,12 @@ struct Card: View{
                     .background(Color("Background").opacity(0.85))
                     .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
                 }
-                .frame(width: UIScreen.main.bounds.width / 1.3, height: UIScreen.main.bounds.height / 1.8, alignment: .top)
+                .frame(width: UIScreen.main.bounds.width / 1.3, height: UIScreen.main.bounds.height / 1.85, alignment: .center)
                 .cornerRadius(30)
             }
             .frame(width: self.width)
         }
+    }
 }
 
 struct Carousel : UIViewRepresentable{
