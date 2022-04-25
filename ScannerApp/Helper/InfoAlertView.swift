@@ -9,7 +9,8 @@ import SwiftUI
 
 struct InfoAlertView: View {
     
-    @Binding var showAlert: Bool
+    @Binding var showAlert: ShowAlert
+    var type: ShowAlert
     var image: String
     var name: String
     var major: String
@@ -49,7 +50,7 @@ struct InfoAlertView: View {
                         }
 
                         Button {
-                            self.showAlert.toggle()
+                            self.showAlert = ShowAlert.none
                         } label: {
                             Image(systemName: "xmark")
                                 .resizable().frame(width: 15, height: 15).padding(8)
@@ -73,7 +74,7 @@ struct InfoAlertView: View {
             .background(Color("Background").opacity(0.85))
             .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
             .cornerRadius(30)
-            .offset(y: -UIScreen.main.bounds.height / 5)
+            .offset(y: -UIScreen.main.bounds.height / 4.5)
         } else {
             ZStack{
                 VStack{
@@ -102,7 +103,7 @@ struct InfoAlertView: View {
                         }
 
                         Button {
-                            self.showAlert.toggle()
+                            self.showAlert = ShowAlert.none
                         } label: {
                             Image(systemName: "xmark")
                                 .resizable().frame(width: 15, height: 15).padding(8)
@@ -203,7 +204,7 @@ extension String: Identifiable {
     }
 }
 
-struct InfoAlertView_Previews: PreviewProvider {
-    static var previews: some View {
-        InfoAlertView(showAlert: .constant(false), image: "dog", name: "TingFung Siu", major: "Computer Science", lang: ["swiftui", "javascript", "java", "c"], part: "Front End", github: URL(string: "http://www.google.com")!, linkedin: URL(string: "http://www.google.com")!, boxHeight: 180)    }
-}
+//struct InfoAlertView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        InfoAlertView(showAlert: ShowAlert.ting, type: ShowAlert.none, image: "dog", name: "TingFung Siu", major: "Computer Science", lang: ["swiftui", "javascript", "java", "c"], part: "Front End", github: URL(string: "http://www.google.com")!, linkedin: URL(string: "http://www.google.com")!, boxHeight: 180)    }
+//}
