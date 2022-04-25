@@ -24,8 +24,6 @@ struct LoadingView: View {
                 ZStack {
                     
                     if !leaveAnimation{
-                        Text("hi")
-                            .padding()
                         Image("Logoupper")
                             .renderingMode(.original)
                             .resizable()

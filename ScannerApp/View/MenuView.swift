@@ -27,7 +27,7 @@ struct MenuView: View {
                     .ignoresSafeArea()
             case "photo":
                 ZStack(alignment: .center, content: {
-                    ModelView()
+                    ModelListView()
                 })
                     .ignoresSafeArea()
             case "icloud.and.arrow.up":

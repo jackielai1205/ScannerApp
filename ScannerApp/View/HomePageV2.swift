@@ -100,7 +100,7 @@ struct Card: View{
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                         .padding(.top, 2)
                         .sheet(isPresented: $showWeb) {
-                            WebView(url: self.url)
+//                            WebView(url: self.url)
                         }
                     }
                     .padding(.horizontal, 20)

@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct ListItem: View {
-
-    @State var model: ModelDetail
+    
+    @State var model: TransactionsData
     
     var body: some View {
         VStack{
             HStack{
                 VStack(alignment:.leading,  spacing: 10){
                     HStack{
-                        Text("Model Name")
+                        Text(model.modelName)
                             .font(.system(size: 20.0, weight: .bold, design: .rounded))
                             .foregroundColor(Color.black)
                         Spacer()
-                        Text(self.model.status)
-                            .foregroundColor(model.status == "Completed " ? Color.green : Color.black)
+                        Text(String(model.status))
+                            .foregroundColor(model.status == 1  ? Color.green : Color.black)
                             .font(.system(size: 20, weight: .bold))
                     }
                     .padding(.horizontal, 10)
@@ -30,8 +30,8 @@ struct ListItem: View {
                             RoundedRectangle(cornerRadius: 20)
                                     .fill(Color.gray)
                             VStack(alignment:.center){
-                                Text("Model Receivce:  \(self.model.receivetime)")
-                                Text("Model Serial Number: \(String(self.model.modelid))")
+                                Text("Model Receivce:  \(model.date)")
+                                Text("Model Serial Number: \(String(model.tranID))")
                             }
                             .padding()
                         }
@@ -41,7 +41,7 @@ struct ListItem: View {
                     .foregroundColor(Color.white)
                     HStack(alignment:.center){
                         Button(action: {
-                            print("\(String(model.modelid)) Delete")
+
                         }, label: {
                             ZStack{
                                 RoundedRectangle(cornerRadius: 10)
@@ -55,9 +55,7 @@ struct ListItem: View {
                         .frame(maxWidth: .infinity)
                         .buttonStyle(BorderedButtonStyle())
                         Spacer()
-                        Button(action: {
-                            print("\(String(model.modelid)) Download")
-                        }, label: {
+                        NavigationLink(destination: LazyView(ModelDetailView(model: model)), label: {
                             ZStack{
                                 RoundedRectangle(cornerRadius: 10)
                                     .fill(Color("Download"))
@@ -78,6 +76,7 @@ struct ListItem: View {
 
 struct ListItem_Previews: PreviewProvider {
     static var previews: some View {
-        ModelView()
+        UploadModelView()
     }
 }
+

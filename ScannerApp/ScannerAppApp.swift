@@ -9,7 +9,7 @@ import SwiftUI
 
 
 @main
-struct ScannerAppApp: App {
+struct ScannerApp: App {
     
     var body: some Scene {
         WindowGroup {

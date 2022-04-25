@@ -16,8 +16,9 @@ struct SettingView: View {
             Image("Background")
                 .resizable()
                 .ignoresSafeArea()
-            VStack(alignment: .center){
+            VStack(){
                 TopLogoBar()
+                Spacer()
                 VStack(spacing: 0){
                     ZStack{
                         RoundedRectangle(cornerRadius: 20)
@@ -26,8 +27,7 @@ struct SettingView: View {
                             .foregroundColor(.white)
                             .font(.system(size: 16))
                     }
-                    .frame(maxHeight: 20)
-                    .padding(20)
+                    .frame(maxWidth: UIScreen.main.bounds.width - 80, maxHeight: 20)
                     NavigateRowView(logoName: "Facebook", logoBackGround: .blue, image: "facebook-circle", link: "https://www.facebook.com", isTopCorner: true, isBottomCorner: false)
                     Divider()
                         .frame(width: UIScreen.main.bounds.width - 40)
@@ -41,7 +41,7 @@ struct SettingView: View {
                     Divider()
                         .frame(width: UIScreen.main.bounds.width - 40)
                 }
-
+                Spacer()
                 VStack(spacing: 0){
                     ZStack{
                         RoundedRectangle(cornerRadius: 20)
@@ -50,8 +50,7 @@ struct SettingView: View {
                             .foregroundColor(.white)
                             .font(.system(size: 16))
                     }
-                    .frame(maxHeight: 20)
-                    .padding(20)
+                    .frame(maxWidth: UIScreen.main.bounds.width - 80, maxHeight: 20)
                     RowView(icon: "gear", leftText: "Application", rightText: "3D Scanner", isTopCorner: true, isBottomCorner: false)
                     Divider()
                         .frame(width: UIScreen.main.bounds.width - 40)
@@ -68,7 +67,6 @@ struct SettingView: View {
                 }
                 Spacer()
                 TabBar(selectedTab: $tab.selectedTab)
-                Spacer()
             }
         }
         .ignoresSafeArea()

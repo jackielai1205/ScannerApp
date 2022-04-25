@@ -38,7 +38,7 @@ struct UploadModelView: View {
                 .ignoresSafeArea()
             VStack{
                 TopLogoBar()
-                SubmitForm(isShowing: $isShowing, images: $images, uploadID: $uploadID, picker: $picker, cancel: $cancel)
+                UploadModelForm(isShowing: $isShowing, images: $images, userID: $uploadID, picker: $picker, cancel: $cancel)
                     .frame(width: UIScreen.main.bounds.width - 30, height: UIScreen.main.bounds.height / 1.5)
                 Spacer()
                 TabBar(selectedTab: $tab.selectedTab)
