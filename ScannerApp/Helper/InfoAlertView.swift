@@ -74,7 +74,6 @@ struct InfoAlertView: View {
             .background(Color("Background").opacity(0.85))
             .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
             .cornerRadius(30)
-            .offset(y: -UIScreen.main.bounds.height / 4.5)
         } else {
             ZStack{
                 VStack{

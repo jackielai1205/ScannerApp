@@ -19,8 +19,7 @@ struct MenuView: View {
                 ZStack(alignment: .center, content: {
                     HomePageV2()
                         .statusBar(hidden: true)
-                })
-                    .ignoresSafeArea()
+                        .ignoresSafeArea()
             case "viewfinder.circle":
                 ZStack(alignment: .center, content: {
                     CameraView()
