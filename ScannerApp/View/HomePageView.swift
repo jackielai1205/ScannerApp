@@ -1,109 +1,212 @@
 //
-//  HomePageView.swift
+//  HomePageV2.swift
 //  ScannerApp
 //
-//  Created by Walter Siu on 11/3/2022.
+//  Created by Walter Siu on 12/4/2022.
 //
 
 import SwiftUI
-import SceneKit
+import WebKit
 
 struct HomePageView: View {
     
-    @State var startAnimation = false
-    @State var photoNumber:String = ""
-    @State var renderTime:String = ""
-    @State var rate:String = ""
+    @State var menu = 0
+    @State var page = 0
     @EnvironmentObject var tab:TabSettings
     
     var body: some View {
-        ZStack {
-            Color("Background")
+        
+        ZStack{
             Image("Background")
                 .resizable()
-                .ignoresSafeArea()
+                .ignoresSafeArea();
             VStack{
-                TopLogoBar()
-                ScrollView {
-                    VStack {
-                        HStack{
-                            SceneView(scene: SCNScene(named: "dragon.usdz") , options: [.autoenablesDefaultLighting,.allowsCameraControl])
-                                .frame(width: UIScreen.main.bounds.width / 3, height: UIScreen.main.bounds.height / 3)
-                                .padding(.leading, 10)
-                                .padding(.top, 5)
-                            VStack{
-                                Text(photoNumber).animation(.spring())
-                                Text(renderTime).animation(.spring())
-                                Text(rate).animation(.spring())
-                                Button {
-                                    startAnimation.toggle()
-                                } label: {
-                                    
-                                    Text("Model Info")
-                                        .foregroundColor(Color.black)
-                                }
-                            }
-                            .frame(width: 200, height: 200)
-                            .onChange(of: startAnimation) { _ in
-                            renderAnimation(startAnimation: startAnimation)
-                            }
-                        }
-                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 3, alignment: .leading)
+                TopLogoBar();
+                VStack{
+                    GeometryReader { x in
+                        Carousel(width: UIScreen.main.bounds.width, page: self.$page, height: x.frame(in: .global).height)
                     }
-                    SceneView(scene: SCNScene(named: "dragon.usdz") , options: [.autoenablesDefaultLighting,.allowsCameraControl])
-                        .frame(width: UIScreen.main.bounds.width / 3, height: UIScreen.main.bounds.height / 3)
-                        .padding(.leading, 10)
-                        .padding(.top, 5)
-                    SceneView(scene: SCNScene(named: "dragon.usdz") , options: [.autoenablesDefaultLighting,.allowsCameraControl])
-                        .frame(width: UIScreen.main.bounds.width / 3, height: UIScreen.main.bounds.height / 3)
-                        .padding(.leading, 10)
-                        .padding(.top, 5)
-                    SceneView(scene: SCNScene(named: "dragon.usdz") , options: [.autoenablesDefaultLighting,.allowsCameraControl])
-                        .frame(width: UIScreen.main.bounds.width / 3, height: UIScreen.main.bounds.height / 3)
-                        .padding(.leading, 10)
-                        .padding(.top, 5)
-                }
-                TabBar(selectedTab: $tab.selectedTab)
-            }
-        }
-    }
-    
-    func renderAnimation(startAnimation: Bool){
-        if (startAnimation) {
-            photoNumber = ""
-            "Photos number: 196".enumerated().forEach { index, character in
-                DispatchQueue.main.asyncAfter(deadline: .now() + Double(index) * 0.05){
-                        photoNumber += String(character)
-
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 1.6)
+                    PageControl(page: self.$page)
+                    Spacer()
+                    TabBar(selectedTab: $tab.selectedTab)
                 }
             }
-                renderTime = ""
-            "Render Time: Around 40 mins".enumerated().forEach { index, character in
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2 + Double(index) * 0.05){
-                        renderTime += String(character)
-                }
-            }
-                rate = ""
-            "Perfect Rate: 90%".enumerated().forEach { index, character in
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5 + Double(index) * 0.05){
-                        rate += String(character)
-                }
-            }
-        } else {
-            photoNumber = ""
-            renderTime = ""
-            rate = ""
         }
     }
 }
 
+struct WebList: View{
+    
+    @Binding var page: Int
+    
+    var body: some View{
+        HStack(spacing: 0){
+            ForEach(data){ i in
+                Card(url: URL(string: "http://www.google.com")!, page: self.$page, width: UIScreen.main.bounds.width, data: i)
+            }
+        }
+    }
+}
 
+struct Card: View{
+    
+    @State var url: URL
+    @State var showWeb = false
+    @Binding var page: Int
+    var width: CGFloat
+    var data: Type
+    
+    var body: some View{
+        
+        ZStack{
+            VStack{
+                NavigationView{
+                    VStack{
+                        Text(self.data.name)
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.white)
 
+                        Image(self.data.image)
+                            .resizable()
+                            .cornerRadius(20)
+                            .scaledToFit()
+                            .opacity(1)
+                            .frame(width: self.width - 50, height: 300)
+                        
+                        Text("Photo Number: " + self.data.photoNum)
+                            .font(.headline)
+                            .foregroundColor(Color.white)
+                            .fontWeight(.bold)
+                            .padding(.top, 2)
+                                            
+                        Text("Process Time: " + self.data.time + " min")
+                            .font(.headline)
+                            .foregroundColor(Color.white)
+                        
+                            .fontWeight(.bold)
+                            .padding(.top, 2)
 
+                        
+                        Button {
+                            showWeb.toggle()
+                        } label: {
+                            Text("Click Me")
+                                .fontWeight(.bold)
+                        }
+                        .frame(width: 100, height: 30)
+                        .background(Color.white)
+                        .foregroundColor(Color("Background"))
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                        .padding(.top, 2)
+                        .sheet(isPresented: $showWeb) {
+                            HomePageWebView(url: self.url)
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 25)
+                    .navigationTitle("")
+                    .navigationBarHidden(true)
+                    .background(Color("Background").opacity(0.85))
+                    .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
+                }
+                .frame(width: UIScreen.main.bounds.width / 1.3, height: UIScreen.main.bounds.height / 1.85, alignment: .center)
+                .cornerRadius(30)
+            }
+            .frame(width: self.width)
+        }
+    }
+}
 
+struct Carousel : UIViewRepresentable{
+    
+    func makeCoordinator() -> Coordinator {
+        return Carousel.Coordinator(parent1: self)
+    }
+    
+    var width : CGFloat
+    @Binding var page : Int
+    var height : CGFloat
+    
+    func makeUIView(context: Context) -> UIScrollView  {
+        let total = width * CGFloat(data.count)
+        let view = UIScrollView()
+        view.isPagingEnabled = true
+        view.contentSize = CGSize(width: total, height: 1.0)
+        view.bounces = true
+        view.showsVerticalScrollIndicator = false
+        view.showsHorizontalScrollIndicator = false
+        view.delegate = context.coordinator
+        
+        let view1 = UIHostingController(rootView: WebList(page: self.$page))
+        view1.view.frame = CGRect(x: 0, y: 0, width: total, height: self.height)
+        view1.view.backgroundColor = .clear
+        view.addSubview(view1.view)
+        return view
+    }
+    
+    func updateUIView(_ uiView: UIScrollView, context: Context) {
+        
+    }
+    
+    class Coordinator : NSObject, UIScrollViewDelegate{
+        
+        var parent: Carousel
+        
+        init(parent1: Carousel){
+          parent = parent1
+        }
+        
+        func scrollViewDidEndDecelerating(_ scrollView: UIScrollView){
+            let page = Int(scrollView.contentOffset.x / UIScreen.main.bounds.width)
+            self.parent.page = page
+        }
+    }
+}
 
-struct HomePageView_Previews: PreviewProvider {
+struct PageControl: UIViewRepresentable{
+
+    @Binding var page: Int
+    
+    func makeUIView(context: Context) -> UIPageControl {
+        let view = UIPageControl()
+        view.currentPageIndicatorTintColor = .green
+        view.pageIndicatorTintColor = UIColor.white
+        view.numberOfPages = data.count
+        view.currentPage = page
+        return view
+    }
+    
+    func updateUIView(_ uiView: UIPageControl, context: Context) {
+        
+        DispatchQueue.main.async {
+            
+            uiView.currentPage = self.page
+        }
+    }
+    
+}
+
+struct Type: Identifiable{
+    var id: Int
+    var name: String
+    var photoNum: String
+    var time: String
+    var image: String
+    var model: String
+}
+
+var data = [
+    Type(id: 0, name: "Dragon", photoNum: "196", time: "30", image: "dragon", model: "dragon.usdz"),
+    Type(id: 1, name: "Chair", photoNum: "20", time: "4", image: "Chair", model: "chair.usdz"),
+    Type(id: 2, name: "Bottle", photoNum: "20", time: "3", image: "bottle", model: "chair.usdz")
+]
+
+struct HomePageV2_Previews: PreviewProvider {
     static var previews: some View {
         HomePageView()
     }
 }
+
+

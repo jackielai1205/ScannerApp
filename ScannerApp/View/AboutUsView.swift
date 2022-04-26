@@ -66,6 +66,9 @@ struct AboutUsView: View {
                     if(self.showAlert == ShowAlert.shi){
                         InfoAlertView(showAlert: $showAlert, type: ShowAlert.shi, image: "dog", name: "ShiGuang Yu", major: "Computer Science", lang: ["javascript", "java", "c"], part: "Back End", github: URL(string: "http://www.google.com")!, linkedin: URL(string: "http://www.google.com")!, boxHeight: 180)
                     }
+                    if(self.showAlert == ShowAlert.jing){
+                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.jing, image: "dog", name: "Jing Ma", major: "AUT Staff", lang: [""], part: "Mentor", github: URL(string: "http://www.google.com")!, linkedin: URL(string: "http://www.google.com")!, boxHeight: 110)
+                    }
                     
                     ZStack(alignment: .center){
                         RoundedRectangle(cornerRadius: 20)
@@ -90,10 +93,6 @@ struct AboutUsView: View {
                     PersonCard(showAlert: $showAlert, type: ShowAlert.jing, image: "dog", name: "Jing Ma", major: "", lang: "", part: "Mentor", color: Color.purple)
                         .blur(radius: (showAlert != ShowAlert.none) ? 20 : 0)
                         .disabled(showAlert != ShowAlert.none ? true : false)
-
-                    if(self.showAlert == ShowAlert.jing){
-                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.jing, image: "dog", name: "Jing Ma", major: "AUT Staff", lang: [""], part: "Mentor", github: URL(string: "http://www.google.com")!, linkedin: URL(string: "http://www.google.com")!, boxHeight: 110)
-                    }
                 }
                 Spacer()
                 TabBar(selectedTab: $tab.selectedTab)

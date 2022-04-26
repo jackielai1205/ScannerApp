@@ -17,7 +17,7 @@ struct MenuView: View {
             switch tab.selectedTab{
             case "house":
                 ZStack(alignment: .center, content: {
-                    HomePageV2()
+                    HomePageView()
                 })
                     .ignoresSafeArea()
             case "viewfinder.circle":
