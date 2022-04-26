@@ -13,31 +13,66 @@ struct CameraView: View {
     
     @StateObject var camera = CameraModel()
     @EnvironmentObject var tab:TabSettings
+    @State var flashLightSwitch = false
+    var style = StrokeStyle(lineWidth: 2,
+                            lineCap: .round,
+                            lineJoin: .miter,
+                            miterLimit: 0,
+                            dash: [2, 4],
+                            dashPhase: 0)
     
     var body: some View {
         
         ZStack{
-            CameraPreview(camera: camera)
-                .ignoresSafeArea()
             
             VStack{
-                Spacer()
-                Button(action: {
-                        camera.takePic()
-                }, label: {
-                    ZStack{
-                        Circle()
-                            .fill(.white)
-                            .frame(width: 60, height: 60)
-
-                        Circle()
-                            .stroke(Color.white, lineWidth:4)
-                            .frame(width: 70, height: 70)
+                ZStack{
+                    Rectangle()
+                        .fill(Color.black)
+                    HStack{
+                        Spacer()
+                        Button(action: {
+                            flashLightSwitch.toggle()
+                            camera.toggleTorch(on: flashLightSwitch)
+                        }, label: {
+                            ZStack{
+                                Circle()
+                                    .stroke(style: style)
+                                
+                                Image(systemName: "bolt")
+                            }
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(Color.yellow)
+                        })
+                        .padding(30)
                     }
-                    .padding(.bottom, UIScreen.main.bounds.height / 3.3)
-                })
-                .frame(height: 75)
-                TabBar(selectedTab: $tab.selectedTab)
+                }
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/8)
+                CameraPreview(camera: camera)
+                ZStack(alignment:.center){
+                    Rectangle()
+                        .fill(Color.black)
+                    VStack{
+                        Spacer()
+                        Button(action: {
+                                camera.takePic()
+                        }, label: {
+                            ZStack{
+                                Circle()
+                                    .fill(.white)
+                                    .frame(width: 60, height: 60)
+
+                                Circle()
+                                    .stroke(Color.white, lineWidth:4)
+                                    .frame(width: 70, height: 70)
+                            }
+                        })
+                        .padding(.top, 20)
+                        TabBar(selectedTab: $tab.selectedTab)
+                            .ignoresSafeArea()
+                    }
+                }
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/4.4)
             }
         }
         .onAppear(
@@ -100,6 +135,28 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
         }
         catch{
             print(error.localizedDescription)
+        }
+    }
+    
+    func toggleTorch(on: Bool) {
+        guard let device = AVCaptureDevice.default(for: .video) else { return }
+
+        if device.hasTorch {
+            do {
+                try device.lockForConfiguration()
+
+                if on == true {
+                    device.torchMode = .on
+                } else {
+                    device.torchMode = .off
+                }
+
+                device.unlockForConfiguration()
+            } catch {
+                print("Torch could not be used")
+            }
+        } else {
+            print("Torch is not available")
         }
     }
     

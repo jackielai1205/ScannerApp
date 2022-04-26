@@ -57,7 +57,6 @@ struct PersonCard: View{
             }
         }
         .frame(width: UIScreen.main.bounds.width / 1, height: 90)
-        .statusBar(hidden: true)
         .padding(.bottom, 10)
         .animation(.spring())
     }

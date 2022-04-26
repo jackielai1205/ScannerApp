@@ -69,7 +69,7 @@ struct UploadModelForm: View {
                             .frame(width: UIScreen.main.bounds.width - 80, height: UIScreen.main.bounds.height / 15, alignment: .center)
                             .opacity(0.85)
                             .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
-                        Label(" No Image Selected", systemImage: "questionmark.circle")
+                        Label("No Image Selected", systemImage: "questionmark.circle")
                             .foregroundColor(Color.white)
                             .font(.title)
                     }
@@ -79,21 +79,22 @@ struct UploadModelForm: View {
                 Spacer()
                 HStack{
                     Button(action: {
-                        isLoading = true
-                        if(!images.isEmpty){
+                        if(!images.isEmpty && modelName != ""){
+                            isLoading = true
                             let form = createUploadMultiPartForm(images: images, userID: userID, modelName: modelName)
                             submitPostMultiPartForm(form: form, domain: "post")
                             isLoading = false
-                            self.message = "Images Uploaded"
-//                            if self.response?.code == 0{
-//                                self.message = "Images Uploaded(Transction ID: \(String(describing: self.response?.tranID ?? nil)))"
-//                            }else{
-//                                self.message = "No Image Selected."
-//                            }
+                            self.message = "Images uploaded"
                             self.isPresentMessage = true
                             withAnimation(.linear){
                                 images = []
                             }
+                        }else if(images.isEmpty){
+                            self.message = "Please select images"
+                            self.isPresentMessage = true
+                        }else if(modelName == ""){
+                            self.message = "Please enter model name"
+                            self.isPresentMessage = true
                         }
                     }, label: {
                         Text("Upload")
