@@ -71,7 +71,7 @@ struct UploadModelForm: View {
                             .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
                         Label("No Image Selected", systemImage: "questionmark.circle")
                             .foregroundColor(Color.white)
-                            .font(.title)
+                            .font(.system(size: 25, weight:.bold))
                     }
                     .offset(x: !images.isEmpty ? -2000 : 0)
                     .opacity(!images.isEmpty ? 0 : 1)

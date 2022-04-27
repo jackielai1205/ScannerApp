@@ -64,7 +64,7 @@ struct ListItem: View {
                                  .foregroundColor(model.status == 1 ? Color("DownloadText") : Color.black)
                         }
                         .background( NavigationLink("", destination: ModelDetailView(model: model)).opacity(0)
-                            .disabled(!(model.status == 1))
+//                            .disabled(!(model.status == 1))
                         )
                         .frame(maxWidth: .infinity)
                         .buttonStyle(BorderedButtonStyle())

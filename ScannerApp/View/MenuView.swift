@@ -17,9 +17,10 @@ struct MenuView: View {
             switch tab.selectedTab{
             case "house":
                 ZStack(alignment: .center, content: {
-                    HomePageV2()
+                    HomePageView()
                         .statusBar(hidden: true)
                         .ignoresSafeArea()
+                })
             case "viewfinder.circle":
                 ZStack(alignment: .center, content: {
                     CameraView()

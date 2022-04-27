@@ -55,6 +55,7 @@
 		46E65A0E2810096400D86DF9 /* TranscationsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E65A0D2810096400D86DF9 /* TranscationsData.swift */; };
 		46E995B02812561300534961 /* ModelInfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E995AF2812561300534961 /* ModelInfoRow.swift */; };
 		46E995B22812BB6400534961 /* QueryUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E995B12812BB6400534961 /* QueryUserResponse.swift */; };
+		46EDBB3128188DCA009A494C /* NoRecordFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EDBB3028188DCA009A494C /* NoRecordFoundView.swift */; };
 		46F6FDA027E2B7D90084CD30 /* UploadModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F6FD9F27E2B7D90084CD30 /* UploadModelView.swift */; };
 /* End PBXBuildFile section */
 
@@ -144,6 +145,7 @@
 		46E65A0D2810096400D86DF9 /* TranscationsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscationsData.swift; sourceTree = "<group>"; };
 		46E995AF2812561300534961 /* ModelInfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInfoRow.swift; sourceTree = "<group>"; };
 		46E995B12812BB6400534961 /* QueryUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryUserResponse.swift; sourceTree = "<group>"; };
+		46EDBB3028188DCA009A494C /* NoRecordFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoRecordFoundView.swift; sourceTree = "<group>"; };
 		46F6FD9F27E2B7D90084CD30 /* UploadModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadModelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -205,6 +207,7 @@
 		4628978B27D745F80080E663 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				46EDBB3028188DCA009A494C /* NoRecordFoundView.swift */,
 				46E65A00280A6FB700D86DF9 /* ListItem.swift */,
 				467E9C2A28092D4500BA4261 /* UploadModelForm.swift */,
 				467FCD232802DB8000D63964 /* MultiPartFormData.swift */,
@@ -556,6 +559,7 @@
 				46C474A527DDB631006075DB /* RowView.swift in Sources */,
 				46A7940C27FAA93A0054B0B2 /* ImagePicker.swift in Sources */,
 				4628978E27D958B50080E663 /* TabCurve.swift in Sources */,
+				46EDBB3128188DCA009A494C /* NoRecordFoundView.swift in Sources */,
 				46E65A01280A6FB700D86DF9 /* ListItem.swift in Sources */,
 				46E65A0E2810096400D86DF9 /* TranscationsData.swift in Sources */,
 				016CD80927DACD96006260B2 /* AboutUsView.swift in Sources */,
@@ -563,12 +567,8 @@
 				46449D5727D6170A00633CAE /* Model.swift in Sources */,
 				46C474A327DDAAD1006075DB /* SettingView.swift in Sources */,
 				46449D5927D6173500633CAE /* ModelListView.swift in Sources */,
-<<<<<<< HEAD
 				46449D2D27D616A700633CAE /* ScannerApp.swift in Sources */,
-=======
-				46449D2D27D616A700633CAE /* ScannerAppApp.swift in Sources */,
 				01B8EF382817FE69009A538A /* SelectModelView.swift in Sources */,
->>>>>>> 5fe29a218429f76d91565f48455fe1e885ed3005
 				016CD80D27DADFC0006260B2 /* TopLogoBar.swift in Sources */,
 				016CD80B27DAD2B9006260B2 /* Person.swift in Sources */,
 				017AD54A27D9B8E200DB6E5A /* LoadingView.swift in Sources */,

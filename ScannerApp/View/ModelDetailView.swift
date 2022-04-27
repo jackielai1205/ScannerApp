@@ -69,7 +69,6 @@ struct ModelDetailView: View {
                 Button("Yes"){
                     Task{
                         serverResponse = await deleteModel(tranID: model.tranID) ?? nil
-                        print(serverResponse)
                         if(serverResponse == nil){
                             displayMessage = "Can't receive data"
                         }
