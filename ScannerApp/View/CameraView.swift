@@ -68,7 +68,7 @@ struct CameraView: View {
                             }
                         })
                         .padding(.top, 20)
-                        TabBar(selectedTab: $tab.selectedTab)
+                        TabBar(selectedTab: $tab.selectedTab, isShowed: $tab.isShowing)
                             .ignoresSafeArea()
                     }
                 }
@@ -99,12 +99,10 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
         case .notDetermined:
             AVCaptureDevice.requestAccess(for: .video){
                 (status) in
-                
                 if status{
                     self.setUp()
                 }
             }
-            
         case .denied:
             self.alert.toggle()
             return
@@ -117,21 +115,15 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
     func setUp(){
         do{
             self.session.beginConfiguration()
-            
             let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
-            
             let input = try AVCaptureDeviceInput(device: device!)
-            
             if self.session.canAddInput(input){
                 self.session.addInput(input)
             }
-            
             if self.session.canAddOutput(self.output){
                 self.session.addOutput(self.output)
             }
-            
             self.session.commitConfiguration()
-            
         }
         catch{
             print(error.localizedDescription)
@@ -171,18 +163,6 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
             }
         }
     }
-    
-    func reTake(){
-        DispatchQueue.global(qos: .background).async {
-            self.session.startRunning()
-            print("Session started")
-            DispatchQueue.main.async {
-                self.isTaken.toggle()
-                self.isSaved = false;
-            }
-        }
-    }
-    
     
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
 

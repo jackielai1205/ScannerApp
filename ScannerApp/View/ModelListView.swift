@@ -82,7 +82,7 @@ struct ModelListView: View {
                                     .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10))
                         }
                     }
-                    TabBar(selectedTab: $tab.selectedTab)
+                    TabBar(selectedTab: $tab.selectedTab, isShowed: $tab.isShowing)
                 }
                 .ignoresSafeArea()
             }

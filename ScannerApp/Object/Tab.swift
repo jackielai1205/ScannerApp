@@ -9,4 +9,5 @@ import Foundation
 
 class TabSettings:ObservableObject{
     @Published var selectedTab = "house"
+    @Published var isShowing = false
 }

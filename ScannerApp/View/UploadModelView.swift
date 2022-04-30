@@ -41,7 +41,7 @@ struct UploadModelView: View {
                 UploadModelForm(isShowing: $isShowing, images: $images, userID: $uploadID, picker: $picker, cancel: $cancel)
                     .frame(width: UIScreen.main.bounds.width - 30, height: UIScreen.main.bounds.height / 1.5)
                 Spacer()
-                TabBar(selectedTab: $tab.selectedTab)
+                TabBar(selectedTab: $tab.selectedTab, isShowed: $tab.isShowing)
             }
             .sheet(isPresented: $picker, content: {
                 ImagePicker(cancel: $cancel, image: $images, picker: $picker)

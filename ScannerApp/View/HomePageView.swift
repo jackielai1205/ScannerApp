@@ -29,7 +29,7 @@ struct HomePageView: View {
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 1.6)
                     PageControl(page: self.$page)
                     Spacer()
-                    TabBar(selectedTab: $tab.selectedTab)
+                    TabBar(selectedTab: $tab.selectedTab, isShowed: $tab.isShowing)
                 }
             }
         }
