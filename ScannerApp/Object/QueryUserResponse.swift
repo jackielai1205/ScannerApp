@@ -13,7 +13,7 @@ struct QueryUserResponse: Codable{
     var trans:[TransactionsData]
     
     init(){
-        code = 0
+        code = -1
         message = ""
         trans = [TransactionsData]()
     }

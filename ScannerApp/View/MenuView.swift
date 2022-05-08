@@ -19,32 +19,38 @@ struct MenuView: View {
                 ZStack(alignment: .center, content: {
 //                    SelectModelView()
                     HomePageView()
+                        .statusBar(hidden: true)
+                        .ignoresSafeArea()
                 })
-                    .ignoresSafeArea()
             case "viewfinder.circle":
                 ZStack(alignment: .center, content: {
                     CameraView()
+                        .statusBar(hidden: true)
                 })
                     .ignoresSafeArea()
             case "photo":
                 ZStack(alignment: .center, content: {
                     ModelListView()
+                        .statusBar(hidden: true)
                 })
                     .ignoresSafeArea()
             case "icloud.and.arrow.up":
                 ZStack(alignment: .center, content: {
                     UploadModelView()
+                        .statusBar(hidden: true)
                 })
                     .ignoresSafeArea()
             case "person.3":
                 ZStack(alignment: .center, content: {
                     AboutUsView()
+                        .statusBar(hidden: true)
 
                 })
                     .ignoresSafeArea()
             case "gearshape":
                 ZStack(alignment: .center, content: {
                     SettingView()
+                        .statusBar(hidden: true)
                 })
             default:
                 ZStack(alignment: .center, content: {

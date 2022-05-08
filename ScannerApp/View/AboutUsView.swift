@@ -95,7 +95,7 @@ struct AboutUsView: View {
                         .disabled(showAlert != ShowAlert.none ? true : false)
                 }
                 Spacer()
-                TabBar(selectedTab: $tab.selectedTab)
+                TabBar(selectedTab: $tab.selectedTab, isShowed: $tab.isShowing)
                     .disabled(showAlert != ShowAlert.none ? true : false)
                     .blur(radius: (showAlert != ShowAlert.none) ? 20 : 0)
             }

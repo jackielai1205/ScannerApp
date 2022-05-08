@@ -69,7 +69,6 @@ struct ModelDetailView: View {
                 Button("Yes"){
                     Task{
                         serverResponse = await deleteModel(tranID: model.tranID) ?? nil
-                        print(serverResponse)
                         if(serverResponse == nil){
                             displayMessage = "Can't receive data"
                         }
@@ -93,17 +92,16 @@ struct ModelDetailView: View {
 
 func deleteModel(tranID:Int, completion: @escaping (DeletResponse?) -> Void) {
     print("Delete Model: \(String(tranID))")
+    
     let requestHeaders:[String:String] = ["Content-Type" : "application/x-www-form-urlencoded"]
-    
-    
     var requestBodyComponents = URLComponents()
     requestBodyComponents.queryItems = [URLQueryItem(name: "tranID", value: String(tranID))]
     var request = URLRequest(url: URL(string: "http://47.101.40.95/delete_model")!)
     request.httpMethod = "POST"
     request.allHTTPHeaderFields = requestHeaders
     request.httpBody = requestBodyComponents.query?.data(using: .utf8)
+    
     let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
-        
         if let responseData = data {
             if let result = try? JSONDecoder().decode(DeletResponse.self, from: responseData){
                 completion(result)

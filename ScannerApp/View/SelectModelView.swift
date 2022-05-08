@@ -80,7 +80,7 @@ struct SelectModelView: View {
                 .cornerRadius(30)
                 .padding(.top, 10)
                 Spacer()
-                TabBar(selectedTab: $tab.selectedTab)
+                TabBar(selectedTab: $tab.selectedTab, isShowed: $tab.isShowing)
             }
             .ignoresSafeArea()
         }

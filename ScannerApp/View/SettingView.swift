@@ -66,7 +66,7 @@ struct SettingView: View {
                     RowView(icon: "ipad.and.iphone", leftText: "Version", rightText: "0.0.2", isTopCorner: false, isBottomCorner: true)
                 }
                 Spacer()
-                TabBar(selectedTab: $tab.selectedTab)
+                TabBar(selectedTab: $tab.selectedTab, isShowed: $tab.isShowing)
             }
         }
         .ignoresSafeArea()

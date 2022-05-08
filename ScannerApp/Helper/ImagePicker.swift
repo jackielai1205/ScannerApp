@@ -49,7 +49,6 @@ struct ImagePicker : UIViewControllerRepresentable {
                     img.itemProvider.loadObject(ofClass: UIImage.self){
                         (image, err) in
                         guard let image = image else{
-                            print(err)
                             return
                         }
                         if self.parent.cancel == false{

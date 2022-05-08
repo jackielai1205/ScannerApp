@@ -20,9 +20,24 @@ struct ListItem: View {
                             .font(.system(size: 20.0, weight: .bold, design: .rounded))
                             .foregroundColor(Color.black)
                         Spacer()
-                        Text(String(model.status))
-                            .foregroundColor(model.status == 1  ? Color.green : Color.black)
-                            .font(.system(size: 20, weight: .bold))
+                        switch(model.status){
+                        case 0:
+                            Text("Processing")
+                                .foregroundColor(Color.gray)
+                                .font(.system(size: 20, weight: .bold))
+                        case 1:
+                            Text("Ready")
+                                .foregroundColor(Color.green)
+                                .font(.system(size: 20, weight: .bold))
+                        case 2:
+                            Text("Failure")
+                                .foregroundColor(Color.red)
+                                .font(.system(size: 20, weight: .bold))
+                        default:
+                            Text("Error")
+                                .foregroundColor(Color.red)
+                                .font(.system(size: 20, weight: .bold))
+                        }
                     }
                     .padding(.horizontal, 10)
                     VStack{
@@ -40,31 +55,17 @@ struct ListItem: View {
                     .font(.system(size: 16, weight: .medium, design: .rounded))
                     .foregroundColor(Color.white)
                     HStack(alignment:.center){
-                        Button(action: {
-
-                        }, label: {
-                            ZStack{
-                                RoundedRectangle(cornerRadius: 10)
-                                    .fill(Color("Delete"))
-                                Label("Delete", systemImage: "xmark.circle")
-                                     .font(.system(size: 16, weight: .bold, design: .rounded))
-                                     .padding(3)
-                                     .foregroundColor(Color("DeleteText"))
-                            }
-                        })
-                        .frame(maxWidth: .infinity)
-                        .buttonStyle(BorderedButtonStyle())
-                        Spacer()
-                        NavigationLink(destination: LazyView(ModelDetailView(model: model)), label: {
-                            ZStack{
-                                RoundedRectangle(cornerRadius: 10)
-                                    .fill(Color("Download"))
-                                Label("Download", systemImage: "arrow.down.circle")
-                                     .font(.system(size: 16, weight: .bold, design: .rounded))
-                                     .padding(3)
-                                     .foregroundColor(Color("DownloadText"))
-                            }
-                        })
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(model.status == 1 ? Color("Download") : Color.gray)
+                            Label("View", systemImage: "arrow.down.circle")
+                                 .font(.system(size: 16, weight: .bold, design: .rounded))
+                                 .padding(3)
+                                 .foregroundColor(model.status == 1 ? Color("DownloadText") : Color.black)
+                        }
+                        .background( NavigationLink("", destination: ModelDetailView(model: model)).opacity(0)
+//                            .disabled(!(model.status == 1))
+                        )
                         .frame(maxWidth: .infinity)
                         .buttonStyle(BorderedButtonStyle())
                     }

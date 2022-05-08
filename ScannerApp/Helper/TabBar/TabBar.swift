@@ -11,7 +11,7 @@ struct TabBar: View {
     
     @Binding var selectedTab:String
     @State var tabPoints : [CGFloat] = []
-    @State var isShowed = true
+    @Binding var isShowed:Bool
     
     var body: some View {
         
