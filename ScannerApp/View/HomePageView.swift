@@ -73,20 +73,20 @@ struct Card: View{
                             .cornerRadius(20)
                             .scaledToFit()
                             .opacity(1)
-                            .frame(width: self.width - 50, height: 300)
+                            .frame(width: self.width - 50, height: UIScreen.main.bounds.height / 3)
                         
                         Text("Photo Number: " + self.data.photoNum)
                             .font(.headline)
                             .foregroundColor(Color.white)
                             .fontWeight(.bold)
-                            .padding(.top, 2)
+                            .padding(.top, 1)
                                             
                         Text("Process Time: " + self.data.time + " min")
                             .font(.headline)
                             .foregroundColor(Color.white)
                         
                             .fontWeight(.bold)
-                            .padding(.top, 2)
+                            .padding(.top, 1)
 
                         
                         Button {
@@ -99,7 +99,7 @@ struct Card: View{
                         .background(Color.white)
                         .foregroundColor(Color("Background"))
                         .clipShape(RoundedRectangle(cornerRadius: 20))
-                        .padding(.top, 2)
+                        .padding(.top, 1)
                         .sheet(isPresented: $showWeb) {
                             HomePageWebView(url: self.url)
                         }
@@ -111,7 +111,7 @@ struct Card: View{
                     .background(Color("Background").opacity(0.85))
                     .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
                 }
-                .frame(width: UIScreen.main.bounds.width / 1.3, height: UIScreen.main.bounds.height / 1.85, alignment: .center)
+                .frame(width: UIScreen.main.bounds.width / 1.3, height: UIScreen.main.bounds.height / 1.9, alignment: .center)
                 .cornerRadius(30)
             }
             .frame(width: self.width)

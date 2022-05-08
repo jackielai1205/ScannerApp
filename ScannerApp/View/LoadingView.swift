@@ -47,7 +47,7 @@ struct LoadingView: View {
                             Text("Copyright © 2022\nAll rights reserved")
                             .foregroundColor(Color(red: 66/255, green: 150/255, blue: 157/255))
                             .opacity(startAnimation ? 1 : 0)
-                            .offset(y: 10)
+                            .offset(y: UIScreen.main.bounds.height / 50 - 45)
                             .font(.footnote)
                             .multilineTextAlignment(.center)
                         }

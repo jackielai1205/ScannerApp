@@ -52,7 +52,7 @@ struct SelectModelView: View {
                             .frame(width: UIScreen.main.bounds.width / 1.3, height: UIScreen.main.bounds.height / 1.9)
                                         .cornerRadius(20)
                                         .padding(.top, 10)
-                        VStack {
+                        HStack {
                             Button {
                                 openFile.toggle()
                             } label: {
@@ -69,6 +69,10 @@ struct SelectModelView: View {
                             .background(Color.gray)
                             .clipShape(RoundedRectangle(cornerRadius: 20))
                             .padding(.top, 10)
+                            
+                            NavigationLink(destination: HomePageView(), label: {
+                                Text("Back")
+                            })
                         }
                     }
                 }
