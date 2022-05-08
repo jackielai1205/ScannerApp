@@ -70,17 +70,31 @@ struct SelectModelView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 20))
                             .padding(.top, 10)
                             
-                            NavigationLink(destination: HomePageView(), label: {
-                                Text("Back")
+                            NavigationLink(destination: LazyView(ModelListView()), label: {
+                                RoundedRectangle(cornerRadius: 20)
+                                    .fill(Color.gray)
+                                    .frame(width: 150, height: 50)
+                                    .padding(.top, 10)
+                                    .overlay(
+                                        HStack{
+                                            Image(systemName: "arrowshape.turn.up.backward.fill")
+                                            Text("Back")
+                                                .fontWeight(.bold)
+                                                .font(.system(size: 20))
+                                        }
+                                            .padding(.top, 10)
+                                        .frame(width: 150, height: 50)
+                                        .foregroundColor(Color.white)
+                                    )
                             })
                         }
                     }
                 }
+                .navigationBarBackButtonHidden(true)
                 .frame(width: UIScreen.main.bounds.width / 1.1, height: UIScreen.main.bounds.height / 1.55)
                 .cornerRadius(30)
                 .padding(.top, 10)
                 Spacer()
-                TabBar(selectedTab: $tab.selectedTab, isShowed: $tab.isShowing)
             }
             .ignoresSafeArea()
         }
