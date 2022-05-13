@@ -66,7 +66,7 @@ struct ModelListView: View {
                     }
                     .frame(width: UIScreen.main.bounds.width - 40, height: UIScreen.main.bounds.height / 10)
                     List{
-                        if result.code == 0{
+                        if result.code == 0 && result.trans.count > 0{
                             ForEach(result.trans, id:\.self){
                                 data in
                                 ListItem(model: data)
@@ -102,7 +102,7 @@ struct ModelListView: View {
         
         var requestBodyComponents = URLComponents()
         requestBodyComponents.queryItems = [URLQueryItem(name: "userID", value: uploadID)]
-        var request = URLRequest(url: URL(string: "http://47.101.40.95/query_user")!)
+        var request = URLRequest(url: URL(string: "http://192.168.1.204:8080/query_user")!)
         request.httpMethod = "POST"
         request.allHTTPHeaderFields = requestHeaders
         request.httpBody = requestBodyComponents.query?.data(using: .utf8)
@@ -135,7 +135,7 @@ struct ModelListView: View {
     }
 }
 
-struct ModelView_Previews: PreviewProvider {
+struct ModelListView_Previews: PreviewProvider {
     static var previews: some View {
         ModelListView()
     }

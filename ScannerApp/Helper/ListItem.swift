@@ -57,14 +57,14 @@ struct ListItem: View {
                     HStack(alignment:.center){
                         ZStack{
                             RoundedRectangle(cornerRadius: 10)
-                                .fill(model.status == 1 ? Color("Download") : Color.gray)
-                            Label("View", systemImage: "arrow.down.circle")
+                                .fill(getColor())
+                            Label(getButtonText(), systemImage: model.status == 1 ? "arrow.down.circle" : "xmark.circle")
                                  .font(.system(size: 16, weight: .bold, design: .rounded))
                                  .padding(3)
-                                 .foregroundColor(model.status == 1 ? Color("DownloadText") : Color.black)
+                                 .foregroundColor(Color.black)
                         }
                         .background( NavigationLink("", destination: ModelDetailView(model: model)).opacity(0)
-//                            .disabled(!(model.status == 1))
+                            .disabled(!(model.status == 1))
                         )
                         .frame(maxWidth: .infinity)
                         .buttonStyle(BorderedButtonStyle())
@@ -72,6 +72,34 @@ struct ListItem: View {
                 }
             }
         }
+    }
+    
+    func getColor()->Color{
+        var color = Color.gray
+        switch (model.status){
+        case 1:
+            color = Color("Download")
+        case 2:
+            color = Color.red
+        default:
+            color = Color.gray
+        }
+        return color
+    }
+    
+    func getButtonText()->String{
+        var text:String
+        switch(model.status){
+        case 0:
+            text = "Please wait. Processing..."
+        case 1:
+            text = "Click to View"
+        case 2:
+            text = "Fail to convert"
+        default:
+            text = "Error"
+        }
+        return text
     }
 }
 

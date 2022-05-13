@@ -10,6 +10,7 @@ import Foundation
 struct TransactionsData: Codable, Hashable{
     var tranID: Int
     var userID:String
+    var location:String
     var date: String
     var modelName: String
     var status: Int

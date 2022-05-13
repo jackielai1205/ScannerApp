@@ -43,11 +43,12 @@
 		467E9C2F2809733100BA4261 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467E9C2E2809733100BA4261 /* Tab.swift */; };
 		467E9C3128097DBD00BA4261 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467E9C3028097DBD00BA4261 /* LazyView.swift */; };
 		467FCD242802DB8000D63964 /* MultiPartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467FCD232802DB8000D63964 /* MultiPartFormData.swift */; };
+		46955753282BD26C00B6E9C0 /* ModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46955752282BD26C00B6E9C0 /* ModelTest.swift */; };
+		46955755282D104400B6E9C0 /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46955754282D104400B6E9C0 /* ModelView.swift */; };
 		4699FE8727DEE2A500B83A72 /* NavigateRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699FE8627DEE2A500B83A72 /* NavigateRowView.swift */; };
 		46A7940C27FAA93A0054B0B2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A7940B27FAA93A0054B0B2 /* ImagePicker.swift */; };
 		46C474A327DDAAD1006075DB /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C474A227DDAAD1006075DB /* SettingView.swift */; };
 		46C474A527DDB631006075DB /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C474A427DDB631006075DB /* RowView.swift */; };
-		46E534FE2811519100C569F0 /* HtmlWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E534FD2811519100C569F0 /* HtmlWebView.swift */; };
 		46E535222811594800C569F0 /* index-2.html in Resources */ = {isa = PBXBuildFile; fileRef = 46E535052811592600C569F0 /* index-2.html */; };
 		46E535232811594800C569F0 /* model.ply in Resources */ = {isa = PBXBuildFile; fileRef = 46E535062811592600C569F0 /* model.ply */; };
 		46E535242811594800C569F0 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 46E535072811592600C569F0 /* index.html */; };
@@ -114,11 +115,12 @@
 		467E9C2E2809733100BA4261 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		467E9C3028097DBD00BA4261 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 		467FCD232802DB8000D63964 /* MultiPartFormData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPartFormData.swift; sourceTree = "<group>"; };
+		46955752282BD26C00B6E9C0 /* ModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTest.swift; sourceTree = "<group>"; };
+		46955754282D104400B6E9C0 /* ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
 		4699FE8627DEE2A500B83A72 /* NavigateRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateRowView.swift; sourceTree = "<group>"; };
 		46A7940B27FAA93A0054B0B2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		46C474A227DDAAD1006075DB /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		46C474A427DDB631006075DB /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
-		46E534FD2811519100C569F0 /* HtmlWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlWebView.swift; sourceTree = "<group>"; };
 		46E535052811592600C569F0 /* index-2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "index-2.html"; sourceTree = "<group>"; };
 		46E535062811592600C569F0 /* model.ply */ = {isa = PBXFileReference; lastKnownFileType = text; path = model.ply; sourceTree = "<group>"; };
 		46E535072811592600C569F0 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				467E9C2C280968BE00BA4261 /* InstructionView.swift */,
 				01C8298E280A9FB7004DE535 /* HomePageV2.swift */,
 				01B8EF372817FE69009A538A /* SelectModelView.swift */,
+				46955754282D104400B6E9C0 /* ModelView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -219,7 +222,6 @@
 				01C82995280AA044004DE535 /* PersonCard.swift */,
 				01C82997280AA060004DE535 /* InfoAlertView.swift */,
 				46E995AF2812561300534961 /* ModelInfoRow.swift */,
-				46E534FD2811519100C569F0 /* HtmlWebView.swift */,
 				01B8EF392818018C009A538A /* HomePageWebView.swift */,
 				4628978C27D958A20080E663 /* TabBar */,
 			);
@@ -400,6 +402,7 @@
 				46E995B12812BB6400534961 /* QueryUserResponse.swift */,
 				46632A40281409320000BB08 /* PostResponse.swift */,
 				466BEE332814F51A00F5B4FD /* DeleteResponse.swift */,
+				46955752282BD26C00B6E9C0 /* ModelTest.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46955753282BD26C00B6E9C0 /* ModelTest.swift in Sources */,
 				467E9C292808145100BA4261 /* ModelDetailView.swift in Sources */,
 				467FCD242802DB8000D63964 /* MultiPartFormData.swift in Sources */,
 				46449D2F27D616A700633CAE /* MenuView.swift in Sources */,
@@ -565,6 +569,7 @@
 				016CD80927DACD96006260B2 /* AboutUsView.swift in Sources */,
 				4699FE8727DEE2A500B83A72 /* NavigateRowView.swift in Sources */,
 				46449D5727D6170A00633CAE /* Model.swift in Sources */,
+				46955755282D104400B6E9C0 /* ModelView.swift in Sources */,
 				46C474A327DDAAD1006075DB /* SettingView.swift in Sources */,
 				46449D5927D6173500633CAE /* ModelListView.swift in Sources */,
 				46449D2D27D616A700633CAE /* ScannerApp.swift in Sources */,
@@ -585,7 +590,6 @@
 				467E9C3128097DBD00BA4261 /* LazyView.swift in Sources */,
 				01C82996280AA044004DE535 /* PersonCard.swift in Sources */,
 				467E9C2D280968BE00BA4261 /* InstructionView.swift in Sources */,
-				46E534FE2811519100C569F0 /* HtmlWebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
