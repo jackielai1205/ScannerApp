@@ -43,7 +43,7 @@ struct WebList: View{
     var body: some View{
         HStack(spacing: 0){
             ForEach(data){ i in
-                Card(url: URL(string: "http://www.google.com")!, page: self.$page, width: UIScreen.main.bounds.width, data: i)
+                Card(url: URL(string: "https://www.3dviewer.net/#model=https://124.222.117.223:8080/static/model.ply")!, page: self.$page, width: UIScreen.main.bounds.width, data: i)
             }
         }
     }
@@ -81,7 +81,7 @@ struct Card: View{
                             .fontWeight(.bold)
                             .padding(.top, 1)
                                             
-                        Text("Process Time: " + self.data.time + " min")
+                        Text("Process Time: " + self.data.time + " mins")
                             .font(.headline)
                             .foregroundColor(Color.white)
                         

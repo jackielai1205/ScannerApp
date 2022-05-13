@@ -1,5 +1,5 @@
 //
-//  HtmlWebView.swift
+//  ModelListItem.swift
 //  ScannerApp
 //
 //  Created by Jackie Tin Lok Lai on 21/4/2022.
@@ -8,7 +8,7 @@
 import SwiftUI
 import WebKit
 
-struct WebView: UIViewRepresentable{
+struct ModelListItem: UIViewRepresentable{
     
     let htmlFileName: String
     private let webView = WKWebView()
@@ -56,7 +56,7 @@ struct WebView: UIViewRepresentable{
 
 struct HtmlWebView: View {
     var body: some View {
-        WebView(htmlFileName: "index")
+        ModelListItem(htmlFileName: "index")
     }
 }
 
