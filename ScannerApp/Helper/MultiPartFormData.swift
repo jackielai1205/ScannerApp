@@ -26,7 +26,7 @@ func createUploadMultiPartForm(images:[UIImage], userID:String, modelName:String
 func submitPostMultiPartForm(form:MultipartForm, domain:String){
     let session = URLSession.shared
     
-    guard let url = URL(string: "http://47.101.40.95/\(domain)") else {
+    guard let url = URL(string: "http://192.168.1.204:8080/fileupload") else {
         print("Error URL")
         return
     }

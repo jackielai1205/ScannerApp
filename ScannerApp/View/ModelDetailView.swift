@@ -26,17 +26,13 @@ struct ModelDetailView: View {
             VStack{
                 TopLogoBar()
                     .ignoresSafeArea()
-                HtmlWebView()
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                    .padding(.horizontal, 20)
-                    .padding(.bottom, 20)
+                Spacer()
                 ZStack{
                     RoundedRectangle(cornerRadius: 20)
                         .fill(Color("Background")
                             .opacity(0.85))
                         .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
                         .padding(.horizontal,10)
-                        .padding(.bottom,10)
                     VStack(spacing: 5){
                         ZStack{
                             RoundedRectangle(cornerRadius: 20)
@@ -45,6 +41,9 @@ struct ModelDetailView: View {
                                 .font(Font.title3.bold())
                         }
                         .frame(maxWidth: UIScreen.main.bounds.width - 40, maxHeight: 30)
+                        ModelView(model: model)
+                            .frame(maxWidth: UIScreen.main.bounds.width - 50, maxHeight: UIScreen.main.bounds.height / 2.5)
+                            .padding(.horizontal)
                         ModelInfoRow(description: "Model ID:", sfImage: "info.circle", data: String(model.tranID))
                         Divider()
                         ModelInfoRow(description: "Model Name:", sfImage: "car", data: model.modelName)
@@ -96,7 +95,7 @@ func deleteModel(tranID:Int, completion: @escaping (DeletResponse?) -> Void) {
     let requestHeaders:[String:String] = ["Content-Type" : "application/x-www-form-urlencoded"]
     var requestBodyComponents = URLComponents()
     requestBodyComponents.queryItems = [URLQueryItem(name: "tranID", value: String(tranID))]
-    var request = URLRequest(url: URL(string: "http://47.101.40.95/delete_model")!)
+    var request = URLRequest(url: URL(string: "http://192.168.1.204:8080/delete_model")!)
     request.httpMethod = "POST"
     request.allHTTPHeaderFields = requestHeaders
     request.httpBody = requestBodyComponents.query?.data(using: .utf8)
@@ -104,6 +103,7 @@ func deleteModel(tranID:Int, completion: @escaping (DeletResponse?) -> Void) {
     let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
         if let responseData = data {
             if let result = try? JSONDecoder().decode(DeletResponse.self, from: responseData){
+                print(result)
                 completion(result)
             }else{
                 completion(nil)
@@ -126,7 +126,7 @@ func deleteModel(tranID:Int) async -> DeletResponse?{
 
 struct ModelDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ModelDetailView(model: TransactionsData(tranID: 1, userID: "12313132", date: "2022-4-4", modelName: "Chair", status: 0))
+        ModelDetailView(model: TransactionsData(tranID: 1, userID: "12313132", location: "123", date: "2022-4-4", modelName: "Chair", status: 0))
             .previewDevice(PreviewDevice(rawValue: "iPhone 13 Pro"))
     }
 }
@@ -147,21 +147,3 @@ struct BackButton : View{
         .padding()
     }
 }
-
-
-//let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
-//
-//    guard let responseData = data else {
-//        print("Error: did not receive data")
-//        return
-//    }
-//
-//    let decoder = JSONDecoder()
-//    do {
-//        serverResponse = try decoder.decode(DeletResponse.self, from: responseData)
-//        print(serverResponse)
-//    } catch {
-//        print("error trying to convert data to JSON")
-//    }
-//}
-//task.resume()
