@@ -7,6 +7,7 @@
 
 import SwiftUI
 import WebKit
+import SceneKit
 
 struct HomePageView: View {
     
@@ -24,7 +25,7 @@ struct HomePageView: View {
                 TopLogoBar();
                 VStack{
                     GeometryReader { x in
-                        Carousel(width: UIScreen.main.bounds.width, page: self.$page, height: x.frame(in: .global).height)
+                        Carousel(width: UIScreen.main.bounds.width, height: x.frame(in: .global).height, page: self.$page)
                     }
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 1.6)
                     PageControl(page: self.$page)
@@ -43,7 +44,7 @@ struct WebList: View{
     var body: some View{
         HStack(spacing: 0){
             ForEach(data){ i in
-                Card(url: URL(string: "https://www.3dviewer.net/")!, page: self.$page, width: UIScreen.main.bounds.width, data: i)
+                Card(page: self.$page, width: UIScreen.main.bounds.width, data: i)
             }
         }
     }
@@ -51,8 +52,7 @@ struct WebList: View{
 
 struct Card: View{
     
-    @State var url: URL
-    @State var showWeb = false
+    @State var isDisplay = false
     @Binding var page: Int
     var width: CGFloat
     var data: Type
@@ -67,7 +67,7 @@ struct Card: View{
                             .font(.headline)
                             .fontWeight(.bold)
                             .foregroundColor(Color.white)
-
+                        
                         Image(self.data.image)
                             .resizable()
                             .cornerRadius(20)
@@ -80,17 +80,17 @@ struct Card: View{
                             .foregroundColor(Color.white)
                             .fontWeight(.bold)
                             .padding(.top, 1)
-                                            
+                        
                         Text("Process Time: " + self.data.time + " min")
                             .font(.headline)
                             .foregroundColor(Color.white)
                         
                             .fontWeight(.bold)
                             .padding(.top, 1)
-
+                        
                         
                         Button {
-                            showWeb.toggle()
+                            isDisplay.toggle()
                         } label: {
                             Text("Click Me")
                                 .fontWeight(.bold)
@@ -100,8 +100,35 @@ struct Card: View{
                         .foregroundColor(Color("Background"))
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                         .padding(.top, 1)
-                        .sheet(isPresented: $showWeb) {
-                            HomePageWebView(url: self.url)
+                        .sheet(isPresented: $isDisplay) {
+                            //                            HomePageWebView(url: self.url)
+                            ZStack{
+                                Rectangle()
+                                    .fill(Color("Background"))
+                                    .ignoresSafeArea()
+                                VStack{
+                                    SceneView(scene: SCNScene(named: "dragon.usdz") , options: [.autoenablesDefaultLighting,.allowsCameraControl])
+                                        .frame(width: UIScreen.main.bounds.width - 50, height: UIScreen.main.bounds.height / 1.55, alignment: .center)
+                                        .cornerRadius(20)
+                                    Button(action: {
+                                        isDisplay.toggle()
+                                    }, label: {
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .fill(Color.gray)
+                                            .frame(width: 150, height: 50)
+                                            .overlay(
+                                                HStack{
+                                                    Image(systemName: "arrowshape.turn.up.backward.fill")
+                                                    Text("Back")
+                                                        .fontWeight(.bold)
+                                                        .font(.system(size: 20))
+                                                }
+                                                .frame(width: 150, height: 50)
+                                                .foregroundColor(Color.white)
+                                            )
+                                    })
+                                }
+                            }
                         }
                     }
                     .padding(.horizontal, 20)
@@ -126,8 +153,8 @@ struct Carousel : UIViewRepresentable{
     }
     
     var width : CGFloat
-    @Binding var page : Int
     var height : CGFloat
+    @Binding var page : Int
     
     func makeUIView(context: Context) -> UIScrollView  {
         let total = width * CGFloat(data.count)
@@ -155,7 +182,7 @@ struct Carousel : UIViewRepresentable{
         var parent: Carousel
         
         init(parent1: Carousel){
-          parent = parent1
+            parent = parent1
         }
         
         func scrollViewDidEndDecelerating(_ scrollView: UIScrollView){
@@ -166,7 +193,7 @@ struct Carousel : UIViewRepresentable{
 }
 
 struct PageControl: UIViewRepresentable{
-
+    
     @Binding var page: Int
     
     func makeUIView(context: Context) -> UIPageControl {

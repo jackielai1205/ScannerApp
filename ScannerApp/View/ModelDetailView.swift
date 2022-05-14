@@ -33,7 +33,7 @@ struct ModelDetailView: View {
                             .opacity(0.85))
                         .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
                         .padding(.horizontal,10)
-                    VStack(spacing: 5){
+                    VStack(alignment: .center){
                         ZStack{
                             RoundedRectangle(cornerRadius: 20)
                                 .fill(Color.gray)
@@ -44,12 +44,17 @@ struct ModelDetailView: View {
                         ModelView(model: model)
                             .frame(maxWidth: UIScreen.main.bounds.width - 50, maxHeight: UIScreen.main.bounds.height / 2.5)
                             .padding(.horizontal)
-                        ModelInfoRow(description: "Model ID:", sfImage: "info.circle", data: String(model.tranID))
-                        Divider()
-                        ModelInfoRow(description: "Model Name:", sfImage: "car", data: model.modelName)
-                        Divider()
-                        ModelInfoRow(description: "Receive Time", sfImage: "clock.badge.checkmark", data: model.date)
-                        Divider()
+                        VStack(alignment:.leading){
+                            ModelInfoRow(description: "Model ID:", sfImage: "info.circle", data: String(model.tranID))
+                            Divider()
+                            ModelInfoRow(description: "Model Name:", sfImage: "car", data: model.modelName)
+                            Divider()
+                            ModelInfoRow(description: "Receive Data", sfImage: "calendar.circle", data: model.date)
+                            Divider()
+                            ModelInfoRow(description: "Receive Time", sfImage: "clock", data: model.time)
+                            Divider()
+                            ModelInfoRow(description: "Process Time", sfImage: "forward.circle", data: model.processTime ?? "Waiting to Process")
+                        }
                         HStack{
                             Button(action: {
                                 isPresentDeleteMessage = true
@@ -126,7 +131,7 @@ func deleteModel(tranID:Int) async -> DeletResponse?{
 
 struct ModelDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ModelDetailView(model: TransactionsData(tranID: 1, userID: "12313132", location: "123", date: "2022-4-4", modelName: "Chair", status: 0))
+        ModelDetailView(model: TransactionsData(tranID: 1, userID: "12313132", location: "123", date: "2022-4-4", time: "12:30", modelName: "Chair", status: 0, processTime: "1505"))
             .previewDevice(PreviewDevice(rawValue: "iPhone 13 Pro"))
     }
 }

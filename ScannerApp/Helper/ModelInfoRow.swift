@@ -20,7 +20,6 @@ struct ModelInfoRow: View {
             Text("**\(data)**")
                 .frame(maxWidth:.infinity)
         }
-        .padding()
     }
 }
 

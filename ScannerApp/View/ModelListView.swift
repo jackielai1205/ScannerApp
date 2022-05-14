@@ -13,7 +13,8 @@ struct ModelListView: View {
     @State var uploadID:String
     @State private var result:QueryUserResponse = QueryUserResponse()
     @EnvironmentObject var tab:TabSettings
-    @State var isPresented = false;
+    @State var isDisplay = false
+    @State var displayMessage = ""
     
     init(){
         UITableView.appearance().showsVerticalScrollIndicator = false
@@ -69,7 +70,7 @@ struct ModelListView: View {
                         if result.code == 0 && result.trans.count > 0{
                             ForEach(result.trans, id:\.self){
                                 data in
-                                ListItem(model: data)
+                                ListItem(model: data, isDisplay: $isDisplay, displayMessage: $displayMessage)
                                     .listRowSeparatorTint(Color.black)
                             }.listRowBackground(Color("Background")
                                 .opacity(0.85)
@@ -85,6 +86,13 @@ struct ModelListView: View {
                     TabBar(selectedTab: $tab.selectedTab, isShowed: $tab.isShowing)
                 }
                 .ignoresSafeArea()
+            }
+            .alert(displayMessage, isPresented: $isDisplay){
+                Button("OK"){
+                    Task{
+                        await loadData(uploadID: self.uploadID)
+                    }
+                }
             }
             .refreshable {
                 await loadData(uploadID: self.uploadID)

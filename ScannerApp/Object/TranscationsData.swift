@@ -12,6 +12,8 @@ struct TransactionsData: Codable, Hashable{
     var userID:String
     var location:String
     var date: String
+    var time: String
     var modelName: String
     var status: Int
+    var processTime:String?
 }
