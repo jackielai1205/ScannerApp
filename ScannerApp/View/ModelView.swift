@@ -17,18 +17,18 @@ struct ModelView: View {
         VStack{
             if(view != nil){
                 SceneView(scene: view, options: [.autoenablesDefaultLighting, .allowsCameraControl])
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
             }else{
                 ZStack{
-                    Rectangle()
+                    RoundedRectangle(cornerRadius: 20)
                         .fill(Color.gray)
-                        .blur(radius: 20)
+                        .blur(radius: 10)
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle(tint: .green))
                         .scaleEffect(3)
                 }
             }
         }
-        .clipShape(RoundedRectangle(cornerRadius: 20))
         .task {
             do{
                 try await loadModel()
