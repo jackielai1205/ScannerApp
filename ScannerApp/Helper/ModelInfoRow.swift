@@ -14,12 +14,15 @@ struct ModelInfoRow: View {
     @State var data:String
     
     var body: some View {
-        HStack(alignment:.center){
-            Label("**\(description)**", systemImage: sfImage)
-                .frame(maxWidth:.infinity)
-            Text("**\(data)**")
-                .frame(maxWidth:.infinity)
+        VStack{
+            HStack(alignment:.center){
+                Label("**\(description)**", systemImage: sfImage)
+                    .frame(maxWidth:.infinity)
+                Text("**\(data)**")
+                    .frame(maxWidth:.infinity)
+            }
         }
+
     }
 }
 

@@ -49,11 +49,11 @@ struct ModelDetailView: View {
                             Divider()
                             ModelInfoRow(description: "Model Name:", sfImage: "car", data: model.modelName)
                             Divider()
-                            ModelInfoRow(description: "Receive Data", sfImage: "calendar.circle", data: model.date)
+                            ModelInfoRow(description: "Receive Data:", sfImage: "calendar.circle", data: model.date)
                             Divider()
-                            ModelInfoRow(description: "Receive Time", sfImage: "clock", data: model.time)
+                            ModelInfoRow(description: "Images Number:", sfImage: "clock", data: String(model.imageLength))
                             Divider()
-                            ModelInfoRow(description: "Process Time", sfImage: "forward.circle", data: model.processTime ?? "Waiting to Process")
+                            ModelInfoRow(description: "Process Time:", sfImage: "forward.circle", data: model.processTime ?? "Waiting to Process")
                         }
                         HStack{
                             Button(action: {
@@ -131,7 +131,7 @@ func deleteModel(tranID:Int) async -> DeletResponse?{
 
 struct ModelDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ModelDetailView(model: TransactionsData(tranID: 1, userID: "12313132", location: "123", date: "2022-4-4", time: "12:30", modelName: "Chair", status: 0, processTime: "1505"))
+        ModelDetailView(model: TransactionsData(tranID: 1, userID: "12313132", location: "123", date: "2022-4-4", time: "12:30", modelName: "Chair", status: 0, processTime: "1505", imageLength: 4))
             .previewDevice(PreviewDevice(rawValue: "iPhone 13 Pro"))
     }
 }
