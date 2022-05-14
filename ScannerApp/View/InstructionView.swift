@@ -50,7 +50,6 @@ struct InstructionView: View {
                     }
                     .frame(height: 340)
                     .frame(maxWidth:.infinity)
-//                    .background(Color.brown)
                     .background(Color("Background").opacity(0.9))
                     .cornerRadius(20)
                     .transition(.move(edge: .bottom))
@@ -58,7 +57,7 @@ struct InstructionView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
             .ignoresSafeArea()
-            .animation(.easeOut)
+            .animation(.easeIn)
         }
     }
 

@@ -10,6 +10,8 @@ import SwiftUI
 struct ListItem: View {
     
     @State var model: TransactionsData
+    @Binding var isDisplay:Bool
+    @Binding var displayMessage:String
     
     var body: some View {
         VStack{
@@ -45,8 +47,9 @@ struct ListItem: View {
                             RoundedRectangle(cornerRadius: 20)
                                     .fill(Color.gray)
                             VStack(alignment:.center){
-                                Text("Model Receivce:  \(model.date)")
                                 Text("Model Serial Number: \(String(model.tranID))")
+                                Text("Receivce Data:  \(model.date)")
+                                Text("Receivce Time: \(model.time)")
                             }
                             .padding()
                         }
@@ -54,53 +57,14 @@ struct ListItem: View {
                     .padding(.horizontal, 10)
                     .font(.system(size: 16, weight: .medium, design: .rounded))
                     .foregroundColor(Color.white)
-                    HStack(alignment:.center){
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(getColor())
-                            Label(getButtonText(), systemImage: model.status == 1 ? "arrow.down.circle" : "xmark.circle")
-                                 .font(.system(size: 16, weight: .bold, design: .rounded))
-                                 .padding(3)
-                                 .foregroundColor(Color.black)
-                        }
-                        .background( NavigationLink("", destination: ModelDetailView(model: model)).opacity(0)
-                            .disabled(!(model.status == 1))
-                        )
+                    ListItemButton(model: model, isDisplay: $isDisplay, displayMessage: $displayMessage)
                         .frame(maxWidth: .infinity)
-                        .buttonStyle(BorderedButtonStyle())
-                    }
+                    .buttonStyle(BorderedButtonStyle())
                 }
             }
         }
     }
     
-    func getColor()->Color{
-        var color = Color.gray
-        switch (model.status){
-        case 1:
-            color = Color("Download")
-        case 2:
-            color = Color.red
-        default:
-            color = Color.gray
-        }
-        return color
-    }
-    
-    func getButtonText()->String{
-        var text:String
-        switch(model.status){
-        case 0:
-            text = "Please wait. Processing..."
-        case 1:
-            text = "Click to View"
-        case 2:
-            text = "Fail to convert"
-        default:
-            text = "Error"
-        }
-        return text
-    }
 }
 
 struct ListItem_Previews: PreviewProvider {

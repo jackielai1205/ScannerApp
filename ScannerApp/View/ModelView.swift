@@ -31,7 +31,7 @@ struct ModelView: View {
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .task {
             do{
-                await try loadModel()
+                try await loadModel()
                 DispatchQueue.main.async {
                     let filePath = getDocumentsDirectory().appendingPathComponent(String(model.tranID) + ".usdz")
                     do{
@@ -40,8 +40,6 @@ struct ModelView: View {
                         print("err")
                     }
 
-                    print(filePath)
-                    print(view)
                 }
             }catch{
                 print("err")
@@ -51,12 +49,9 @@ struct ModelView: View {
     
     func loadModel() async throws{
         let url = URL(string: "http://192.168.1.204:8080/download/?file=\(model.location)")
-        print(url)
+        print(url!)
         let request = URLRequest(url: url!)
-        let requestHeaders:[String:String] = ["Content-Type" : "application/x-www-form-urlencoded"]
-        var requestBodyComponents = URLComponents()
-//        requestBodyComponents.queryItems = [URLQueryItem(name: "tranID", value: String(model.tranID))]
-         let result:Int = try await withCheckedThrowingContinuation{
+        let _:Int = try await withCheckedThrowingContinuation{
             continuation in
             let task = URLSession.shared.dataTask(with: request){
                 (data, response, error) in
@@ -72,8 +67,6 @@ struct ModelView: View {
                     print("Can't write data")
                     continuation.resume(throwing: error)
                 }
-                print(data)
-                
             }
             task.resume()
         }
