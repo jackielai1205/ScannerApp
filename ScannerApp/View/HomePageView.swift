@@ -43,11 +43,7 @@ struct WebList: View{
     var body: some View{
         HStack(spacing: 0){
             ForEach(data){ i in
-<<<<<<< HEAD
                 Card(url: URL(string: "https://www.3dviewer.net/#model=https://124.222.117.223:8080/static/model.ply")!, page: self.$page, width: UIScreen.main.bounds.width, data: i)
-=======
-                Card(url: URL(string: "https://www.3dviewer.net/")!, page: self.$page, width: UIScreen.main.bounds.width, data: i)
->>>>>>> 3ef722c4e354d0d4cc801e9f71171bbd13fee16e
             }
         }
     }
