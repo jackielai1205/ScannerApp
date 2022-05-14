@@ -16,4 +16,5 @@ struct TransactionsData: Codable, Hashable{
     var modelName: String
     var status: Int
     var processTime:String?
+    var imageLength:Int
 }
