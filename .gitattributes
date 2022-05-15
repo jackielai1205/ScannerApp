@@ -1,2 +1,4 @@
 *usdz filter=lfs diff=lfs merge=lfs -text
 *.usdz filter=lfs diff=lfs merge=lfs -text
+icedragon.usdz filter=lfs diff=lfs merge=lfs -text
+eva.usdz filter=lfs diff=lfs merge=lfs -text
