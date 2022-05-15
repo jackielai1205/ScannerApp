@@ -72,8 +72,7 @@ struct Card: View{
                             .resizable()
                             .cornerRadius(20)
                             .scaledToFit()
-                            .opacity(1)
-                            .frame(width: self.width - 50, height: UIScreen.main.bounds.height / 3)
+                            .frame(width: UIScreen.main.bounds.width / 1.5, height: UIScreen.main.bounds.height / 3)
                         
                         Text("Photo Number: " + self.data.photoNum)
                             .font(.headline)
@@ -101,14 +100,14 @@ struct Card: View{
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                         .padding(.top, 1)
                         .sheet(isPresented: $isDisplay) {
-                            //                            HomePageWebView(url: self.url)
+//                                                        HomePageWebView(url: self.url)
                             ZStack{
                                 Rectangle()
                                     .fill(Color("Background"))
                                     .ignoresSafeArea()
                                 VStack{
-                                    SceneView(scene: SCNScene(named: "dragon.usdz") , options: [.autoenablesDefaultLighting,.allowsCameraControl])
-                                        .frame(width: UIScreen.main.bounds.width - 50, height: UIScreen.main.bounds.height / 1.55, alignment: .center)
+                                    SceneView(scene: SCNScene(named: data.model) , options: [.autoenablesDefaultLighting,.allowsCameraControl])
+                                        .frame(width: UIScreen.main.bounds.width / 1.1, height: UIScreen.main.bounds.height / 1.4, alignment: .center)
                                         .cornerRadius(20)
                                     Button(action: {
                                         isDisplay.toggle()
@@ -225,9 +224,9 @@ struct Type: Identifiable{
 }
 
 var data = [
-    Type(id: 0, name: "Dragon", photoNum: "196", time: "30", image: "dragon", model: "dragon.usdz"),
-    Type(id: 1, name: "Chair", photoNum: "20", time: "4", image: "Chair", model: "chair.usdz"),
-    Type(id: 2, name: "Bottle", photoNum: "20", time: "3", image: "bottle", model: "chair.usdz")
+    Type(id: 0, name: "Figure - Nergigante", photoNum: "196", time: "30", image: "dragon", model: "dragon.usdz"),
+    Type(id: 1, name: "Figure - Velkhana", photoNum: "35", time: "3", image: "icedragon", model: "icedragon.usdz"),
+    Type(id: 2, name: "Figure - Eva", photoNum: "78", time: "5", image: "eva", model: "eva.usdz")
 ]
 
 struct HomePageV2_Previews: PreviewProvider {
