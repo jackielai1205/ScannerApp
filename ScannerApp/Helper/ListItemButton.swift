@@ -49,7 +49,7 @@ struct ListItemButton: View {
                     ZStack{
                         RoundedRectangle(cornerRadius: 10)
                             .fill(Color.red)
-                        Label("Delete Model", systemImage: "xmark.circle")
+                        Label("Delete", systemImage: "xmark.circle")
                              .font(.system(size: 16, weight: .bold, design: .rounded))
                              .foregroundColor(Color.black)
                              .padding(3)

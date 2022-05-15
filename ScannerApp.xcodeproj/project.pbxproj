@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		012BB77127DDB646008298F5 /* chair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 012BB76F27DDB646008298F5 /* chair.usdz */; };
 		012BB77227DDB646008298F5 /* dragon.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 012BB77027DDB646008298F5 /* dragon.usdz */; };
 		016CD80927DACD96006260B2 /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016CD80827DACD96006260B2 /* AboutUsView.swift */; };
 		016CD80B27DAD2B9006260B2 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016CD80A27DAD2B9006260B2 /* Person.swift */; };
@@ -21,8 +20,6 @@
 		01C82994280AA019004DE535 /* MultipartForm in Frameworks */ = {isa = PBXBuildFile; productRef = 01C82993280AA019004DE535 /* MultipartForm */; };
 		01C82996280AA044004DE535 /* PersonCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C82995280AA044004DE535 /* PersonCard.swift */; };
 		01C82998280AA060004DE535 /* InfoAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C82997280AA060004DE535 /* InfoAlertView.swift */; };
-		01DF446D283085DC00EFAE23 /* eva.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 01DF446C283085DC00EFAE23 /* eva.usdz */; };
-		01DF446F283085E200EFAE23 /* icedragon.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 01DF446E283085E200EFAE23 /* icedragon.usdz */; };
 		46255B22282E4F2A00DECF83 /* ListItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46255B21282E4F2A00DECF83 /* ListItemButton.swift */; };
 		4628978A27D742930080E663 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4628978927D742930080E663 /* TabBar.swift */; };
 		4628978E27D958B50080E663 /* TabCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4628978D27D958B50080E663 /* TabCurve.swift */; };
@@ -52,6 +49,8 @@
 		46A7940C27FAA93A0054B0B2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A7940B27FAA93A0054B0B2 /* ImagePicker.swift */; };
 		46C474A327DDAAD1006075DB /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C474A227DDAAD1006075DB /* SettingView.swift */; };
 		46C474A527DDB631006075DB /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C474A427DDB631006075DB /* RowView.swift */; };
+		46DD257D2830BA8800356DB6 /* eva.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 46DD257B2830BA8800356DB6 /* eva.usdz */; };
+		46DD257E2830BA8800356DB6 /* icedragon.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 46DD257C2830BA8800356DB6 /* icedragon.usdz */; };
 		46E535222811594800C569F0 /* index-2.html in Resources */ = {isa = PBXBuildFile; fileRef = 46E535052811592600C569F0 /* index-2.html */; };
 		46E535232811594800C569F0 /* model.ply in Resources */ = {isa = PBXBuildFile; fileRef = 46E535062811592600C569F0 /* model.ply */; };
 		46E535242811594800C569F0 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 46E535072811592600C569F0 /* index.html */; };
@@ -81,7 +80,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		012BB76F27DDB646008298F5 /* chair.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = chair.usdz; sourceTree = "<group>"; };
 		012BB77027DDB646008298F5 /* dragon.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = dragon.usdz; sourceTree = "<group>"; };
 		016CD80827DACD96006260B2 /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
 		016CD80A27DAD2B9006260B2 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -93,8 +91,6 @@
 		01C8298E280A9FB7004DE535 /* HomePageV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageV2.swift; sourceTree = "<group>"; };
 		01C82995280AA044004DE535 /* PersonCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCard.swift; sourceTree = "<group>"; };
 		01C82997280AA060004DE535 /* InfoAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAlertView.swift; sourceTree = "<group>"; };
-		01DF446C283085DC00EFAE23 /* eva.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = eva.usdz; path = ../../Downloads/eva.usdz; sourceTree = "<group>"; };
-		01DF446E283085E200EFAE23 /* icedragon.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = icedragon.usdz; path = ../../Downloads/icedragon.usdz; sourceTree = "<group>"; };
 		46255B21282E4F2A00DECF83 /* ListItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemButton.swift; sourceTree = "<group>"; };
 		4628978927D742930080E663 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		4628978D27D958B50080E663 /* TabCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCurve.swift; sourceTree = "<group>"; };
@@ -127,6 +123,8 @@
 		46A7940B27FAA93A0054B0B2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		46C474A227DDAAD1006075DB /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		46C474A427DDB631006075DB /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
+		46DD257B2830BA8800356DB6 /* eva.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = eva.usdz; sourceTree = "<group>"; };
+		46DD257C2830BA8800356DB6 /* icedragon.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = icedragon.usdz; sourceTree = "<group>"; };
 		46E535052811592600C569F0 /* index-2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "index-2.html"; sourceTree = "<group>"; };
 		46E535062811592600C569F0 /* model.ply */ = {isa = PBXFileReference; lastKnownFileType = text; path = model.ply; sourceTree = "<group>"; };
 		46E535072811592600C569F0 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
@@ -187,10 +185,9 @@
 		012BB77627DDD4E9008298F5 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				01DF446E283085E200EFAE23 /* icedragon.usdz */,
-				01DF446C283085DC00EFAE23 /* eva.usdz */,
-				012BB76F27DDB646008298F5 /* chair.usdz */,
 				012BB77027DDB646008298F5 /* dragon.usdz */,
+				46DD257B2830BA8800356DB6 /* eva.usdz */,
+				46DD257C2830BA8800356DB6 /* icedragon.usdz */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -529,13 +526,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46DD257D2830BA8800356DB6 /* eva.usdz in Resources */,
 				46E535222811594800C569F0 /* index-2.html in Resources */,
+				46DD257E2830BA8800356DB6 /* icedragon.usdz in Resources */,
 				46E535232811594800C569F0 /* model.ply in Resources */,
-				01DF446D283085DC00EFAE23 /* eva.usdz in Resources */,
 				46E535242811594800C569F0 /* index.html in Resources */,
-				01DF446F283085E200EFAE23 /* icedragon.usdz in Resources */,
 				46449D6027D6189F00633CAE /* README.md in Resources */,
-				012BB77127DDB646008298F5 /* chair.usdz in Resources */,
 				46449D3427D616A700633CAE /* Preview Assets.xcassets in Resources */,
 				46449D3127D616A700633CAE /* Assets.xcassets in Resources */,
 				012BB77227DDB646008298F5 /* dragon.usdz in Resources */,
