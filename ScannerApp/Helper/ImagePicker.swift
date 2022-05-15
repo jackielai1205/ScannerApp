@@ -51,7 +51,7 @@ struct ImagePicker : UIViewControllerRepresentable {
                         guard let image = image else{
                             return
                         }
-                        if self.parent.cancel == false{
+                        if self.parent.cancel == false && self.parent.image.count <= 80{
                             self.parent.image.append(image as! UIImage)
                         }
                     }
