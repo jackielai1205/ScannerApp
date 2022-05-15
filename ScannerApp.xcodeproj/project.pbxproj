@@ -21,8 +21,8 @@
 		01C82994280AA019004DE535 /* MultipartForm in Frameworks */ = {isa = PBXBuildFile; productRef = 01C82993280AA019004DE535 /* MultipartForm */; };
 		01C82996280AA044004DE535 /* PersonCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C82995280AA044004DE535 /* PersonCard.swift */; };
 		01C82998280AA060004DE535 /* InfoAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C82997280AA060004DE535 /* InfoAlertView.swift */; };
-		01DF446D283085DC00EFAE23 /* eva.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 01DF446C283085DC00EFAE23 /* eva.usdz */; };
-		01DF446F283085E200EFAE23 /* icedragon.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 01DF446E283085E200EFAE23 /* icedragon.usdz */; };
+		01DF44722830BF0A00EFAE23 /* eva.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 01DF44702830BF0A00EFAE23 /* eva.usdz */; };
+		01DF44732830BF0A00EFAE23 /* icedragon.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 01DF44712830BF0A00EFAE23 /* icedragon.usdz */; };
 		46255B22282E4F2A00DECF83 /* ListItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46255B21282E4F2A00DECF83 /* ListItemButton.swift */; };
 		4628978A27D742930080E663 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4628978927D742930080E663 /* TabBar.swift */; };
 		4628978E27D958B50080E663 /* TabCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4628978D27D958B50080E663 /* TabCurve.swift */; };
@@ -93,8 +93,8 @@
 		01C8298E280A9FB7004DE535 /* HomePageV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageV2.swift; sourceTree = "<group>"; };
 		01C82995280AA044004DE535 /* PersonCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCard.swift; sourceTree = "<group>"; };
 		01C82997280AA060004DE535 /* InfoAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAlertView.swift; sourceTree = "<group>"; };
-		01DF446C283085DC00EFAE23 /* eva.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = eva.usdz; path = ../../Downloads/eva.usdz; sourceTree = "<group>"; };
-		01DF446E283085E200EFAE23 /* icedragon.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = icedragon.usdz; path = ../../Downloads/icedragon.usdz; sourceTree = "<group>"; };
+		01DF44702830BF0A00EFAE23 /* eva.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = eva.usdz; sourceTree = "<group>"; };
+		01DF44712830BF0A00EFAE23 /* icedragon.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = icedragon.usdz; sourceTree = "<group>"; };
 		46255B21282E4F2A00DECF83 /* ListItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemButton.swift; sourceTree = "<group>"; };
 		4628978927D742930080E663 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		4628978D27D958B50080E663 /* TabCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCurve.swift; sourceTree = "<group>"; };
@@ -187,8 +187,8 @@
 		012BB77627DDD4E9008298F5 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				01DF446E283085E200EFAE23 /* icedragon.usdz */,
-				01DF446C283085DC00EFAE23 /* eva.usdz */,
+				01DF44702830BF0A00EFAE23 /* eva.usdz */,
+				01DF44712830BF0A00EFAE23 /* icedragon.usdz */,
 				012BB76F27DDB646008298F5 /* chair.usdz */,
 				012BB77027DDB646008298F5 /* dragon.usdz */,
 			);
@@ -531,9 +531,9 @@
 			files = (
 				46E535222811594800C569F0 /* index-2.html in Resources */,
 				46E535232811594800C569F0 /* model.ply in Resources */,
-				01DF446D283085DC00EFAE23 /* eva.usdz in Resources */,
+				01DF44722830BF0A00EFAE23 /* eva.usdz in Resources */,
 				46E535242811594800C569F0 /* index.html in Resources */,
-				01DF446F283085E200EFAE23 /* icedragon.usdz in Resources */,
+				01DF44732830BF0A00EFAE23 /* icedragon.usdz in Resources */,
 				46449D6027D6189F00633CAE /* README.md in Resources */,
 				012BB77127DDB646008298F5 /* chair.usdz in Resources */,
 				46449D3427D616A700633CAE /* Preview Assets.xcassets in Resources */,

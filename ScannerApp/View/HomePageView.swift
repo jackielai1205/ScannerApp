@@ -137,7 +137,7 @@ struct Card: View{
                     .background(Color("Background").opacity(0.85))
                     .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
                 }
-                .frame(width: UIScreen.main.bounds.width / 1.3, height: UIScreen.main.bounds.height / 1.9, alignment: .center)
+                .frame(width: UIScreen.main.bounds.width / 1.35, height: UIScreen.main.bounds.height / 1.9, alignment: .center)
                 .cornerRadius(30)
             }
             .frame(width: self.width)
