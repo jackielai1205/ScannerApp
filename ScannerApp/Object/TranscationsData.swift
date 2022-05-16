@@ -17,4 +17,5 @@ struct TransactionsData: Codable, Hashable{
     var status: Int
     var processTime:String?
     var imageLength:Int
+    var errorMessage:String?
 }

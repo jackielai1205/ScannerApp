@@ -10,15 +10,19 @@ import simd
 
 struct AboutUsView: View {
     
+    // showAlert >> different alert message box when click to check individual profile information
     @State var showAlert = ShowAlert.none
     @EnvironmentObject var tab:TabSettings
     
     var body: some View {
         ZStack {
+            // Set background color to Image(Background)
             Image("Background")
                 .resizable()
                 .ignoresSafeArea()
             VStack{
+                // Logo bar positing at the top of page
+                // >> blur = 20 when showing different person's profile message box
                 TopLogoBar()
                     .blur(radius: (showAlert != ShowAlert.none) ? 20 : 0)
                 VStack{
@@ -43,20 +47,24 @@ struct AboutUsView: View {
                     .padding(.top, 10)
                     .blur(radius: (showAlert != ShowAlert.none) ? 20 : 0)
                     
+                    // Each PersonCard represent a person, PersonCard can be click to see more info about that person
+                    // >> blur = 20 when showing another person's profile message box
+                    // >> Clicking function will disable when showing another person's profile message box
                     PersonCard(showAlert: $showAlert, type: ShowAlert.ting, image: "dog", name: "TingFung Siu", major: "Computer Science", lang: "Swift Java JavaScript C", part: "Front End", color: Color.blue)
                         .blur(radius: (showAlert != ShowAlert.none) ? 20 : 0)
                         .disabled(showAlert != ShowAlert.none ? true : false)
-
+                    
+                    // Once PersonCard is clicked, person's profile message box will show by calling InfoAlertView
                     if(self.showAlert == ShowAlert.ting){
-                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.ting, image: "dog", name: "TingFung Siu", major: "Computer Science", lang: ["swiftui", "javascript", "java", "c"], part: "Front End", github: URL(string: "http://www.google.com")!, linkedin: URL(string: "http://www.google.com")!, boxHeight: 180)
+                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.ting, image: "dog", name: "TingFung Siu", major: "Computer Science", lang: ["swiftui", "javascript", "java", "c"], part: "Front End", github: "https://github.com/typist95616", linkedin: "https://www.linkedin.com/in/walter-siu-1095281a5/", boxHeight: 180)
                     }
                     
-                    PersonCard(showAlert: $showAlert, type: ShowAlert.jackie, image: "dog", name: "Jackie Tin Lok Lai", major: "Computer Science", lang: "Swift Java JavaScript C", part: "Frond End & Back End", color: Color.red)
+                    PersonCard(showAlert: $showAlert, type: ShowAlert.jackie, image: "jackieprofile", name: "Jackie Tin Lok Lai", major: "Computer Science", lang: "Swift Java JavaScript C", part: "Frond End & Back End", color: Color.red)
                         .blur(radius: (showAlert != ShowAlert.none) ? 20 : 0)
                         .disabled(showAlert != ShowAlert.none ? true : false)
 
                     if(self.showAlert == ShowAlert.jackie){
-                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.jackie, image: "dog", name: "Jackie Tin Lok Lai", major: "Computer Science", lang: ["swiftui", "javascript", "java", "c"], part: "Front End and Back End ", github: URL(string: "http://www.google.com")!, linkedin: URL(string: "http://www.google.com")!, boxHeight: 180)
+                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.jackie, image: "dog", name: "Jackie Tin Lok Lai", major: "Computer Science", lang: ["swiftui", "javascript", "java", "c"], part: "Front End and Back End ", github:  "https://github.com/jackielai1205", linkedin: "http://www.google.com", boxHeight: 180)
                     }
                     
                     PersonCard(showAlert: $showAlert, type: ShowAlert.shi, image: "dog", name: "ShiGuang Yu", major: "Computer Science", lang: "Swift Java JavaScript C", part: "Back End", color: Color.green)
@@ -64,10 +72,10 @@ struct AboutUsView: View {
                         .disabled(showAlert != ShowAlert.none ? true : false)
 
                     if(self.showAlert == ShowAlert.shi){
-                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.shi, image: "dog", name: "ShiGuang Yu", major: "Computer Science", lang: ["javascript", "java", "c"], part: "Back End", github: URL(string: "http://www.google.com")!, linkedin: URL(string: "http://www.google.com")!, boxHeight: 180)
+                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.shi, image: "dog", name: "ShiGuang Yu", major: "Computer Science", lang: ["javascript", "java", "c", "golang"], part: "Back End", github: "https://github.com/Lutr1z", linkedin: "http://www.google.com", boxHeight: 180)
                     }
                     if(self.showAlert == ShowAlert.jing){
-                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.jing, image: "dog", name: "Jing Ma", major: "AUT Staff", lang: [""], part: "Mentor", github: URL(string: "http://www.google.com")!, linkedin: URL(string: "http://www.google.com")!, boxHeight: 110)
+                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.jing, image: "dog", name: "Jing Ma", major: "AUT Staff", lang: [""], part: "Mentor", github: "", linkedin: "", boxHeight: 110)
                     }
                     
                     ZStack(alignment: .center){
@@ -95,6 +103,10 @@ struct AboutUsView: View {
                         .disabled(showAlert != ShowAlert.none ? true : false)
                 }
                 Spacer()
+                
+                // Tab Bar positing at the bottom of page
+                // >> blur = 20 when showing any person's profile message box
+                // >> Clicking function will disable when showing any person's profile message box
                 TabBar(selectedTab: $tab.selectedTab, isShowed: $tab.isShowing)
                     .disabled(showAlert != ShowAlert.none ? true : false)
                     .blur(radius: (showAlert != ShowAlert.none) ? 20 : 0)
@@ -109,6 +121,9 @@ struct AboutUsView_Previews: PreviewProvider {
     }
 }
 
+// Enum class for showing different profile alert message box
+// When showAlert == none >> nothing show
+// When showAlert == ting >> ting's profile message box show.. etc
 enum ShowAlert {
     case none
     case ting
@@ -116,33 +131,3 @@ enum ShowAlert {
     case shi
     case jing
 }
-
-// Old About Us Page UI
-//VStack {
-//    VStack {
-//        TopLogoBar()
-//    }
-//    ScrollView{
-//        ForEach (personList, id: \.self) { person in
-//                Text(person.name)
-//                    .foregroundColor(Color.white)
-//                    .fontWeight(.bold)
-//                    .frame(maxWidth: .infinity, alignment: .leading)
-//                    .padding(.leading, 30)
-//                Image(person.image)
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fit)
-//                    .padding(.horizontal, 50)
-//                Text(person.personalInfo)
-//                    .foregroundColor(Color.white)
-//                    .frame(maxWidth: .infinity, alignment: .leading)
-//                    .padding(.horizontal, 30)
-//                    .font(.system(size: 12))
-//                Divider()
-//                    .background(Color.white)
-//                    .frame(width: UIScreen.main.bounds.width / 1.1 , alignment: .center)
-//        }
-//    }
-//}
-
-//var personList : [Person] = [Person(name:"TingFung Siu", image: "dog", personalInfo: "An array is a collection of similar types of data. For example,"), Person(name: "Jackie Tin Lok Lai", image: "dog", personalInfo: "Suppose we need to record the age of 5 students. Instead of creating 5 separate variables, we can simply create an array"), Person(name: "ShiGunag Yu", image: "dog", personalInfo: "Web Server")]

@@ -16,12 +16,13 @@ struct InfoAlertView: View {
     var major: String
     var lang: [String]
     var part: String
-    var github: URL
-    var linkedin: URL
+    var github: String
+    var linkedin: String
     var boxHeight: CGFloat
     
     var body: some View {
         
+        // Display format for profile message box of Jing Ma
         if(self.name == "Jing Ma"){
             ZStack{
                 VStack{
@@ -75,6 +76,7 @@ struct InfoAlertView: View {
             .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
             .cornerRadius(30)
         } else {
+            // Display format for person message box of any other person
             ZStack{
                 VStack{
                     HStack{
@@ -146,8 +148,9 @@ struct InfoAlertView: View {
                             }
                             
                             HStack{
+                                // Button that hyperlink to person's github website
                                 Button {
-                                    guard let github = URL(string: "https://github.com/jackielai1205/ScannerApp"),
+                                    guard let github = URL(string: self.github),
                                           UIApplication.shared.canOpenURL(github) else {
                                             return
                                     }
@@ -163,8 +166,9 @@ struct InfoAlertView: View {
                                         .foregroundColor(Color.white)
                                 }
                                 
+                                // Button that hyperlink to person's linkedin website
                                 Button {
-                                    guard let linkedin = URL(string: "https://nz.linkedin.com/"),
+                                    guard let linkedin = URL(string: self.linkedin),
                                           UIApplication.shared.canOpenURL(linkedin) else {
                                             return
                                     }
@@ -202,8 +206,3 @@ extension String: Identifiable {
         return hash
     }
 }
-
-//struct InfoAlertView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        InfoAlertView(showAlert: ShowAlert.ting, type: ShowAlert.none, image: "dog", name: "TingFung Siu", major: "Computer Science", lang: ["swiftui", "javascript", "java", "c"], part: "Front End", github: URL(string: "http://www.google.com")!, linkedin: URL(string: "http://www.google.com")!, boxHeight: 180)    }
-//}

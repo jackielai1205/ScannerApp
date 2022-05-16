@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		012BB77127DDB646008298F5 /* chair.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 012BB76F27DDB646008298F5 /* chair.usdz */; };
+		012714272831E719002E7B76 /* HomePageWebList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012714262831E719002E7B76 /* HomePageWebList.swift */; };
+		012714292831E776002E7B76 /* HomePageModelCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012714282831E776002E7B76 /* HomePageModelCard.swift */; };
+		0127142B2831E7AA002E7B76 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0127142A2831E7AA002E7B76 /* PageController.swift */; };
+		0127142D2831E835002E7B76 /* HomePageCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0127142C2831E835002E7B76 /* HomePageCarousel.swift */; };
 		012BB77227DDB646008298F5 /* dragon.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 012BB77027DDB646008298F5 /* dragon.usdz */; };
 		016CD80927DACD96006260B2 /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016CD80827DACD96006260B2 /* AboutUsView.swift */; };
 		016CD80B27DAD2B9006260B2 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016CD80A27DAD2B9006260B2 /* Person.swift */; };
@@ -52,6 +55,8 @@
 		46A7940C27FAA93A0054B0B2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A7940B27FAA93A0054B0B2 /* ImagePicker.swift */; };
 		46C474A327DDAAD1006075DB /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C474A227DDAAD1006075DB /* SettingView.swift */; };
 		46C474A527DDB631006075DB /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C474A427DDB631006075DB /* RowView.swift */; };
+		46DD257D2830BA8800356DB6 /* eva.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 46DD257B2830BA8800356DB6 /* eva.usdz */; };
+		46DD257E2830BA8800356DB6 /* icedragon.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 46DD257C2830BA8800356DB6 /* icedragon.usdz */; };
 		46E535222811594800C569F0 /* index-2.html in Resources */ = {isa = PBXBuildFile; fileRef = 46E535052811592600C569F0 /* index-2.html */; };
 		46E535232811594800C569F0 /* model.ply in Resources */ = {isa = PBXBuildFile; fileRef = 46E535062811592600C569F0 /* model.ply */; };
 		46E535242811594800C569F0 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 46E535072811592600C569F0 /* index.html */; };
@@ -81,7 +86,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		012BB76F27DDB646008298F5 /* chair.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = chair.usdz; sourceTree = "<group>"; };
+		012714262831E719002E7B76 /* HomePageWebList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageWebList.swift; sourceTree = "<group>"; };
+		012714282831E776002E7B76 /* HomePageModelCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageModelCard.swift; sourceTree = "<group>"; };
+		0127142A2831E7AA002E7B76 /* PageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
+		0127142C2831E835002E7B76 /* HomePageCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageCarousel.swift; sourceTree = "<group>"; };
 		012BB77027DDB646008298F5 /* dragon.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = dragon.usdz; sourceTree = "<group>"; };
 		016CD80827DACD96006260B2 /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
 		016CD80A27DAD2B9006260B2 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -127,6 +135,8 @@
 		46A7940B27FAA93A0054B0B2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		46C474A227DDAAD1006075DB /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		46C474A427DDB631006075DB /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
+		46DD257B2830BA8800356DB6 /* eva.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = eva.usdz; sourceTree = "<group>"; };
+		46DD257C2830BA8800356DB6 /* icedragon.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = icedragon.usdz; sourceTree = "<group>"; };
 		46E535052811592600C569F0 /* index-2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "index-2.html"; sourceTree = "<group>"; };
 		46E535062811592600C569F0 /* model.ply */ = {isa = PBXFileReference; lastKnownFileType = text; path = model.ply; sourceTree = "<group>"; };
 		46E535072811592600C569F0 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
@@ -189,8 +199,9 @@
 			children = (
 				01DF44702830BF0A00EFAE23 /* eva.usdz */,
 				01DF44712830BF0A00EFAE23 /* icedragon.usdz */,
-				012BB76F27DDB646008298F5 /* chair.usdz */,
 				012BB77027DDB646008298F5 /* dragon.usdz */,
+				46DD257B2830BA8800356DB6 /* eva.usdz */,
+				46DD257C2830BA8800356DB6 /* icedragon.usdz */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -211,6 +222,7 @@
 				01C8298E280A9FB7004DE535 /* HomePageV2.swift */,
 				01B8EF372817FE69009A538A /* SelectModelView.swift */,
 				46955754282D104400B6E9C0 /* ModelView.swift */,
+				01C82997280AA060004DE535 /* InfoAlertView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -228,10 +240,13 @@
 				46C474A427DDB631006075DB /* RowView.swift */,
 				467E9C3028097DBD00BA4261 /* LazyView.swift */,
 				01C82995280AA044004DE535 /* PersonCard.swift */,
-				01C82997280AA060004DE535 /* InfoAlertView.swift */,
 				46E995AF2812561300534961 /* ModelInfoRow.swift */,
 				01B8EF392818018C009A538A /* HomePageWebView.swift */,
 				46255B21282E4F2A00DECF83 /* ListItemButton.swift */,
+				012714262831E719002E7B76 /* HomePageWebList.swift */,
+				012714282831E776002E7B76 /* HomePageModelCard.swift */,
+				0127142A2831E7AA002E7B76 /* PageController.swift */,
+				0127142C2831E835002E7B76 /* HomePageCarousel.swift */,
 				4628978C27D958A20080E663 /* TabBar */,
 			);
 			path = Helper;
@@ -529,13 +544,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46DD257D2830BA8800356DB6 /* eva.usdz in Resources */,
 				46E535222811594800C569F0 /* index-2.html in Resources */,
+				46DD257E2830BA8800356DB6 /* icedragon.usdz in Resources */,
 				46E535232811594800C569F0 /* model.ply in Resources */,
-				01DF44722830BF0A00EFAE23 /* eva.usdz in Resources */,
 				46E535242811594800C569F0 /* index.html in Resources */,
+				01DF44722830BF0A00EFAE23 /* eva.usdz in Resources */,
 				01DF44732830BF0A00EFAE23 /* icedragon.usdz in Resources */,
 				46449D6027D6189F00633CAE /* README.md in Resources */,
-				012BB77127DDB646008298F5 /* chair.usdz in Resources */,
 				46449D3427D616A700633CAE /* Preview Assets.xcassets in Resources */,
 				46449D3127D616A700633CAE /* Assets.xcassets in Resources */,
 				012BB77227DDB646008298F5 /* dragon.usdz in Resources */,
@@ -579,6 +595,7 @@
 				46E65A0E2810096400D86DF9 /* TranscationsData.swift in Sources */,
 				016CD80927DACD96006260B2 /* AboutUsView.swift in Sources */,
 				4699FE8727DEE2A500B83A72 /* NavigateRowView.swift in Sources */,
+				012714272831E719002E7B76 /* HomePageWebList.swift in Sources */,
 				46449D5727D6170A00633CAE /* Model.swift in Sources */,
 				46955755282D104400B6E9C0 /* ModelView.swift in Sources */,
 				46C474A327DDAAD1006075DB /* SettingView.swift in Sources */,
@@ -589,6 +606,7 @@
 				016CD80B27DAD2B9006260B2 /* Person.swift in Sources */,
 				46255B22282E4F2A00DECF83 /* ListItemButton.swift in Sources */,
 				017AD54A27D9B8E200DB6E5A /* LoadingView.swift in Sources */,
+				012714292831E776002E7B76 /* HomePageModelCard.swift in Sources */,
 				01C82998280AA060004DE535 /* InfoAlertView.swift in Sources */,
 				01B8EF3A2818018C009A538A /* HomePageWebView.swift in Sources */,
 				46E995B22812BB6400534961 /* QueryUserResponse.swift in Sources */,
@@ -599,6 +617,8 @@
 				4628978A27D742930080E663 /* TabBar.swift in Sources */,
 				01C8298F280A9FB7004DE535 /* HomePageV2.swift in Sources */,
 				4628979B27DAB3F00080E663 /* CameraView.swift in Sources */,
+				0127142B2831E7AA002E7B76 /* PageController.swift in Sources */,
+				0127142D2831E835002E7B76 /* HomePageCarousel.swift in Sources */,
 				467E9C3128097DBD00BA4261 /* LazyView.swift in Sources */,
 				01C82996280AA044004DE535 /* PersonCard.swift in Sources */,
 				467E9C2D280968BE00BA4261 /* InstructionView.swift in Sources */,
@@ -767,7 +787,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ScannerApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 3N2HM2CBW9;
+				DEVELOPMENT_TEAM = WU9YUJ5Z9G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ScannerApp/Info.plist;
@@ -785,7 +805,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = WalterSiu.ScannerApp.com;
+				PRODUCT_BUNDLE_IDENTIFIER = Jackielai.ScannerApp.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -803,7 +823,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ScannerApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 3N2HM2CBW9;
+				DEVELOPMENT_TEAM = WU9YUJ5Z9G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ScannerApp/Info.plist;
@@ -821,7 +841,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = WalterSiu.ScannerApp.com;
+				PRODUCT_BUNDLE_IDENTIFIER = Jackielai.ScannerApp.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

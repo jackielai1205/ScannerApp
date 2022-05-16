@@ -25,11 +25,11 @@ struct PersonCard: View{
                     showAlert = type
                 } label: {
                     HStack(alignment: .center){
-                        Image("dog")
+                        Image(image)
                             .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .clipShape(Circle())
+                            .scaledToFit()
                             .frame(width: 90)
+                            .clipShape(Circle())
                             .padding(.vertical, 10)
                             .padding(.leading, 10)
                         
@@ -70,9 +70,3 @@ struct CardModifier: ViewModifier {
             .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
     }
 }
-
-//struct PersonCard_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PersonCard(showAlert: .constant(false), image: "dog", name: "TingFung Siu", major: "Computer Science", lang: "Swift", part: "Front End", color: Color.blue)
-//    }
-//}

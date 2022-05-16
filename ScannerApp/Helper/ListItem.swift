@@ -12,6 +12,7 @@ struct ListItem: View {
     @State var model: TransactionsData
     @Binding var isDisplay:Bool
     @Binding var displayMessage:String
+    @State var isErrorMessagePresented = false
     
     var body: some View {
         VStack{
@@ -45,11 +46,17 @@ struct ListItem: View {
                     VStack{
                         ZStack(alignment: .center){
                             RoundedRectangle(cornerRadius: 20)
-                                    .fill(Color.gray)
+                                .fill(Color.gray)
                             VStack(alignment:.center){
                                 Text("Model Serial Number: \(String(model.tranID))")
                                 Text("Receivce Data:  \(model.date)")
                                 Text("Receivce Time: \(model.time)")
+                                //                                if(model.errorMessage != nil){
+                                //                                    Text("Error Message: \(model.errorMessage!)")
+                                //                                        .lineLimit(nil)
+                                //                                        .multilineTextAlignment(.center)
+                                //                                        .frame(height: 60)
+                                //                                }
                             }
                             .padding()
                         }
@@ -57,14 +64,37 @@ struct ListItem: View {
                     .padding(.horizontal, 10)
                     .font(.system(size: 16, weight: .medium, design: .rounded))
                     .foregroundColor(Color.white)
-                    ListItemButton(model: model, isDisplay: $isDisplay, displayMessage: $displayMessage)
-                        .frame(maxWidth: .infinity)
-                    .buttonStyle(BorderedButtonStyle())
+                    HStack{
+                        ListItemButton(model: model, isDisplay: $isDisplay, displayMessage: $displayMessage)
+                            .frame(maxWidth: .infinity)
+                            .buttonStyle(BorderedButtonStyle())
+                        if(model.errorMessage != nil){
+                            ZStack{
+                                Button(action: {
+                                    isErrorMessagePresented = true
+                                },
+                                   label: {
+                                        ZStack{
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .fill(Color.red)
+                                            Label("Show Error", systemImage: "questionmark.circle")
+                                                .font(.system(size: 16, weight: .bold, design: .rounded))
+                                                .foregroundColor(Color.black)
+                                                .padding(3)
+                                        }
+                                })
+                            }
+                            .frame(maxWidth: .infinity)
+                            .buttonStyle(BorderedButtonStyle())
+                        }
+                    }
                 }
             }
         }
+        .alert(model.errorMessage ?? "nil", isPresented: $isErrorMessagePresented){
+            Button("OK"){}
+        }
     }
-    
 }
 
 struct ListItem_Previews: PreviewProvider {
