@@ -14,6 +14,7 @@ struct LoadingView: View {
     
     var body: some View {
         ZStack {
+            // Set blackground color to black
             Color.black
                 .ignoresSafeArea()
             
@@ -24,6 +25,7 @@ struct LoadingView: View {
                 ZStack {
                     
                     if !leaveAnimation{
+                        // Separate logo into two parts for the loading animation
                         Image("Logoupper")
                             .renderingMode(.original)
                             .resizable()

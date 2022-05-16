@@ -16,12 +16,13 @@ struct InfoAlertView: View {
     var major: String
     var lang: [String]
     var part: String
-    var github: URL
-    var linkedin: URL
+    var github: String
+    var linkedin: String
     var boxHeight: CGFloat
     
     var body: some View {
         
+        // Display format for profile message box of Jing Ma
         if(self.name == "Jing Ma"){
             ZStack{
                 VStack{
@@ -75,6 +76,7 @@ struct InfoAlertView: View {
             .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)
             .cornerRadius(30)
         } else {
+            // Display format for person message box of any other person
             ZStack{
                 VStack{
                     HStack{
@@ -83,6 +85,7 @@ struct InfoAlertView: View {
                             .aspectRatio(contentMode: .fit)
                             .clipShape(Circle())
                             .frame(width: 70, height: 60)
+                            .scaledToFit()
                             .padding(.top, 10)
                             .padding(.trailing, 0)
                             .padding(.leading, 5)
@@ -146,11 +149,10 @@ struct InfoAlertView: View {
                             }
                             
                             HStack{
+                                // Button that hyperlink to person's github website
                                 Button {
-                                    let githubLink = github
-                                    UIApplication.shared.open(githubLink,
-                                                                   options: [:],
-                                                                   completionHandler: nil)
+                                    let githubLink = URL(string: github)
+                                    UIApplication.shared.open(githubLink!,options: [:],completionHandler: nil)
                                 } label: {
                                     Image("github")
                                         .resizable()
@@ -160,11 +162,10 @@ struct InfoAlertView: View {
                                         .foregroundColor(Color.white)
                                 }
                                 
+                                // Button that hyperlink to person's linkedin website
                                 Button {
-                                    let linkedin = linkedin
-                                    UIApplication.shared.open(linkedin,
-                                                                   options: [:],
-                                                                   completionHandler: nil)
+                                    let linkedin = URL(string: linkedin)
+                                    UIApplication.shared.open(linkedin!,options: [:],completionHandler: nil)
                                 } label: {
                                     Image("linkedin")
                                         .resizable()
@@ -196,8 +197,3 @@ extension String: Identifiable {
         return hash
     }
 }
-
-//struct InfoAlertView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        InfoAlertView(showAlert: ShowAlert.ting, type: ShowAlert.none, image: "dog", name: "TingFung Siu", major: "Computer Science", lang: ["swiftui", "javascript", "java", "c"], part: "Front End", github: URL(string: "http://www.google.com")!, linkedin: URL(string: "http://www.google.com")!, boxHeight: 180)    }
-//}

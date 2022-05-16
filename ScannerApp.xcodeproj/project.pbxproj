@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		012714272831E719002E7B76 /* HomePageWebList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012714262831E719002E7B76 /* HomePageWebList.swift */; };
+		012714292831E776002E7B76 /* HomePageModelCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012714282831E776002E7B76 /* HomePageModelCard.swift */; };
+		0127142B2831E7AA002E7B76 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0127142A2831E7AA002E7B76 /* PageController.swift */; };
+		0127142D2831E835002E7B76 /* HomePageCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0127142C2831E835002E7B76 /* HomePageCarousel.swift */; };
 		012BB77227DDB646008298F5 /* dragon.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 012BB77027DDB646008298F5 /* dragon.usdz */; };
 		016CD80927DACD96006260B2 /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016CD80827DACD96006260B2 /* AboutUsView.swift */; };
 		016CD80B27DAD2B9006260B2 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016CD80A27DAD2B9006260B2 /* Person.swift */; };
@@ -78,6 +82,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		012714262831E719002E7B76 /* HomePageWebList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageWebList.swift; sourceTree = "<group>"; };
+		012714282831E776002E7B76 /* HomePageModelCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageModelCard.swift; sourceTree = "<group>"; };
+		0127142A2831E7AA002E7B76 /* PageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
+		0127142C2831E835002E7B76 /* HomePageCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageCarousel.swift; sourceTree = "<group>"; };
 		012BB77027DDB646008298F5 /* dragon.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = dragon.usdz; sourceTree = "<group>"; };
 		016CD80827DACD96006260B2 /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
 		016CD80A27DAD2B9006260B2 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -187,6 +195,7 @@
 				01C8298E280A9FB7004DE535 /* HomePageV2.swift */,
 				01B8EF372817FE69009A538A /* SelectModelView.swift */,
 				46955754282D104400B6E9C0 /* ModelView.swift */,
+				01C82997280AA060004DE535 /* InfoAlertView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -204,10 +213,13 @@
 				46C474A427DDB631006075DB /* RowView.swift */,
 				467E9C3028097DBD00BA4261 /* LazyView.swift */,
 				01C82995280AA044004DE535 /* PersonCard.swift */,
-				01C82997280AA060004DE535 /* InfoAlertView.swift */,
 				46E995AF2812561300534961 /* ModelInfoRow.swift */,
 				01B8EF392818018C009A538A /* HomePageWebView.swift */,
 				46255B21282E4F2A00DECF83 /* ListItemButton.swift */,
+				012714262831E719002E7B76 /* HomePageWebList.swift */,
+				012714282831E776002E7B76 /* HomePageModelCard.swift */,
+				0127142A2831E7AA002E7B76 /* PageController.swift */,
+				0127142C2831E835002E7B76 /* HomePageCarousel.swift */,
 				4628978C27D958A20080E663 /* TabBar */,
 			);
 			path = Helper;
@@ -457,6 +469,7 @@
 				46E65A0E2810096400D86DF9 /* TranscationsData.swift in Sources */,
 				016CD80927DACD96006260B2 /* AboutUsView.swift in Sources */,
 				4699FE8727DEE2A500B83A72 /* NavigateRowView.swift in Sources */,
+				012714272831E719002E7B76 /* HomePageWebList.swift in Sources */,
 				46449D5727D6170A00633CAE /* Model.swift in Sources */,
 				46955755282D104400B6E9C0 /* ModelView.swift in Sources */,
 				46C474A327DDAAD1006075DB /* SettingView.swift in Sources */,
@@ -467,6 +480,7 @@
 				016CD80B27DAD2B9006260B2 /* Person.swift in Sources */,
 				46255B22282E4F2A00DECF83 /* ListItemButton.swift in Sources */,
 				017AD54A27D9B8E200DB6E5A /* LoadingView.swift in Sources */,
+				012714292831E776002E7B76 /* HomePageModelCard.swift in Sources */,
 				01C82998280AA060004DE535 /* InfoAlertView.swift in Sources */,
 				01B8EF3A2818018C009A538A /* HomePageWebView.swift in Sources */,
 				46E995B22812BB6400534961 /* QueryUserResponse.swift in Sources */,
@@ -477,6 +491,8 @@
 				4628978A27D742930080E663 /* TabBar.swift in Sources */,
 				01C8298F280A9FB7004DE535 /* HomePageV2.swift in Sources */,
 				4628979B27DAB3F00080E663 /* CameraView.swift in Sources */,
+				0127142B2831E7AA002E7B76 /* PageController.swift in Sources */,
+				0127142D2831E835002E7B76 /* HomePageCarousel.swift in Sources */,
 				467E9C3128097DBD00BA4261 /* LazyView.swift in Sources */,
 				01C82996280AA044004DE535 /* PersonCard.swift in Sources */,
 				467E9C2D280968BE00BA4261 /* InstructionView.swift in Sources */,
