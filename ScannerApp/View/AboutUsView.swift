@@ -75,7 +75,7 @@ struct AboutUsView: View {
                         InfoAlertView(showAlert: $showAlert, type: ShowAlert.shi, image: "dog", name: "ShiGuang Yu", major: "Computer Science", lang: ["javascript", "java", "c"], part: "Back End", github: "https://github.com/Lutr1z", linkedin: "https://www.linkedin.com/feed/", boxHeight: 180)
                     }
                     if(self.showAlert == ShowAlert.jing){
-                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.jing, image: "JingPic", name: "Jing Ma", major: "AUT Staff", lang: [""], part: "Mentor", github: "http://www.google.com", linkedin: "http://www.google.com", boxHeight: 110)
+                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.jing, image: "Jingprofile", name: "Jing Ma", major: "AUT Staff", lang: [""], part: "Mentor", github: "http://www.google.com", linkedin: "http://www.google.com", boxHeight: 110)
                     }
                     
                     ZStack(alignment: .center){
@@ -98,7 +98,7 @@ struct AboutUsView: View {
                     .padding(.leading, 20)
                     .blur(radius: (showAlert != ShowAlert.none) ? 20 : 0)
                     
-                    PersonCard(showAlert: $showAlert, type: ShowAlert.jing, image: "JingPic", name: "Jing Ma", major: "", lang: "", part: "Mentor", color: Color.purple)
+                    PersonCard(showAlert: $showAlert, type: ShowAlert.jing, image: "Jingprofile", name: "Jing Ma", major: "", lang: "", part: "Mentor", color: Color.purple)
                         .blur(radius: (showAlert != ShowAlert.none) ? 20 : 0)
                         .disabled(showAlert != ShowAlert.none ? true : false)
                 }

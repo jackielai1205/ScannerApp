@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//A row of data of model detail
 struct ModelInfoRow: View {
     
     @State var description:String

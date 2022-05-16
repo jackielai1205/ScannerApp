@@ -11,6 +11,8 @@ struct SettingView: View {
     
     @EnvironmentObject var tab:TabSettings
     
+    
+    //Arrange the page with NavigateRowView and RowView
     var body: some View {
         ZStack{
             Image("Background")

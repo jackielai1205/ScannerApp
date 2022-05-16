@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+//components for setting page which only show information
 struct RowView: View {
     
     @State var icon:String

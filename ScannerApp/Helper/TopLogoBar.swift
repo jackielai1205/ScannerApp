@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+//Top bar
 struct TopLogoBar: View {
     var body: some View {
         ZStack(alignment: .bottom) {

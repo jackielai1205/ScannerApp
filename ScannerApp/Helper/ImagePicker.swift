@@ -10,6 +10,7 @@ import PhotosUI
 import UIKit
 
 
+//Image picker for import images from local device
 struct ImagePicker : UIViewControllerRepresentable {    
     
     func makeCoordinator() -> Coordinator {
@@ -51,6 +52,7 @@ struct ImagePicker : UIViewControllerRepresentable {
                         guard let image = image else{
                             return
                         }
+                        //No more 80 pics upload to app, otherwise causes memory leak
                         if self.parent.cancel == false && self.parent.image.count <= 80{
                             self.parent.image.append(image as! UIImage)
                         }

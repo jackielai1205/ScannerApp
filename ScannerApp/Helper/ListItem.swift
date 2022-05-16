@@ -14,6 +14,7 @@ struct ListItem: View {
     @Binding var displayMessage:String
     @State var isErrorMessagePresented = false
     
+    //Arrange individual list item
     var body: some View {
         VStack{
             HStack{

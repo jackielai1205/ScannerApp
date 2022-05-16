@@ -16,7 +16,7 @@ struct NavigateRowView: View {
     @State var isTopCorner:Bool
     @State var isBottomCorner:Bool
     
-    
+    //NavigteRow for the setting page which direct to specific website
     var body: some View {
         Link(destination: URL(string: link)!, label: {
             HStack{

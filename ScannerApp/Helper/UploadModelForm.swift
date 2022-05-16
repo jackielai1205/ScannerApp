@@ -7,7 +7,9 @@
 
 import SwiftUI
 
+//Arrange page in the Upload model page
 struct UploadModelForm: View {
+    
     @Binding var isShowing: Bool
     @Binding var images : [UIImage]
     @Binding var userID : String
@@ -19,7 +21,6 @@ struct UploadModelForm: View {
     @State var isLoading = false
     @State var response:PostResponse?
 
-    
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 20)

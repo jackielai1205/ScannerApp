@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//Show if no record found in Model List View
 struct NoRecordFoundView: View {
     var body: some View {
         ZStack{

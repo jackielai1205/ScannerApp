@@ -39,7 +39,6 @@ struct ModelView: View {
                     }catch{
                         print("err")
                     }
-
                 }
             }catch{
                 print("err")
@@ -47,6 +46,7 @@ struct ModelView: View {
         }
     }
     
+    //Query by model location and download the model to local device, then display it
     func loadModel() async throws{
         let url = URL(string: "http://192.168.1.204:8080/download/?file=\(model.location)")
         print(url!)
