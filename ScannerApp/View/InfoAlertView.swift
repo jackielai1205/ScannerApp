@@ -49,7 +49,7 @@ struct InfoAlertView: View {
                                 .padding(.leading, 3)
                                 .padding(.bottom, 0)
                         }
-
+                        
                         Button {
                             self.showAlert = ShowAlert.none
                         } label: {
@@ -103,7 +103,7 @@ struct InfoAlertView: View {
                                 .padding(.leading, 3)
                                 .padding(.bottom, 0)
                         }
-
+                        
                         Button {
                             self.showAlert = ShowAlert.none
                         } label: {
@@ -128,7 +128,7 @@ struct InfoAlertView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 20)
                     .padding(.bottom, 5)
-
+                    
                     VStack{
                         HStack{
                             Image(systemName: "keyboard.fill")
@@ -151,8 +151,11 @@ struct InfoAlertView: View {
                             HStack{
                                 // Button that hyperlink to person's github website
                                 Button {
-                                    let githubLink = URL(string: github)
-                                    UIApplication.shared.open(githubLink!,options: [:],completionHandler: nil)
+                                    guard let github = URL(string: self.github),
+                                          UIApplication.shared.canOpenURL(github) else {
+                                        return
+                                    }
+                                    UIApplication.shared.open(github,options: [:],completionHandler: nil)
                                 } label: {
                                     Image("github")
                                         .resizable()
@@ -164,8 +167,11 @@ struct InfoAlertView: View {
                                 
                                 // Button that hyperlink to person's linkedin website
                                 Button {
-                                    let linkedin = URL(string: linkedin)
-                                    UIApplication.shared.open(linkedin!,options: [:],completionHandler: nil)
+                                    guard let linkedin = URL(string: self.linkedin),
+                                          UIApplication.shared.canOpenURL(linkedin) else {
+                                        return
+                                    }
+                                    UIApplication.shared.open(linkedin,options: [:],completionHandler: nil)
                                 } label: {
                                     Image("linkedin")
                                         .resizable()

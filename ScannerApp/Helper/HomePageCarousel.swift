@@ -12,8 +12,7 @@ struct HomePageCarousel : UIViewRepresentable{
     func updateUIView(_ uiView: UIScrollView, context: Context) {
         
     }
-    
-    
+
     func makeCoordinator() -> Coordinator {
         return HomePageCarousel.Coordinator(parent1: self)
     }
