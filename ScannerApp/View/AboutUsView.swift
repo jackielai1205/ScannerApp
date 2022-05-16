@@ -48,15 +48,15 @@ struct AboutUsView: View {
                         .disabled(showAlert != ShowAlert.none ? true : false)
 
                     if(self.showAlert == ShowAlert.ting){
-                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.ting, image: "dog", name: "TingFung Siu", major: "Computer Science", lang: ["swiftui", "javascript", "java", "c"], part: "Front End", github: URL(string: "http://www.google.com")!, linkedin: URL(string: "http://www.google.com")!, boxHeight: 180)
+                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.ting, image: "dog", name: "TingFung Siu", major: "Computer Science", lang: ["swiftui", "javascript", "java", "c"], part: "Front End", github: URL(string: "https://github.com/typist95616")!, linkedin: URL(string: "https://www.linkedin.com/feed/")!, boxHeight: 180)
                     }
                     
-                    PersonCard(showAlert: $showAlert, type: ShowAlert.jackie, image: "dog", name: "Jackie Tin Lok Lai", major: "Computer Science", lang: "Swift Java JavaScript C", part: "Frond End & Back End", color: Color.red)
+                    PersonCard(showAlert: $showAlert, type: ShowAlert.jackie, image: "JackiePic", name: "Jackie Tin Lok Lai", major: "Computer Science", lang: "Swift Java JavaScript C", part: "Frond End & Back End", color: Color.red)
                         .blur(radius: (showAlert != ShowAlert.none) ? 20 : 0)
                         .disabled(showAlert != ShowAlert.none ? true : false)
 
                     if(self.showAlert == ShowAlert.jackie){
-                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.jackie, image: "dog", name: "Jackie Tin Lok Lai", major: "Computer Science", lang: ["swiftui", "javascript", "java", "c"], part: "Front End and Back End ", github: URL(string: "http://www.google.com")!, linkedin: URL(string: "http://www.google.com")!, boxHeight: 180)
+                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.jackie, image: "JackiePic", name: "Jackie Tin Lok Lai", major: "Computer Science", lang: ["swiftui", "javascript", "java", "c"], part: "Front End and Back End ", github: URL(string: "https://github.com/jackielai1205")!, linkedin: URL(string: "https://www.linkedin.com/in/jackie-tin-lok-lai-3b2813228/")!, boxHeight: 180)
                     }
                     
                     PersonCard(showAlert: $showAlert, type: ShowAlert.shi, image: "dog", name: "ShiGuang Yu", major: "Computer Science", lang: "Swift Java JavaScript C", part: "Back End", color: Color.green)
@@ -64,10 +64,10 @@ struct AboutUsView: View {
                         .disabled(showAlert != ShowAlert.none ? true : false)
 
                     if(self.showAlert == ShowAlert.shi){
-                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.shi, image: "dog", name: "ShiGuang Yu", major: "Computer Science", lang: ["javascript", "java", "c"], part: "Back End", github: URL(string: "http://www.google.com")!, linkedin: URL(string: "http://www.google.com")!, boxHeight: 180)
+                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.shi, image: "dog", name: "ShiGuang Yu", major: "Computer Science", lang: ["javascript", "java", "c"], part: "Back End", github: URL(string: "https://github.com/Lutr1z")!, linkedin: URL(string: "https://www.linkedin.com/feed/")!, boxHeight: 180)
                     }
                     if(self.showAlert == ShowAlert.jing){
-                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.jing, image: "dog", name: "Jing Ma", major: "AUT Staff", lang: [""], part: "Mentor", github: URL(string: "http://www.google.com")!, linkedin: URL(string: "http://www.google.com")!, boxHeight: 110)
+                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.jing, image: "JingPic", name: "Jing Ma", major: "AUT Staff", lang: [""], part: "Mentor", github: URL(string: "http://www.google.com")!, linkedin: URL(string: "http://www.google.com")!, boxHeight: 110)
                     }
                     
                     ZStack(alignment: .center){
@@ -90,7 +90,7 @@ struct AboutUsView: View {
                     .padding(.leading, 20)
                     .blur(radius: (showAlert != ShowAlert.none) ? 20 : 0)
                     
-                    PersonCard(showAlert: $showAlert, type: ShowAlert.jing, image: "dog", name: "Jing Ma", major: "", lang: "", part: "Mentor", color: Color.purple)
+                    PersonCard(showAlert: $showAlert, type: ShowAlert.jing, image: "JingPic", name: "Jing Ma", major: "", lang: "", part: "Mentor", color: Color.purple)
                         .blur(radius: (showAlert != ShowAlert.none) ? 20 : 0)
                         .disabled(showAlert != ShowAlert.none ? true : false)
                 }

@@ -26,9 +26,11 @@ struct RowView: View {
             }
             Text(leftText)
                 .foregroundColor(Color("DisabledText"))
+                .bold()
             Spacer()
             Text(rightText)
                 .foregroundColor(Color("DisabledText"))
+                .bold()
         }
         .padding(10)
         .background{

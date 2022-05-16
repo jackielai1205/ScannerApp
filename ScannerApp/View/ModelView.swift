@@ -22,7 +22,7 @@ struct ModelView: View {
                 ZStack{
                     RoundedRectangle(cornerRadius: 20)
                         .fill(Color.gray)
-                        .blur(radius: 10)
+                        .blur(radius: 5)
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle(tint: .green))
                         .scaleEffect(3)

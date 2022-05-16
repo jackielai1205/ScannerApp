@@ -22,9 +22,7 @@ struct CameraView: View {
                             dashPhase: 0)
     
     var body: some View {
-        
         ZStack{
-            
             VStack{
                 ZStack{
                     Rectangle()

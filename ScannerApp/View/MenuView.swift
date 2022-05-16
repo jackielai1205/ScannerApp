@@ -17,7 +17,6 @@ struct MenuView: View {
             switch tab.selectedTab{
             case "house":
                 ZStack(alignment: .center, content: {
-//                    SelectModelView()
                     HomePageView()
                         .statusBar(hidden: true)
                         .ignoresSafeArea()

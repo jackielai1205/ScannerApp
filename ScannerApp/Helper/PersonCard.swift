@@ -25,7 +25,7 @@ struct PersonCard: View{
                     showAlert = type
                 } label: {
                     HStack(alignment: .center){
-                        Image("dog")
+                        Image(image)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .clipShape(Circle())

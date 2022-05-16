@@ -29,6 +29,7 @@ struct NavigateRowView: View {
                         .foregroundColor(.white)
                 }
                 Text(logoName)
+                    .bold()
                 Spacer()
                 Image(systemName: "chevron.right")
                         .font(.system(size: 14, weight: .semibold, design: .rounded))

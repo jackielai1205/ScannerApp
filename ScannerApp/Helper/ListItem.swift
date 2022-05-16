@@ -51,12 +51,6 @@ struct ListItem: View {
                                 Text("Model Serial Number: \(String(model.tranID))")
                                 Text("Receivce Data:  \(model.date)")
                                 Text("Receivce Time: \(model.time)")
-                                //                                if(model.errorMessage != nil){
-                                //                                    Text("Error Message: \(model.errorMessage!)")
-                                //                                        .lineLimit(nil)
-                                //                                        .multilineTextAlignment(.center)
-                                //                                        .frame(height: 60)
-                                //                                }
                             }
                             .padding()
                         }

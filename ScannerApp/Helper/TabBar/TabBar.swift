@@ -59,31 +59,6 @@ struct TabBar: View {
         .frame(width: UIScreen.main.bounds.width, height: 100)
         .offset(y: isShowed ? -20 : 60)
     }
-    
-    
-    func getCurvePoint()->CGFloat{
-        if tabPoints.isEmpty{
-            return 10
-        }
-        else{
-            switch selectedTab{
-            case "house":
-                return tabPoints[0]
-            case "viewfinder.circle":
-                return tabPoints[1]
-            case "photo":
-                return tabPoints[2]
-            case "icloud.and.arrow.up":
-                return tabPoints[3]
-            case "person.3":
-                return tabPoints[4]
-            case "gearshape":
-                return tabPoints[5]
-            default:
-                return 10
-            }
-        }
-    }
 }
 
 struct TabBar_Previews: PreviewProvider {

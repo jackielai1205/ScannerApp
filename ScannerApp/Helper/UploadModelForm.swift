@@ -88,6 +88,7 @@ struct UploadModelForm: View {
                             self.isPresentMessage = true
                             withAnimation(.linear){
                                 images = []
+                                modelName = ""
                             }
                         }else if(images.isEmpty){
                             self.message = "Please select images"
@@ -124,7 +125,6 @@ struct UploadModelForm: View {
                             .background(Color.gray)
                             .clipShape(Capsule())
                     })
-                    .disabled(cancel)
                 }
                 .padding(.bottom , 10)
                 .padding(.horizontal, 5)

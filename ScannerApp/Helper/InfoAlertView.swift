@@ -147,11 +147,8 @@ struct InfoAlertView: View {
                             
                             HStack{
                                 Button {
-                                    guard let github = URL(string: "https://github.com/jackielai1205/ScannerApp"),
-                                          UIApplication.shared.canOpenURL(github) else {
-                                            return
-                                    }
-                                    UIApplication.shared.open(github,
+                                    let githubLink = github
+                                    UIApplication.shared.open(githubLink,
                                                                    options: [:],
                                                                    completionHandler: nil)
                                 } label: {
@@ -164,10 +161,7 @@ struct InfoAlertView: View {
                                 }
                                 
                                 Button {
-                                    guard let linkedin = URL(string: "https://nz.linkedin.com/"),
-                                          UIApplication.shared.canOpenURL(linkedin) else {
-                                            return
-                                    }
+                                    let linkedin = linkedin
                                     UIApplication.shared.open(linkedin,
                                                                    options: [:],
                                                                    completionHandler: nil)
