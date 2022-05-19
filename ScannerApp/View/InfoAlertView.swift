@@ -49,7 +49,7 @@ struct InfoAlertView: View {
                                 .padding(.leading, 3)
                                 .padding(.bottom, 0)
                         }
-
+                        
                         Button {
                             self.showAlert = ShowAlert.none
                         } label: {
@@ -85,6 +85,7 @@ struct InfoAlertView: View {
                             .aspectRatio(contentMode: .fit)
                             .clipShape(Circle())
                             .frame(width: 70, height: 60)
+                            .scaledToFit()
                             .padding(.top, 10)
                             .padding(.trailing, 0)
                             .padding(.leading, 5)
@@ -102,7 +103,7 @@ struct InfoAlertView: View {
                                 .padding(.leading, 3)
                                 .padding(.bottom, 0)
                         }
-
+                        
                         Button {
                             self.showAlert = ShowAlert.none
                         } label: {
@@ -127,7 +128,7 @@ struct InfoAlertView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 20)
                     .padding(.bottom, 5)
-
+                    
                     VStack{
                         HStack{
                             Image(systemName: "keyboard.fill")
@@ -152,11 +153,9 @@ struct InfoAlertView: View {
                                 Button {
                                     guard let github = URL(string: self.github),
                                           UIApplication.shared.canOpenURL(github) else {
-                                            return
+                                        return
                                     }
-                                    UIApplication.shared.open(github,
-                                                                   options: [:],
-                                                                   completionHandler: nil)
+                                    UIApplication.shared.open(github,options: [:],completionHandler: nil)
                                 } label: {
                                     Image("github")
                                         .resizable()
@@ -170,11 +169,9 @@ struct InfoAlertView: View {
                                 Button {
                                     guard let linkedin = URL(string: self.linkedin),
                                           UIApplication.shared.canOpenURL(linkedin) else {
-                                            return
+                                        return
                                     }
-                                    UIApplication.shared.open(linkedin,
-                                                                   options: [:],
-                                                                   completionHandler: nil)
+                                    UIApplication.shared.open(linkedin,options: [:],completionHandler: nil)
                                 } label: {
                                     Image("linkedin")
                                         .resizable()

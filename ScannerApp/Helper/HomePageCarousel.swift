@@ -10,6 +10,7 @@ import SwiftUI
 struct HomePageCarousel : UIViewRepresentable{
     
     func updateUIView(_ uiView: UIScrollView, context: Context) {
+        
     }
     
     

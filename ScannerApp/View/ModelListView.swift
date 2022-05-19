@@ -133,13 +133,6 @@ struct ModelListView: View {
             }
         }
         task.resume()
-        
-        
-        
-        //        guard let url = URL(string: "http://47.101.40.95/query_user/") else {
-        //            print("Error URL")
-        //            return
-        //        }
     }
 }
 

@@ -22,9 +22,7 @@ struct CameraView: View {
                             dashPhase: 0)
     
     var body: some View {
-        
         ZStack{
-            
             VStack{
                 ZStack{
                     Rectangle()
@@ -90,12 +88,14 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
     @Published var output = AVCapturePhotoOutput()
     @Published var isSaved = false
     
+    
+    
+    //Check the permission of camera and seek if don't have
     func checkAuthorization(){
         switch AVCaptureDevice.authorizationStatus(for: .video){
         case .authorized:
             setUp()
             return
-            
         case .notDetermined:
             AVCaptureDevice.requestAccess(for: .video){
                 (status) in
@@ -106,12 +106,12 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
         case .denied:
             self.alert.toggle()
             return
-            
         default:
             return
         }
     }
     
+    //Set up camera
     func setUp(){
         do{
             self.session.beginConfiguration()
@@ -130,6 +130,7 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
         }
     }
     
+    //Toggle the flashlight of camera
     func toggleTorch(on: Bool) {
         guard let device = AVCaptureDevice.default(for: .video) else { return }
 
@@ -152,7 +153,7 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
         }
     }
     
-    
+    //Capture pic
     func takePic(){
         DispatchQueue.global(qos:.background).async {
             print("Take Pic")
@@ -164,6 +165,7 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
         }
     }
     
+    //Check output
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
 
         print("Photo taken")
@@ -177,13 +179,11 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
 
     }
     
+    //Save pic to gallery
     func savePic(imageData:Data){
         let image = UIImage(data:imageData)!
-        
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        
         self.isSaved = true
-        
         print("saved Successfully...")
     }
 }

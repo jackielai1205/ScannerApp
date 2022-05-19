@@ -64,7 +64,7 @@ struct AboutUsView: View {
                         .disabled(showAlert != ShowAlert.none ? true : false)
 
                     if(self.showAlert == ShowAlert.jackie){
-                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.jackie, image: "jackieprofile", name: "Jackie Tin Lok Lai", major: "Computer Science", lang: ["swiftui", "javascript", "java", "c"], part: "Front End and Back End ", github:  "https://github.com/jackielai1205", linkedin: "http://www.google.com", boxHeight: 180)
+                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.jackie, image: "jackieprofile", name: "Jackie Tin Lok Lai", major: "Computer Science", lang: ["swiftui", "javascript", "java", "c"], part: "Front End and Back End ", github: "https://github.com/jackielai1205", linkedin: "https://www.linkedin.com/in/jackie-tin-lok-lai-3b2813228/", boxHeight: 180)
                     }
                     
                     PersonCard(showAlert: $showAlert, type: ShowAlert.shi, image: "shiprofile", name: "ShiGuang Yu", major: "Computer Science", lang: "Swift Java JavaScript C", part: "Back End", color: Color.green)
@@ -72,7 +72,7 @@ struct AboutUsView: View {
                         .disabled(showAlert != ShowAlert.none ? true : false)
 
                     if(self.showAlert == ShowAlert.shi){
-                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.shi, image: "shiprofile", name: "ShiGuang Yu", major: "Computer Science", lang: ["javascript", "java", "c", "golang"], part: "Back End", github: "https://github.com/Lutr1z", linkedin: "http://www.google.com", boxHeight: 180)
+                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.shi, image: "dog", name: "ShiGuang Yu", major: "Computer Science", lang: ["javascript", "java", "c"], part: "Back End", github: "https://github.com/Lutr1z", linkedin: "https://www.linkedin.com/feed/", boxHeight: 180)
                     }
                     if(self.showAlert == ShowAlert.jing){
                         InfoAlertView(showAlert: $showAlert, type: ShowAlert.jing, image: "jingprofile", name: "Jing Ma", major: "AUT Staff", lang: [""], part: "Mentor", github: "", linkedin: "", boxHeight: 110)

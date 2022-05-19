@@ -94,6 +94,8 @@ struct ModelDetailView: View {
     }
 }
 
+
+//Query to server and convert the response to client
 func deleteModel(tranID:Int, completion: @escaping (DeletResponse?) -> Void) {
     print("Delete Model: \(String(tranID))")
     
@@ -118,6 +120,7 @@ func deleteModel(tranID:Int, completion: @escaping (DeletResponse?) -> Void) {
     task.resume()
 }
 
+//Complmention handler to convert data when the server connection ended
 func deleteModel(tranID:Int) async -> DeletResponse?{
     await withCheckedContinuation{
         continuation in

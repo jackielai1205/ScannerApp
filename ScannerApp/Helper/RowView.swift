@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+//components for setting page which only show information
 struct RowView: View {
     
     @State var icon:String
@@ -26,9 +28,11 @@ struct RowView: View {
             }
             Text(leftText)
                 .foregroundColor(Color("DisabledText"))
+                .bold()
             Spacer()
             Text(rightText)
                 .foregroundColor(Color("DisabledText"))
+                .bold()
         }
         .padding(10)
         .background{
