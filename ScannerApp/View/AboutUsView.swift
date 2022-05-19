@@ -50,32 +50,32 @@ struct AboutUsView: View {
                     // Each PersonCard represent a person, PersonCard can be click to see more info about that person
                     // >> blur = 20 when showing another person's profile message box
                     // >> Clicking function will disable when showing another person's profile message box
-                    PersonCard(showAlert: $showAlert, type: ShowAlert.ting, image: "dog", name: "TingFung Siu", major: "Computer Science", lang: "Swift Java JavaScript C", part: "Front End", color: Color.blue)
+                    PersonCard(showAlert: $showAlert, type: ShowAlert.ting, image: "tingprofile", name: "TingFung Siu", major: "Computer Science", lang: "Swift Java JavaScript C", part: "Front End", color: Color.blue)
                         .blur(radius: (showAlert != ShowAlert.none) ? 20 : 0)
                         .disabled(showAlert != ShowAlert.none ? true : false)
                     
                     // Once PersonCard is clicked, person's profile message box will show by calling InfoAlertView
                     if(self.showAlert == ShowAlert.ting){
-                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.ting, image: "dog", name: "TingFung Siu", major: "Computer Science", lang: ["swiftui", "javascript", "java", "c"], part: "Front End", github: "https://github.com/typist95616", linkedin: "https://www.linkedin.com/in/walter-siu-1095281a5/", boxHeight: 180)
+                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.ting, image: "tingprofile", name: "TingFung Siu", major: "Computer Science", lang: ["swiftui", "javascript", "java", "c"], part: "Front End", github: "https://github.com/typist95616", linkedin: "https://www.linkedin.com/in/walter-siu-1095281a5/", boxHeight: 180)
                     }
                     
-                    PersonCard(showAlert: $showAlert, type: ShowAlert.jackie, image: "jackieprofile", name: "Jackie Tin Lok Lai", major: "Computer Science", lang: "Swift Java JavaScript C", part: "Frond End & Back End", color: Color.red)
+                    PersonCard(showAlert: $showAlert, type: ShowAlert.jackie, image: "jackieprofile", name: "Jackie Tin Lok Lai", major: "Computer Science", lang: "Swift Java JavaScript C", part: "Full Stack", color: Color.red)
                         .blur(radius: (showAlert != ShowAlert.none) ? 20 : 0)
                         .disabled(showAlert != ShowAlert.none ? true : false)
 
                     if(self.showAlert == ShowAlert.jackie){
-                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.jackie, image: "dog", name: "Jackie Tin Lok Lai", major: "Computer Science", lang: ["swiftui", "javascript", "java", "c"], part: "Front End and Back End ", github:  "https://github.com/jackielai1205", linkedin: "http://www.google.com", boxHeight: 180)
+                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.jackie, image: "jackieprofile", name: "Jackie Tin Lok Lai", major: "Computer Science", lang: ["swiftui", "javascript", "java", "c"], part: "Front End and Back End ", github:  "https://github.com/jackielai1205", linkedin: "http://www.google.com", boxHeight: 180)
                     }
                     
-                    PersonCard(showAlert: $showAlert, type: ShowAlert.shi, image: "dog", name: "ShiGuang Yu", major: "Computer Science", lang: "Swift Java JavaScript C", part: "Back End", color: Color.green)
+                    PersonCard(showAlert: $showAlert, type: ShowAlert.shi, image: "shiprofile", name: "ShiGuang Yu", major: "Computer Science", lang: "Swift Java JavaScript C", part: "Back End", color: Color.green)
                         .blur(radius: (showAlert != ShowAlert.none) ? 20 : 0)
                         .disabled(showAlert != ShowAlert.none ? true : false)
 
                     if(self.showAlert == ShowAlert.shi){
-                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.shi, image: "dog", name: "ShiGuang Yu", major: "Computer Science", lang: ["javascript", "java", "c", "golang"], part: "Back End", github: "https://github.com/Lutr1z", linkedin: "http://www.google.com", boxHeight: 180)
+                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.shi, image: "shiprofile", name: "ShiGuang Yu", major: "Computer Science", lang: ["javascript", "java", "c", "golang"], part: "Back End", github: "https://github.com/Lutr1z", linkedin: "http://www.google.com", boxHeight: 180)
                     }
                     if(self.showAlert == ShowAlert.jing){
-                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.jing, image: "dog", name: "Jing Ma", major: "AUT Staff", lang: [""], part: "Mentor", github: "", linkedin: "", boxHeight: 110)
+                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.jing, image: "jingprofile", name: "Jing Ma", major: "AUT Staff", lang: [""], part: "Mentor", github: "", linkedin: "", boxHeight: 110)
                     }
                     
                     ZStack(alignment: .center){
@@ -98,7 +98,7 @@ struct AboutUsView: View {
                     .padding(.leading, 20)
                     .blur(radius: (showAlert != ShowAlert.none) ? 20 : 0)
                     
-                    PersonCard(showAlert: $showAlert, type: ShowAlert.jing, image: "dog", name: "Jing Ma", major: "", lang: "", part: "Mentor", color: Color.purple)
+                    PersonCard(showAlert: $showAlert, type: ShowAlert.jing, image: "jingprofile", name: "Jing Ma", major: "", lang: "", part: "Mentor", color: Color.purple)
                         .blur(radius: (showAlert != ShowAlert.none) ? 20 : 0)
                         .disabled(showAlert != ShowAlert.none ? true : false)
                 }
