@@ -17,3 +17,4 @@ struct ScannerApp: App {
         }
     }
 }
+

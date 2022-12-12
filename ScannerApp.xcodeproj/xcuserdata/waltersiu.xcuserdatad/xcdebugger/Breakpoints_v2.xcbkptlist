@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "F029DBAA-91D7-445F-A97D-3DA559F99CE4"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "842CE35F-E8FD-4865-A428-F6906DFE7B1C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ScannerApp/View/SelectModelView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "842CE35F-E8FD-4865-A428-F6906DFE7B1C - 226fbe03a88c2083"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ScannerApp.SelectModelView.init() -&gt; ScannerApp.SelectModelView"
+                  moduleName = "ScannerApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/waltersiu/Desktop/Final_ScannerApp/ScannerApp/View/SelectModelView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "842CE35F-E8FD-4865-A428-F6906DFE7B1C - e7ece5aa09f21f56"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ScannerApp.SelectModelView.init(fileName: Swift.String, openFile: Swift.Bool, model: ScannerApp.Model, fileURL: Swift.String, view: Swift.Optional&lt;__C.SCNScene&gt;, tab: SwiftUI.EnvironmentObject&lt;ScannerApp.TabSettings&gt;) -&gt; ScannerApp.SelectModelView"
+                  moduleName = "ScannerApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/waltersiu/Desktop/Final_ScannerApp/ScannerApp/View/SelectModelView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

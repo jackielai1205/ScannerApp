@@ -10,7 +10,7 @@ import Combine
 
 struct ModelListView: View {
     
-    @State var uploadID:String
+    @State var uploadID = "F3F9CDCA-B648-4391-A267-02A3E9DE7B2C"
     @State private var result:QueryUserResponse = QueryUserResponse()
     @EnvironmentObject var tab:TabSettings
     @State var isDisplay = false
@@ -18,16 +18,18 @@ struct ModelListView: View {
     
     init(){
         UITableView.appearance().showsVerticalScrollIndicator = false
-        if let data = UserDefaults.standard.string(forKey: "Save") {
-            uploadID = data
-        }else{
-            uploadID = UUID().uuidString
-        }
+//        if let data = UserDefaults.standard.string(forKey: "Save") {
+//            uploadID = "F3F9CDCA-B648-4391-A267-02A3E9DE7B2C"
+////            uploadID = data
+//        }else{
+//            uploadID = "F3F9CDCA-B648-4391-A267-02A3E9DE7B2C"
+////            uploadID = UUID().uuidString
+//        }
         UITableView.appearance().backgroundColor = .clear
         print(uploadID)
         save()
     }
-    
+
     private func save() {
         UserDefaults.standard.set(uploadID, forKey: "Save")
     }

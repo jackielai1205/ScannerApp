@@ -72,7 +72,7 @@ struct AboutUsView: View {
                         .disabled(showAlert != ShowAlert.none ? true : false)
 
                     if(self.showAlert == ShowAlert.shi){
-                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.shi, image: "dog", name: "ShiGuang Yu", major: "Computer Science", lang: ["javascript", "java", "c"], part: "Back End", github: "https://github.com/Lutr1z", linkedin: "https://www.linkedin.com/feed/", boxHeight: 180)
+                        InfoAlertView(showAlert: $showAlert, type: ShowAlert.shi, image: "shiprofile", name: "ShiGuang Yu", major: "Computer Science", lang: ["javascript", "java", "c"], part: "Back End", github: "https://github.com/Lutr1z", linkedin: "https://www.linkedin.com/feed/", boxHeight: 180)
                     }
                     if(self.showAlert == ShowAlert.jing){
                         InfoAlertView(showAlert: $showAlert, type: ShowAlert.jing, image: "jingprofile", name: "Jing Ma", major: "AUT Staff", lang: [""], part: "Mentor", github: "", linkedin: "", boxHeight: 110)
